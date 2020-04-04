@@ -1,4 +1,4 @@
-const getLayouts = () => [];
+const getLayouts = () => ['major-diatonic'];
 
 export default getLayouts;
 
