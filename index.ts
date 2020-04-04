@@ -1,4 +1,5 @@
 const getLayouts = () => ['major-diatonic'];
+const getHarpMatrix = () => {};
 
-export default getLayouts;
+export { getLayouts, getHarpMatrix };
 

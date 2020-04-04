@@ -1,4 +1,4 @@
-import getLayouts from './index';
+import { getLayouts, getHarpMatrix } from './index';
 
 test('index contains a getLayouts function', () => {
   expect(getLayouts).toBeDefined();
