@@ -1,4 +1,4 @@
-import { getLayouts, getHarpMatrix } from './index';
+import { getLayouts, getHarpmatrix } from './index';
 import {
   example_majorDiatonicLayout_firstPosition,
   example_majorDiatonicLayout_secondPosition,
@@ -16,16 +16,16 @@ test('getLayouts function returns an array with \'major-diatonic\' as one of the
   expect(getLayouts().includes('major-diatonic')).toBeTruthy();
 });
 
-test('getHarpMatrix function can return a first position major diatonic matrix', () => {
+test('getHarpmatrix function can return a first position major diatonic matrix', () => {
   const expectedMatrix = example_majorDiatonicLayout_firstPosition;
-  const actualMatrix = getHarpMatrix('major-diatonic', 'first');
+  const actualMatrix = getHarpmatrix('major-diatonic', 'first');
 
   expect(actualMatrix).toStrictEqual(expectedMatrix);
 });
 
-test('getHarpMatrix function can return a second position major diatonic matrix', () => {
+test('getHarpmatrix function can return a second position major diatonic matrix', () => {
   const expectedMatrix = example_majorDiatonicLayout_secondPosition;
-  const actualMatrix = getHarpMatrix('major-diatonic', 'second');
+  const actualMatrix = getHarpmatrix('major-diatonic', 'second');
 
   expect(actualMatrix).toStrictEqual(expectedMatrix);
 });
