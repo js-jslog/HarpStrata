@@ -1,5 +1,6 @@
 type ScaleDegree = '1' | 'b2' | '2' | 'b3' | '3' | '4' | 'b5' | '5' | 'b6' | '6' | 'b7' | '7'
-interface Harpmatrix extends Array<ScaleDegree>{}
+interface HarpmatrixRow extends Array<ScaleDegree>{}
+interface Harpmatrix extends Array<HarpmatrixRow>{}
 
 const orderedScaleDegrees: [
   '1', 'b2', '2', 'b3', '3', '4', 'b5', '5', 'b6', '6', 'b7', '7'
@@ -8,19 +9,19 @@ const orderedScaleDegrees: [
 ];
 
 const majorDiatonicLayout: [
-  'b3', undefined, undefined, 'b3',
-  '1', '3', '5', '1',
-  '2', '5', '7', '2',
-  'b2', 'b5', 'b7', 'b2',
-  undefined, '4', '6', undefined,
-  undefined, undefined, 'b6', undefined,
+  [ 'b3', undefined, undefined, 'b3', ],
+  [ '1', '3', '5', '1', ],
+  [ '2', '5', '7', '2', ],
+  [ 'b2', 'b5', 'b7', 'b2', ],
+  [ undefined, '4', '6', undefined, ],
+  [ undefined, undefined, 'b6', undefined, ],
 ] = [
-  'b3',     ,     , 'b3',
-  '1' , '3' , '5' , '1' ,
-  '2' , '5' , '7' , '2' ,
-  'b2', 'b5', 'b7', 'b2',
-      , '4' , '6' ,     ,
-      ,     , 'b6',     ,
+  [ 'b3',     ,     , 'b3', ],
+  [ '1' , '3' , '5' , '1' , ],
+  [ '2' , '5' , '7' , '2' , ],
+  [ 'b2', 'b5', 'b7', 'b2', ],
+  [     , '4' , '6' ,     , ],
+  [     ,     , 'b6',     , ],
 ];
 
 const layoutMap: {
@@ -40,10 +41,12 @@ const offsetHarpMatrix = (harpmatrix: Harpmatrix, offset: number) => {
     shiftedScaleDegrees.unshift(shiftedScaleDegrees.pop());
   }
 
-  return harpmatrix.map((degree) => {
-    const degreeIndex= orderedScaleDegrees.indexOf(degree as ScaleDegree);
-    const outputDegree = shiftedScaleDegrees[degreeIndex];
-    return outputDegree
+  return harpmatrix.map((matrixrow) => {
+    return matrixrow.map((degree) => {
+      const degreeIndex = orderedScaleDegrees.indexOf(degree as ScaleDegree);
+      const outputDegree = shiftedScaleDegrees[degreeIndex];
+      return outputDegree
+    });
   });
 };
 
