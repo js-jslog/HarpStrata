@@ -1,3 +1,4 @@
+import offsetHarpmatrix from './offsetHarpmatrix'
 import { Harpmatrix } from '../common/types'
 
 const majorDiatonicLayout: [
@@ -24,7 +25,17 @@ const layoutMap: {
 
 const getLayouts = () => Object.keys(layoutMap);
 
-const getHarpMatrix = () => layoutMap['major-diatonic'];
+const getHarpMatrix = (layout: string, position: string) => {
+  const matrix = layoutMap[layout];
+
+  const positionMap = {
+    first: 0,
+    second: 7,
+  };
+
+  return offsetHarpmatrix(matrix, positionMap[position]);
+
+};
 
 export { getLayouts, getHarpMatrix };
 
