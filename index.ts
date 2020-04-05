@@ -18,9 +18,29 @@ const layoutMap = {
   'major-diatonic': majorDiatonicLayout,
 };
 
+const scaleDegrees: [
+  '1', 'b2', '2', 'b3', '3', '4', 'b5', '5', 'b6', '6', 'b7', '7'
+] = [
+  '1', 'b2', '2', 'b3', '3', '4', 'b5', '5', 'b6', '6', 'b7', '7'
+];
+
 const getLayouts = () => Object.keys(layoutMap);
 
 const getHarpMatrix = () => layoutMap['major-diatonic'];
 
-export { getLayouts, getHarpMatrix };
+const offsetHarpMatrix = (harpmatrix, offset: number) => {
+  const shiftedScaleDegrees = [...scaleDegrees];
+
+  for (let i = 0; i < offset; i++) {
+    shiftedScaleDegrees.unshift(shiftedScaleDegrees.pop());
+  }
+
+  return harpmatrix.map((degree) => {
+    const degreeIndex = scaleDegrees.indexOf(degree);
+    const outputDegree = shiftedScaleDegrees[degreeIndex];
+    return outputDegree
+  });
+};
+
+export { getLayouts, getHarpMatrix, offsetHarpMatrix };
 

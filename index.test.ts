@@ -1,4 +1,4 @@
-import { getLayouts, getHarpMatrix } from './index';
+import { getLayouts, getHarpMatrix, offsetHarpMatrix } from './index';
 
 test('index contains a getLayouts function', () => {
   expect(getLayouts).toBeDefined();
@@ -29,6 +29,21 @@ test('getHarpMatrix function can return a first position major diatonic matrix',
         ,     , 'b6',     ,
   ];
   const actualMatrix = getHarpMatrix();
+
+  expect(actualMatrix).toStrictEqual(expectedMatrix);
+});
+
+test('offsetHarpMatrix can convert a first position to a second position layout', () => {
+  const expectedMatrix = [
+    'b6',     ,     , 'b6',
+    '4' , '6' , '1' , '4' ,
+    '5' , '1' , '3' , '5' ,
+    'b5', '7' , 'b3', 'b5',
+        , 'b7', '2' ,     ,
+        ,     , 'b2',     ,
+  ];
+
+  const actualMatrix = offsetHarpMatrix(getHarpMatrix(), 7);
 
   expect(actualMatrix).toStrictEqual(expectedMatrix);
 });
