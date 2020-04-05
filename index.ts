@@ -1,3 +1,12 @@
+type ScaleDegree = '1' | 'b2' | '2' | 'b3' | '3' | '4' | 'b5' | '5' | 'b6' | '6' | 'b7' | '7'
+interface Harpmatrix extends Array<ScaleDegree>{}
+
+const orderedScaleDegrees: [
+  '1', 'b2', '2', 'b3', '3', '4', 'b5', '5', 'b6', '6', 'b7', '7'
+] = [
+  '1', 'b2', '2', 'b3', '3', '4', 'b5', '5', 'b6', '6', 'b7', '7'
+];
+
 const majorDiatonicLayout: [
   'b3', undefined, undefined, 'b3',
   '1', '3', '5', '1',
@@ -14,29 +23,25 @@ const majorDiatonicLayout: [
       ,     , 'b6',     ,
 ];
 
-const layoutMap = {
+const layoutMap: {
+  'major-diatonic': Harpmatrix;
+} = {
   'major-diatonic': majorDiatonicLayout,
 };
-
-const scaleDegrees: [
-  '1', 'b2', '2', 'b3', '3', '4', 'b5', '5', 'b6', '6', 'b7', '7'
-] = [
-  '1', 'b2', '2', 'b3', '3', '4', 'b5', '5', 'b6', '6', 'b7', '7'
-];
 
 const getLayouts = () => Object.keys(layoutMap);
 
 const getHarpMatrix = () => layoutMap['major-diatonic'];
 
-const offsetHarpMatrix = (harpmatrix, offset: number) => {
-  const shiftedScaleDegrees = [...scaleDegrees];
+const offsetHarpMatrix = (harpmatrix: Harpmatrix, offset: number) => {
+  const shiftedScaleDegrees = [...orderedScaleDegrees];
 
   for (let i = 0; i < offset; i++) {
     shiftedScaleDegrees.unshift(shiftedScaleDegrees.pop());
   }
 
   return harpmatrix.map((degree) => {
-    const degreeIndex = scaleDegrees.indexOf(degree);
+    const degreeIndex= orderedScaleDegrees.indexOf(degree as ScaleDegree);
     const outputDegree = shiftedScaleDegrees[degreeIndex];
     return outputDegree
   });
