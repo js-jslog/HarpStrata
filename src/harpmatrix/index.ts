@@ -24,6 +24,7 @@ const layoutMap: {
 };
 
 const getLayouts = () => Object.keys(layoutMap);
+const getPositions = (layout: string) => ['first'];
 
 const getHarpmatrix = (layout: string, position: string) => {
   const matrix = layoutMap[layout];
@@ -37,5 +38,5 @@ const getHarpmatrix = (layout: string, position: string) => {
 
 };
 
-export { getLayouts, getHarpmatrix };
+export { getLayouts, getPositions, getHarpmatrix };
 
