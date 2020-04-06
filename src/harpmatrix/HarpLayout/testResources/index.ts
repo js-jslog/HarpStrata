@@ -1,4 +1,4 @@
-import { HarpLayout, Interactions, InteractionMatrix, PitchMatrix } from '../types';
+import { Layouts, HarpLayout, Interactions, InteractionMatrix, PitchMatrix } from '../types';
 
 const Overblow1: Interactions = Interactions.Overblow1;
 const Blow: Interactions = Interactions.Blow;
@@ -26,6 +26,7 @@ const interactionmatrix: InteractionMatrix = [
 ];
 
 export const example_majorDiatonicLayout: HarpLayout = {
+  id: Layouts.MajorDiatonic,
   pitchmatrix,
   interactionmatrix,
 };

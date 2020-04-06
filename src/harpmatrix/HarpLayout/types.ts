@@ -18,6 +18,7 @@ interface PitchRow extends Array<number>{}
 export interface PitchMatrix extends Array<PitchRow>{}
 
 export interface HarpLayout {
+  id: Layouts,
   pitchmatrix: PitchMatrix,
   interactionmatrix: InteractionMatrix,
 };
