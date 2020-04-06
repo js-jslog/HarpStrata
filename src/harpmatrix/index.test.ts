@@ -1,3 +1,4 @@
+import { Positions } from './index';
 import { getLayouts, getPositions, getHarpmatrix } from './index';
 import {
   example_majorDiatonicLayout_firstPosition,
@@ -9,7 +10,7 @@ test('getLayouts function returns an array with \'major-diatonic\' as one of the
 });
 
 test('getPositions function returns an array with \'first\' as one of the values', () => {
-  expect(getPositions('major-diatonic').includes('first')).toBeTruthy();
+  expect(getPositions('major-diatonic').includes(Positions.First)).toBeTruthy();
 });
 
 test('getHarpmatrix function can return a first position major diatonic matrix', () => {
