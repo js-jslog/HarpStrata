@@ -1,4 +1,5 @@
 import offsetHarpmatrix from './offsetHarpmatrix'
+import { getHarpLayouts } from './HarpLayout'
 import { Harpmatrix } from '../common/types'
 
 const majorDiatonicLayout: [
@@ -23,7 +24,7 @@ const layoutMap: {
   'major-diatonic': majorDiatonicLayout,
 };
 
-const getLayouts = () => Object.keys(layoutMap);
+const getLayouts = getHarpLayouts;
 
 enum Positions {
   First = 'FIRST',

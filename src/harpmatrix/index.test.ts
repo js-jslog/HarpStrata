@@ -1,4 +1,5 @@
 import { Positions } from './index';
+import { Layouts } from './HarpLayout/types'
 import { getLayouts, getPositions, getHarpmatrix } from './index';
 import {
   example_majorDiatonicLayout_firstPosition,
@@ -6,7 +7,7 @@ import {
 } from './testResources';
 
 test('getLayouts function returns an array with \'major-diatonic\' as one of the values', () => {
-  expect(getLayouts().includes('major-diatonic')).toBeTruthy();
+  expect(getLayouts().includes(Layouts.MajorDiatonic)).toBeTruthy();
 });
 
 test('getPositions function returns an array with \'first\' as one of the values', () => {
