@@ -1,4 +1,4 @@
-import { Layouts, HarpLayout, Interactions, InteractionMatrix, HalftoneMatrix } from '../types';
+import { Layouts, HarpLayout, Interactions, InteractionMatrix, HalfstepMatrix } from '../types';
 
 const Overblow1: Interactions = Interactions.Overblow1;
 const Blow: Interactions = Interactions.Blow;
@@ -7,7 +7,7 @@ const Bend1: Interactions = Interactions.Bend1;
 const Bend2: Interactions = Interactions.Bend2;
 const Bend3: Interactions = Interactions.Bend3;
 
-const halftonematrix: HalftoneMatrix = [
+const halfstepmatrix: HalfstepMatrix = [
   [ 3,  ,   , 15, ],
   [ 0, 4, 7 , 12, ],
   [ 2, 7, 11, 14, ],
@@ -27,6 +27,6 @@ const interactionmatrix: InteractionMatrix = [
 
 export const example_majorDiatonicLayout: HarpLayout = {
   id: Layouts.MajorDiatonic,
-  halftonematrix,
+  halfstepmatrix,
   interactionmatrix,
 };

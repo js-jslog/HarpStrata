@@ -14,11 +14,11 @@ export enum Interactions {
 interface InteractionRow extends Array<Interactions>{}
 export interface InteractionMatrix extends Array<InteractionRow>{}
 
-interface HalftoneRow extends Array<number>{}
-export interface HalftoneMatrix extends Array<HalftoneRow>{}
+interface HalfstepRow extends Array<number>{}
+export interface HalfstepMatrix extends Array<HalfstepRow>{}
 
 export interface HarpLayout {
   id: Layouts,
-  halftonematrix: HalftoneMatrix,
+  halfstepmatrix: HalfstepMatrix,
   interactionmatrix: InteractionMatrix,
 };
