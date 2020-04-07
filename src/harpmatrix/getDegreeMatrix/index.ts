@@ -27,9 +27,15 @@ const orderedDegrees: [
 ];
 
 export default (halfstepMatrix, offset) => {
+  const shiftedDegrees = [ ...orderedDegrees ];
+
+  for (let i = 0; i < offset; i++) {
+    shiftedDegrees.unshift(shiftedDegrees.pop());
+  }
+
   return halfstepMatrix.map((row) => {
     return row.map((element) => {
-      return (12 + element - offset) % 12 + 1;
+      return shiftedDegrees[element % 12];
     });
   });
 };
