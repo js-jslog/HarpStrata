@@ -14,3 +14,10 @@ test('getDegreeMatrix function maps a simple 2d array of 7\'s to root degrees wh
   expect(actualArray).toStrictEqual(expectedArray);
 });
 
+test('getDegreeMatrix function maps a simple 2d array of 13\'s to root degrees when halfsetp offset is 0', () => {
+  const expectedArray = [[ 1, ], [ 1, ]];
+  const actualArray = getDegreeMatrix([[ 12, ], [ 12, ]], 0);
+
+  expect(actualArray).toStrictEqual(expectedArray);
+});
+
