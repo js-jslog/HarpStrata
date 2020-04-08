@@ -13,3 +13,5 @@ export enum Degrees {
   Seventh = '7',
 };
 
+interface DegreeRow extends Array<Degrees>{}
+export interface DegreeMatrix extends Array<DegreeRow>{}
