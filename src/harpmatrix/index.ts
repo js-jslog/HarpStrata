@@ -1,5 +1,6 @@
-import offsetHarpmatrix from './offsetHarpmatrix'
-import { getHarpLayouts } from './HarpLayout'
+import getDegreeMatrix from './getDegreeMatrix'
+import { getHarpLayouts, getHarpLayout } from './HarpLayout'
+import { Layouts } from './HarpLayout/types'
 import { Harpmatrix } from '../common/types'
 
 const majorDiatonicLayout: [
@@ -35,15 +36,15 @@ const getPositions = (layout: string): Positions[] => [
   Positions.Second,
 ];
 
-const getHarpmatrix = (layout: string, position: string) => {
-  const matrix = layoutMap[layout];
+const getHarpmatrix = (layout: Layouts, position: string) => {
+  const matrix = getHarpLayout(layout).halfstepmatrix;
 
   const positionMap = {
     first: 0,
     second: 7,
   };
 
-  return offsetHarpmatrix(matrix, positionMap[position]);
+  return getDegreeMatrix(matrix, positionMap[position]);
 
 };
 

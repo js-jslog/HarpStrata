@@ -16,14 +16,14 @@ test('getPositions function returns an array with \'first\' as one of the values
 
 test('getHarpmatrix function can return a first position major diatonic matrix', () => {
   const expectedMatrix = example_majorDiatonicLayout_firstPosition;
-  const actualMatrix = getHarpmatrix('major-diatonic', 'first');
+  const actualMatrix = getHarpmatrix(Layouts.MajorDiatonic, 'first');
 
   expect(actualMatrix).toStrictEqual(expectedMatrix);
 });
 
 test('getHarpmatrix function can return a second position major diatonic matrix', () => {
   const expectedMatrix = example_majorDiatonicLayout_secondPosition;
-  const actualMatrix = getHarpmatrix('major-diatonic', 'second');
+  const actualMatrix = getHarpmatrix(Layouts.MajorDiatonic, 'second');
 
   expect(actualMatrix).toStrictEqual(expectedMatrix);
 });
