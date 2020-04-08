@@ -2,6 +2,7 @@ import { Degrees } from './types';
 
 const orderedDegrees: [
   Degrees.Root,
+  Degrees.Flat2,
   Degrees.Second,
   Degrees.Flat3,
   Degrees.Third,
@@ -14,6 +15,7 @@ const orderedDegrees: [
   Degrees.Seventh,
 ] = [
   Degrees.Root,
+  Degrees.Flat2,
   Degrees.Second,
   Degrees.Flat3,
   Degrees.Third,

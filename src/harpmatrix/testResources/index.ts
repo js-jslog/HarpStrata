@@ -1,3 +1,12 @@
+export const example_majorDiatonicHalfstep = [
+  [ 3,  ,   , 15, ],
+  [ 0, 4, 7 , 12, ],
+  [ 2, 7, 11, 14, ],
+  [ 1, 6, 10, 13, ],
+  [  , 5, 9 ,   , ],
+  [  ,  , 8 ,   , ],
+];
+
 export const example_majorDiatonicLayout_firstPosition: [
   [ 'b3', undefined, undefined, 'b3', ],
   [ '1', '3', '5', '1', ],
