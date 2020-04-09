@@ -6,9 +6,7 @@
     "author": "js-jslog <josephsinfield@yahoo.com>",
     "license": "UNLICENSED",
     "scripts": {
-        "test": "jest",
-        "postinstall": "npx eslint --init",
-        "install": "npx ts-jest config:init"
+        "test": "jest"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",
