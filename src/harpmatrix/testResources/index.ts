@@ -1,10 +1,10 @@
 import { HarpLayout } from '../HarpLayout/types'
 import { example_majorDiatonicLayout } from '../HarpLayout/testResources'
-import { DegreeMatrix } from '../getDegreeMatrix/types'
+import { DegreeMatrix } from '../Degree/types'
 import {
   example_majorDiatonicDegrees_firstPosition,
   example_majorDiatonicDegrees_secondPosition,
-} from '../getDegreeMatrix/testResources'
+} from '../Degree/testResources'
 
 interface HarpLaminae {
   layout: HarpLayout,

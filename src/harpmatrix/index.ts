@@ -1,4 +1,4 @@
-import getDegreeMatrix from './getDegreeMatrix'
+import getDegreeMatrix from './Degree'
 import { getHarpLayouts, getHarpLayout } from './HarpLayout'
 import { Layouts } from './HarpLayout/types'
 import { Harpmatrix } from '../common/types'
