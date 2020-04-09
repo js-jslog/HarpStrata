@@ -32,7 +32,7 @@ test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6)
 
 test('getDegreeMatrix maps a major diatonic halfstepmatrix in to a major diatonic degreematrix in first position', () => {
   const expectedArray = example_majorDiatonicHarp_firstPosition.degrees;
-  const actualArray = getDegreeMatrix(example_majorDiatonicHarp_firstPosition.layout.halfstepmatrix, 0);
+  const actualArray = getDegreeMatrix(example_majorDiatonicHarp_firstPosition.layout.halfsteps, 0);
 
   expect(actualArray).toStrictEqual(expectedArray);
 });

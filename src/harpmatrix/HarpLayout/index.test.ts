@@ -1,9 +1,9 @@
 import { example_majorDiatonicLayout } from './testResources';
-import { Layouts } from './types'
+import { LayoutIds } from './types'
 import { getHarpLayouts, getHarpLayout } from './index';
 
 test('getHarpLayouts function returns an array of the available layouts', () => {
-  const expectedArray = [ Layouts.MajorDiatonic ];
+  const expectedArray = [ LayoutIds.MajorDiatonic ];
   const actualArray = getHarpLayouts();
 
   expect(actualArray).toStrictEqual(expectedArray);
@@ -11,7 +11,7 @@ test('getHarpLayouts function returns an array of the available layouts', () => 
 
 test('getHarpLayout function can return a major diatonic layout', () => {
   const expectedMatrix = example_majorDiatonicLayout;
-  const actualMatrix = getHarpLayout(Layouts.MajorDiatonic);
+  const actualMatrix = getHarpLayout(LayoutIds.MajorDiatonic);
 
   expect(actualMatrix).toStrictEqual(expectedMatrix);
 });

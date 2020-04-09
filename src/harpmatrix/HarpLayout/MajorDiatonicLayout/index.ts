@@ -1,13 +1,15 @@
-import { Layouts, HarpLayout, Interactions, InteractionMatrix, HalfstepMatrix } from '../types';
+import { LayoutIds, HarpLayout, HalfstepMatrix } from '../types';
+import { InteractionIds, InteractionMatrix } from '../Interaction/types';
+import {
+  overblow1,
+  blow,
+  draw,
+  bend1,
+  bend2,
+  bend3,
+} from '../Interaction';
 
-const Overblow1: Interactions = Interactions.Overblow1;
-const Blow: Interactions = Interactions.Blow;
-const Draw: Interactions = Interactions.Draw;
-const Bend1: Interactions = Interactions.Bend1;
-const Bend2: Interactions = Interactions.Bend2;
-const Bend3: Interactions = Interactions.Bend3;
-
-const halfstepmatrix: HalfstepMatrix = [
+const halfsteps: HalfstepMatrix = [
   [ 3,  ,   , 15, ],
   [ 0, 4, 7 , 12, ],
   [ 2, 7, 11, 14, ],
@@ -16,18 +18,18 @@ const halfstepmatrix: HalfstepMatrix = [
   [  ,  , 8 ,   , ],
 ];
 
-const interactionmatrix: InteractionMatrix = [
-  [ Overblow1,        ,        , Overblow1, ],
-  [ Blow     , Blow   , Blow   , Blow     , ],
-  [ Draw     , Draw   , Draw   , Draw     , ],
-  [ Bend1    , Bend1  , Bend1  , Bend1    , ],
-  [          , Bend2  , Bend2  ,          , ],
-  [          ,        , Bend3  ,          , ],
+const interactions: InteractionMatrix = [
+  [ overblow1,        ,        , overblow1, ],
+  [ blow     , blow   , blow   , blow     , ],
+  [ draw     , draw   , draw   , draw     , ],
+  [ bend1    , bend1  , bend1  , bend1    , ],
+  [          , bend2  , bend2  ,          , ],
+  [          ,        , bend3  ,          , ],
 ];
 
 export const MajorDiatonicLayout: HarpLayout = {
-  id: Layouts.MajorDiatonic,
-  halfstepmatrix,
-  interactionmatrix,
+  id: LayoutIds.MajorDiatonic,
+  halfsteps,
+  interactions,
 };
 
