@@ -25,11 +25,9 @@ const interactionmatrix: InteractionMatrix = [
   [          ,        , Bend3  ,          , ],
 ];
 
-const MajorDiatonicLayout: HarpLayout = {
+export const MajorDiatonicLayout: HarpLayout = {
   id: Layouts.MajorDiatonic,
   halfstepmatrix,
   interactionmatrix,
 };
-
-export default MajorDiatonicLayout;
 

@@ -28,7 +28,7 @@ const orderedDegrees: [
   Degrees.Seventh,
 ];
 
-export default (halfstepMatrix, offset) => {
+export const getDegreeMatrix = (halfstepMatrix, offset) => {
   const shiftedDegrees = [ ...orderedDegrees ];
 
   for (let i = 0; i < offset; i++) {

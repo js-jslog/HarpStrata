@@ -1,5 +1,5 @@
 import { Layouts, HarpLayout } from './types';
-import MajorDiatonicLayout from './MajorDiatonicLayout';
+import { MajorDiatonicLayout } from './MajorDiatonicLayout';
 
 const layoutMap = new Map();
 layoutMap.set(MajorDiatonicLayout.id, MajorDiatonicLayout);

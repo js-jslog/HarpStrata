@@ -1,4 +1,4 @@
-import getDegreeMatrix from './index';
+import { getDegreeMatrix } from './index';
 import { Degrees } from './types';
 import { example_majorDiatonicHarp_firstPosition } from '../testResources';
 
