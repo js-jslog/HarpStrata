@@ -6,7 +6,8 @@
     "author": "js-jslog <josephsinfield@yahoo.com>",
     "license": "UNLICENSED",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "clear_jest": "jest --clearCache"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",
