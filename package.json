@@ -7,7 +7,8 @@
     "license": "UNLICENSED",
     "scripts": {
         "test": "jest",
-        "clear_jest": "jest --clearCache"
+        "clear_jest": "jest --clearCache",
+        "lint": "eslint 'src/**'"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",
