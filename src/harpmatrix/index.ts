@@ -10,9 +10,9 @@ const positionMap = {
   second: 7,
 }
 const getHarpmatrix = (layout: LayoutIds, position: string): DegreeMatrix => {
-  const matrix = getHarpLayout(layout).halfsteps
+  const { halfsteps } = getHarpLayout(layout)
 
-  return getDegreeMatrix(matrix, positionMap[position])
+  return getDegreeMatrix(halfsteps, positionMap[position])
 }
 
 enum Positions {

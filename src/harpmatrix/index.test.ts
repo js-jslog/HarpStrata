@@ -12,15 +12,17 @@ test('getPositions function returns an array with \'first\' as one of the values
 })
 
 test('getHarpmatrix function can return a first position major diatonic matrix', () => {
-  const expectedMatrix = EXAMPLE_STRATA.MAJOR_DIATONIC_FIRST_POSITION.degrees
+  const { MAJOR_DIATONIC_FIRST_POSITION } = EXAMPLE_STRATA
+  const { degrees } = MAJOR_DIATONIC_FIRST_POSITION
   const actualMatrix = getHarpmatrix(LayoutIds.MajorDiatonic, 'first')
 
-  expect(actualMatrix).toStrictEqual(expectedMatrix)
+  expect(actualMatrix).toStrictEqual(degrees)
 })
 
 test('getHarpmatrix function can return a second position major diatonic matrix', () => {
-  const expectedMatrix = EXAMPLE_STRATA.MAJOR_DIATONIC_SECOND_POSITION.degrees
+  const { MAJOR_DIATONIC_SECOND_POSITION } = EXAMPLE_STRATA
+  const { degrees } = MAJOR_DIATONIC_SECOND_POSITION
   const actualMatrix = getHarpmatrix(LayoutIds.MajorDiatonic, 'second')
 
-  expect(actualMatrix).toStrictEqual(expectedMatrix)
+  expect(actualMatrix).toStrictEqual(degrees)
 })

@@ -23,6 +23,12 @@ module.exports = {
         'jest'
     ],
     'rules': {
+        'prefer-destructuring': ['error', {
+            'array': true,
+            'object': true
+        }, {
+            'enforceForRenamedProperties': true
+        }],
         'indent': [
             'error',
             2
