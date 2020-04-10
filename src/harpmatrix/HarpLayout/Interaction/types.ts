@@ -5,12 +5,12 @@ export enum InteractionIds {
   Bend2 = 'BEND2',
   Bend3 = 'BEND3',
   Overblow1 = 'OVERBLOW1',
-};
+}
 
 export interface Interaction {
-  id: InteractionIds,
-};
+  id: InteractionIds;
+}
 
-interface InteractionRow extends Array<Interaction>{}
-export interface InteractionMatrix extends Array<InteractionRow>{}
+type InteractionRow = Array<Interaction>
+export type InteractionMatrix = Array<InteractionRow>
 

@@ -11,7 +11,7 @@ export enum Degrees {
   Sixth = '6',
   Flat7 = 'b7',
   Seventh = '7',
-};
+}
 
-interface DegreeRow extends Array<Degrees>{}
-export interface DegreeMatrix extends Array<DegreeRow>{}
+type DegreeRow = Array<Degrees>
+export type DegreeMatrix = Array<DegreeRow>

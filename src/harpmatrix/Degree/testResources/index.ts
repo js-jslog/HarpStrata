@@ -1,4 +1,4 @@
-import { Degrees } from '../types';
+import { Degrees } from '../types'
 
 export const example_majorDiatonicDegrees_firstPosition: [
   [ Degrees.Flat3 , undefined     , undefined      , Degrees.Flat3 , ],
@@ -14,7 +14,7 @@ export const example_majorDiatonicDegrees_firstPosition: [
   [ Degrees.Flat2 , Degrees.Flat5 , Degrees.Flat7  , Degrees.Flat2 , ],
   [               , Degrees.Fourth, Degrees.Sixth  ,               , ],
   [               ,               , Degrees.Flat6  ,               , ],
-];
+]
 
 export const example_majorDiatonicDegrees_secondPosition: [
   [ Degrees.Flat6 , undefined      , undefined     , Degrees.Flat6 , ],
@@ -30,4 +30,4 @@ export const example_majorDiatonicDegrees_secondPosition: [
   [ Degrees.Flat5 , Degrees.Seventh, Degrees.Flat3 , Degrees.Flat5 , ],
   [               , Degrees.Flat7  , Degrees.Second,               , ],
   [               ,                , Degrees.Flat2 ,               , ],
-];
+]

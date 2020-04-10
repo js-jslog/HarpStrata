@@ -1,14 +1,14 @@
-import { InteractionMatrix } from './Interaction/types';
+import { InteractionMatrix } from './Interaction/types'
 
 export enum LayoutIds {
   MajorDiatonic = 'MAJOR-DIATONIC',
-};
+}
 
-interface HalfstepRow extends Array<number>{}
-export interface HalfstepMatrix extends Array<HalfstepRow>{}
+type HalfstepRow = Array<number>
+export type HalfstepMatrix = Array<HalfstepRow>
 
 export interface HarpLayout {
-  id: LayoutIds,
-  halfsteps: HalfstepMatrix,
-  interactions: InteractionMatrix,
-};
+  id: LayoutIds;
+  halfsteps: HalfstepMatrix;
+  interactions: InteractionMatrix;
+}

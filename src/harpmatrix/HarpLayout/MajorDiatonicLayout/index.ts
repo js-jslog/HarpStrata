@@ -1,5 +1,5 @@
-import { LayoutIds, HarpLayout, HalfstepMatrix } from '../types';
-import { InteractionIds, InteractionMatrix } from '../Interaction/types';
+import { LayoutIds, HarpLayout, HalfstepMatrix } from '../types'
+import { InteractionIds, InteractionMatrix } from '../Interaction/types'
 import {
   OVERBLOW1,
   BLOW,
@@ -7,7 +7,7 @@ import {
   BEND1,
   BEND2,
   BEND3,
-} from '../Interaction';
+} from '../Interaction'
 
 const halfsteps: HalfstepMatrix = [
   [ 3,  ,   , 15, ],
@@ -16,7 +16,7 @@ const halfsteps: HalfstepMatrix = [
   [ 1, 6, 10, 13, ],
   [  , 5, 9 ,   , ],
   [  ,  , 8 ,   , ],
-];
+]
 
 const interactions: InteractionMatrix = [
   [ OVERBLOW1,        ,        , OVERBLOW1, ],
@@ -25,11 +25,11 @@ const interactions: InteractionMatrix = [
   [ BEND1    , BEND1  , BEND1  , BEND1    , ],
   [          , BEND2  , BEND2  ,          , ],
   [          ,        , BEND3  ,          , ],
-];
+]
 
 export const MajorDiatonicLayout: HarpLayout = {
   id: LayoutIds.MajorDiatonic,
   halfsteps,
   interactions,
-};
+}
 

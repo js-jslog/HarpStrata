@@ -7,17 +7,17 @@ import {
 } from '../Degree/testResources'
 
 interface HarpLaminae {
-  layout: HarpLayout,
-  degrees: DegreeMatrix,
-};
+  layout: HarpLayout;
+  degrees: DegreeMatrix;
+}
 
 export const example_majorDiatonicHarp_firstPosition: HarpLaminae = {
   layout: MajorDiatonicLayout,
   degrees: example_majorDiatonicDegrees_firstPosition,
-};
+}
 
 export const example_majorDiatonicHarp_secondPosition: HarpLaminae = {
   layout: MajorDiatonicLayout,
   degrees: example_majorDiatonicDegrees_secondPosition,
-};
+}
 
