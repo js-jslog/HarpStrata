@@ -1,23 +1,27 @@
 import { HarpLayout } from '../HarpLayout/types'
 import { MajorDiatonicLayout } from '../HarpLayout/MajorDiatonicLayout'
 import { DegreeMatrix } from '../Degree/types'
-import {
-  example_majorDiatonicDegrees_firstPosition,
-  example_majorDiatonicDegrees_secondPosition,
-} from '../Degree/testResources'
+import { EXAMPLE_DEGREES } from '../Degree/testResources'
 
-interface HarpLaminae {
+interface HarpStrata {
   layout: HarpLayout;
   degrees: DegreeMatrix;
 }
 
-export const example_majorDiatonicHarp_firstPosition: HarpLaminae = {
+const MAJOR_DIATONIC_FIRST_POSITION: HarpStrata = {
   layout: MajorDiatonicLayout,
-  degrees: example_majorDiatonicDegrees_firstPosition,
+  degrees: EXAMPLE_DEGREES.MAJOR_DIATONIC_FIRST_POSITION,
 }
 
-export const example_majorDiatonicHarp_secondPosition: HarpLaminae = {
+const MAJOR_DIATONIC_SECOND_POSITION: HarpStrata = {
   layout: MajorDiatonicLayout,
-  degrees: example_majorDiatonicDegrees_secondPosition,
+  degrees: EXAMPLE_DEGREES.MAJOR_DIATONIC_SECOND_POSITION,
 }
 
+export const EXAMPLE_STRATA: {
+  MAJOR_DIATONIC_FIRST_POSITION;
+  MAJOR_DIATONIC_SECOND_POSITION;
+} = {
+  MAJOR_DIATONIC_FIRST_POSITION,
+  MAJOR_DIATONIC_SECOND_POSITION,
+}

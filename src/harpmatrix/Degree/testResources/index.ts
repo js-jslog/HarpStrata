@@ -1,6 +1,6 @@
 import { Degrees } from '../types'
 
-export const example_majorDiatonicDegrees_firstPosition: [
+const MAJOR_DIATONIC_FIRST_POSITION: [
   [ Degrees.Flat3 , undefined     , undefined      , Degrees.Flat3 , ],
   [ Degrees.Root  , Degrees.Third , Degrees.Fifth  , Degrees.Root  , ],
   [ Degrees.Second, Degrees.Fifth , Degrees.Seventh, Degrees.Second, ],
@@ -8,15 +8,15 @@ export const example_majorDiatonicDegrees_firstPosition: [
   [ undefined     , Degrees.Fourth, Degrees.Sixth  , undefined     , ],
   [ undefined     , undefined     , Degrees.Flat6  , undefined     , ],
 ] = [
-  [ Degrees.Flat3 ,               ,                , Degrees.Flat3 , ],
+  [ Degrees.Flat3 , undefined     , undefined      , Degrees.Flat3 , ],
   [ Degrees.Root  , Degrees.Third , Degrees.Fifth  , Degrees.Root  , ],
   [ Degrees.Second, Degrees.Fifth , Degrees.Seventh, Degrees.Second, ],
   [ Degrees.Flat2 , Degrees.Flat5 , Degrees.Flat7  , Degrees.Flat2 , ],
-  [               , Degrees.Fourth, Degrees.Sixth  ,               , ],
-  [               ,               , Degrees.Flat6  ,               , ],
+  [ undefined     , Degrees.Fourth, Degrees.Sixth  , undefined     , ],
+  [ undefined     , undefined     , Degrees.Flat6  , undefined     , ],
 ]
 
-export const example_majorDiatonicDegrees_secondPosition: [
+const MAJOR_DIATONIC_SECOND_POSITION: [
   [ Degrees.Flat6 , undefined      , undefined     , Degrees.Flat6 , ],
   [ Degrees.Fourth, Degrees.Sixth  , Degrees.Root  , Degrees.Fourth, ],
   [ Degrees.Fifth , Degrees.Root   , Degrees.Third , Degrees.Fifth , ],
@@ -24,10 +24,18 @@ export const example_majorDiatonicDegrees_secondPosition: [
   [ undefined     , Degrees.Flat7  , Degrees.Second, undefined     , ],
   [ undefined     , undefined      , Degrees.Flat2 , undefined     , ],
 ] = [
-  [ Degrees.Flat6 ,                ,               , Degrees.Flat6 , ],
+  [ Degrees.Flat6 , undefined      , undefined     , Degrees.Flat6 , ],
   [ Degrees.Fourth, Degrees.Sixth  , Degrees.Root  , Degrees.Fourth, ],
   [ Degrees.Fifth , Degrees.Root   , Degrees.Third , Degrees.Fifth , ],
   [ Degrees.Flat5 , Degrees.Seventh, Degrees.Flat3 , Degrees.Flat5 , ],
-  [               , Degrees.Flat7  , Degrees.Second,               , ],
-  [               ,                , Degrees.Flat2 ,               , ],
+  [ undefined     , Degrees.Flat7  , Degrees.Second, undefined     , ],
+  [ undefined     , undefined      , Degrees.Flat2 , undefined     , ],
 ]
+
+export const EXAMPLE_DEGREES: {
+  MAJOR_DIATONIC_FIRST_POSITION;
+  MAJOR_DIATONIC_SECOND_POSITION;
+} = {
+  MAJOR_DIATONIC_FIRST_POSITION,
+  MAJOR_DIATONIC_SECOND_POSITION
+}

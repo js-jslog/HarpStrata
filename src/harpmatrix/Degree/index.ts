@@ -1,4 +1,4 @@
-import { Degrees } from './types'
+import { Degrees, DegreeMatrix } from './types'
 
 const orderedDegrees: [
   Degrees.Root,
@@ -28,7 +28,7 @@ const orderedDegrees: [
   Degrees.Seventh,
 ]
 
-export const getDegreeMatrix = (halfstepMatrix, offset) => {
+export const getDegreeMatrix = (halfstepMatrix, offset): DegreeMatrix => {
   const shiftedDegrees = [ ...orderedDegrees ]
 
   for (let i = 0; i < offset; i++) {
