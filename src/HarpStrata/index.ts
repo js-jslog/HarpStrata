@@ -1,9 +1,9 @@
 import { getDegreeMatrix } from './Degree'
-import { getApparatusIds, getApparatus } from './Apparatus'
+import { getActiveApparatusIds, getApparatus } from './Apparatus'
 import { ApparatusIds } from './Apparatus/types'
 import { HarpStrata } from './types'
 
-const getLayouts = getApparatusIds
+const getLayouts = getActiveApparatusIds
 
 const positionMap = {
   first: 0,

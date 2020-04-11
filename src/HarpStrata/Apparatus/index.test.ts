@@ -1,10 +1,10 @@
 import { MajorDiatonicLayout } from './MajorDiatonicLayout'
 import { ApparatusIds } from './types'
-import { getApparatusIds, getApparatus } from './index'
+import { getActiveApparatusIds, getApparatus } from './index'
 
-test('getApparatusIds function returns an array of the available layouts', () => {
+test('getActiveApparatusIds function returns an array of the available layouts', () => {
   const expectedArray = [ ApparatusIds.MajorDiatonic ]
-  const actualArray = getApparatusIds()
+  const actualArray = getActiveApparatusIds()
 
   expect(actualArray).toStrictEqual(expectedArray)
 })
