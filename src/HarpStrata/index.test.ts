@@ -1,9 +1,9 @@
 import { ApparatusIds } from './Apparatus/types'
-import { getLayouts, getPositions, getHarpStrata, Positions } from './index'
+import { getHarpIds, getPositions, getHarpStrata, Positions } from './index'
 import { EXAMPLE_STRATA } from './testResources'
 
-test('getLayouts function returns an array with \'major-diatonic\' as one of the values', () => {
-  expect(getLayouts().includes(ApparatusIds.MajorDiatonic)).toBeTruthy()
+test('getHarpIds function returns an array with \'major-diatonic\' as one of the values', () => {
+  expect(getHarpIds().includes(ApparatusIds.MajorDiatonic)).toBeTruthy()
 })
 
 test('getPositions function returns an array with \'first\' as one of the values', () => {

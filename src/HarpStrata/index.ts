@@ -3,7 +3,7 @@ import { getActiveApparatusIds, getApparatus } from './Apparatus'
 import { ApparatusIds } from './Apparatus/types'
 import { HarpStrata } from './types'
 
-const getLayouts = getActiveApparatusIds
+const getHarpIds = getActiveApparatusIds
 
 const positionMap = {
   first: 0,
@@ -31,7 +31,7 @@ const getPositions = (): Positions[] => [
 
 
 export {
-  getLayouts,
+  getHarpIds,
   getPositions,
   Positions,
   getHarpStrata
