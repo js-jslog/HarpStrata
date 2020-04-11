@@ -10,12 +10,12 @@ const positionMap = {
   second: 7,
 }
 
-const getHarpStrata = (layoutId: ApparatusIds, position: string): HarpStrata => {
-  const layout = getApparatus(layoutId)
-  const degrees = getDegreeMatrix(layout.halfsteps, positionMap[position])
+const getHarpStrata = (apparatusId: ApparatusIds, position: string): HarpStrata => {
+  const apparatus = getApparatus(apparatusId)
+  const degrees = getDegreeMatrix(apparatus.halfsteps, positionMap[position])
 
   return {
-    layout,
+    apparatus,
     degrees,
   }
 }

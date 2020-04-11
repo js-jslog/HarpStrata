@@ -1,7 +1,7 @@
 import { getDegreeMatrix } from './index'
 import { Degrees } from './types'
 import { EXAMPLE_DEGREES } from './testResources'
-import { MajorDiatonicLayout } from '../Apparatus/MajorDiatonicLayout'
+import { MajorDiatonicApparatus } from '../Apparatus/MajorDiatonicApparatus'
 
 test('getDegreeMatrix function maps a simple 2d array of 0\'s to root degrees when halfsetp offset is 0', () => {
   const expectedArray = [[ Degrees.Root, ], [ Degrees.Root, ]]
@@ -33,7 +33,7 @@ test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6)
 
 test('getDegreeMatrix maps a major diatonic halfstepmatrix in to a major diatonic degreematrix in first position', () => {
   const { MAJOR_DIATONIC_FIRST_POSITION } = EXAMPLE_DEGREES
-  const actualArray = getDegreeMatrix(MajorDiatonicLayout.halfsteps, 0)
+  const actualArray = getDegreeMatrix(MajorDiatonicApparatus.halfsteps, 0)
 
   expect(actualArray).toStrictEqual(MAJOR_DIATONIC_FIRST_POSITION)
 })

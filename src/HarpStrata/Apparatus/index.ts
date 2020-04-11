@@ -1,8 +1,8 @@
 import { ApparatusIds, Apparatus } from './types'
-import { MajorDiatonicLayout } from './MajorDiatonicLayout'
+import { MajorDiatonicApparatus } from './MajorDiatonicApparatus'
 
-const layoutMap = new Map()
-layoutMap.set(MajorDiatonicLayout.id, MajorDiatonicLayout)
+const apparatusMap = new Map()
+apparatusMap.set(MajorDiatonicApparatus.id, MajorDiatonicApparatus)
 
-export const getActiveApparatusIds = (): ApparatusIds[] => Array.from(layoutMap.keys())
-export const getApparatus = (layout: ApparatusIds): Apparatus => layoutMap.get(layout)
+export const getActiveApparatusIds = (): ApparatusIds[] => Array.from(apparatusMap.keys())
+export const getApparatus = (apparatusId: ApparatusIds): Apparatus => apparatusMap.get(apparatusId)

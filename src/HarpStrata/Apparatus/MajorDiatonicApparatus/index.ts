@@ -27,7 +27,7 @@ const interactions: InteractionMatrix = [
   [ undefined, undefined, BEND3    , undefined, ],
 ]
 
-export const MajorDiatonicLayout: Apparatus = {
+export const MajorDiatonicApparatus: Apparatus = {
   id: ApparatusIds.MajorDiatonic,
   halfsteps,
   interactions,
