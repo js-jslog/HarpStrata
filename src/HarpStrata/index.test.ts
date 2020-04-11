@@ -1,4 +1,4 @@
-import { LayoutIds } from './HarpLayout/types'
+import { LayoutIds } from './Apparatus/types'
 import { getLayouts, getPositions, getHarpStrata, Positions } from './index'
 import { EXAMPLE_STRATA } from './testResources'
 

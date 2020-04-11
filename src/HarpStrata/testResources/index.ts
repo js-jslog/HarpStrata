@@ -1,4 +1,4 @@
-import { MajorDiatonicLayout } from '../HarpLayout/MajorDiatonicLayout'
+import { MajorDiatonicLayout } from '../Apparatus/MajorDiatonicLayout'
 import { EXAMPLE_DEGREES } from '../Degree/testResources'
 import { HarpStrata } from '../types'
 

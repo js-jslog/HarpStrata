@@ -1,8 +1,8 @@
-import { HarpLayout } from './HarpLayout/types'
+import { Apparatus } from './Apparatus/types'
 import { DegreeMatrix } from './Degree/types'
 
 export interface HarpStrata {
-  layout: HarpLayout;
+  layout: Apparatus;
   degrees: DegreeMatrix;
 }
 

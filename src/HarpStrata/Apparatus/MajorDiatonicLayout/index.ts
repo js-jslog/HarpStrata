@@ -1,4 +1,4 @@
-import { LayoutIds, HarpLayout, HalfstepMatrix } from '../types'
+import { LayoutIds, Apparatus, HalfstepMatrix } from '../types'
 import { InteractionMatrix } from '../Interaction/types'
 import {
   OVERBLOW1,
@@ -27,7 +27,7 @@ const interactions: InteractionMatrix = [
   [ undefined, undefined, BEND3    , undefined, ],
 ]
 
-export const MajorDiatonicLayout: HarpLayout = {
+export const MajorDiatonicLayout: Apparatus = {
   id: LayoutIds.MajorDiatonic,
   halfsteps,
   interactions,

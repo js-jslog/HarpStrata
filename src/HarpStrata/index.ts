@@ -1,6 +1,6 @@
 import { getDegreeMatrix } from './Degree'
-import { getHarpLayouts, getHarpLayout } from './HarpLayout'
-import { LayoutIds } from './HarpLayout/types'
+import { getHarpLayouts, getHarpLayout } from './Apparatus'
+import { LayoutIds } from './Apparatus/types'
 import { HarpStrata } from './types'
 
 const getLayouts = getHarpLayouts

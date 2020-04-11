@@ -7,7 +7,7 @@ export enum LayoutIds {
 type HalfstepRow = Array<number>
 export type HalfstepMatrix = Array<HalfstepRow>
 
-export interface HarpLayout {
+export interface Apparatus {
   id: LayoutIds;
   halfsteps: HalfstepMatrix;
   interactions: InteractionMatrix;
