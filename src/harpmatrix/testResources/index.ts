@@ -1,12 +1,6 @@
-import { HarpLayout } from '../HarpLayout/types'
 import { MajorDiatonicLayout } from '../HarpLayout/MajorDiatonicLayout'
-import { DegreeMatrix } from '../Degree/types'
 import { EXAMPLE_DEGREES } from '../Degree/testResources'
-
-interface HarpStrata {
-  layout: HarpLayout;
-  degrees: DegreeMatrix;
-}
+import { HarpStrata } from '../types'
 
 const MAJOR_DIATONIC_FIRST_POSITION: HarpStrata = {
   layout: MajorDiatonicLayout,

@@ -2,6 +2,7 @@ import { getDegreeMatrix } from './Degree'
 import { getHarpLayouts, getHarpLayout } from './HarpLayout'
 import { LayoutIds } from './HarpLayout/types'
 import { DegreeMatrix } from './Degree/types'
+import { HarpStrata } from './types'
 
 const getLayouts = getHarpLayouts
 
@@ -13,6 +14,16 @@ const getHarpmatrix = (layout: LayoutIds, position: string): DegreeMatrix => {
   const { halfsteps } = getHarpLayout(layout)
 
   return getDegreeMatrix(halfsteps, positionMap[position])
+}
+
+const getHarpStrata = (layoutId: LayoutIds, position: string): HarpStrata => {
+  const layout = getHarpLayout(layoutId)
+  const degrees = getDegreeMatrix(layout.halfsteps, positionMap[position])
+
+  return {
+    layout,
+    degrees,
+  }
 }
 
 enum Positions {
@@ -30,5 +41,6 @@ export {
   getPositions,
   getHarpmatrix,
   Positions,
+  getHarpStrata
 }
 

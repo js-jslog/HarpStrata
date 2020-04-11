@@ -1,4 +1,4 @@
-import { Positions } from './index'
+import { Positions, getHarpStrata } from './index'
 import { LayoutIds } from './HarpLayout/types'
 import { getLayouts, getPositions, getHarpmatrix } from './index'
 import { EXAMPLE_STRATA } from './testResources'
@@ -23,4 +23,18 @@ test('getHarpmatrix function can return a second position major diatonic matrix'
   const actualMatrix = getHarpmatrix(LayoutIds.MajorDiatonic, 'second')
 
   expect(actualMatrix).toStrictEqual(expectedMatrix)
+})
+
+test('getHarpStrata can return a first position major diatonic HarpStrata', () => {
+  const { MAJOR_DIATONIC_FIRST_POSITION: expectedStrata } = EXAMPLE_STRATA
+  const actualStrata = getHarpStrata(LayoutIds.MajorDiatonic, 'first')
+
+  expect(actualStrata).toStrictEqual(expectedStrata)
+})
+
+test('getHarpStrata can return a second position major diatonic HarpStrata', () => {
+  const { MAJOR_DIATONIC_SECOND_POSITION: expectedStrata } = EXAMPLE_STRATA
+  const actualStrata = getHarpStrata(LayoutIds.MajorDiatonic, 'second')
+
+  expect(actualStrata).toStrictEqual(expectedStrata)
 })
