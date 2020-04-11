@@ -1,6 +1,6 @@
 import { getDegreeMatrix } from './Degree'
 import { getApparatusIds, getApparatus } from './Apparatus'
-import { LayoutIds } from './Apparatus/types'
+import { ApparatusIds } from './Apparatus/types'
 import { HarpStrata } from './types'
 
 const getLayouts = getApparatusIds
@@ -10,7 +10,7 @@ const positionMap = {
   second: 7,
 }
 
-const getHarpStrata = (layoutId: LayoutIds, position: string): HarpStrata => {
+const getHarpStrata = (layoutId: ApparatusIds, position: string): HarpStrata => {
   const layout = getApparatus(layoutId)
   const degrees = getDegreeMatrix(layout.halfsteps, positionMap[position])
 

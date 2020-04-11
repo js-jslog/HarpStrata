@@ -1,6 +1,6 @@
 import { InteractionMatrix } from './Interaction/types'
 
-export enum LayoutIds {
+export enum ApparatusIds {
   MajorDiatonic = 'MAJOR-DIATONIC',
 }
 
@@ -8,7 +8,7 @@ type HalfstepRow = Array<number>
 export type HalfstepMatrix = Array<HalfstepRow>
 
 export interface Apparatus {
-  id: LayoutIds;
+  id: ApparatusIds;
   halfsteps: HalfstepMatrix;
   interactions: InteractionMatrix;
 }
