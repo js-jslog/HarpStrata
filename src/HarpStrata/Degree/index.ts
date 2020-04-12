@@ -1,6 +1,6 @@
 import { Degrees, DegreeMatrix } from './types'
 
-const orderedDegrees: [
+const ORDERED_DEGREES: readonly Degrees[] = [
   Degrees.Root,
   Degrees.Flat2,
   Degrees.Second,
@@ -13,23 +13,10 @@ const orderedDegrees: [
   Degrees.Sixth,
   Degrees.Flat7,
   Degrees.Seventh,
-] = [
-  Degrees.Root,
-  Degrees.Flat2,
-  Degrees.Second,
-  Degrees.Flat3,
-  Degrees.Third,
-  Degrees.Fourth,
-  Degrees.Flat5,
-  Degrees.Fifth,
-  Degrees.Flat6,
-  Degrees.Sixth,
-  Degrees.Flat7,
-  Degrees.Seventh,
-]
+] as const
 
 export const getDegreeMatrix = (halfstepMatrix, offset): DegreeMatrix => {
-  const shiftedDegrees = [ ...orderedDegrees ]
+  const shiftedDegrees = [ ...ORDERED_DEGREES ]
 
   for (let i = 0; i < offset; i++) {
     shiftedDegrees.unshift(shiftedDegrees.pop())

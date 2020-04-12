@@ -13,5 +13,5 @@ export enum Degrees {
   Seventh = '7',
 }
 
-type DegreeRow = Array<Degrees>
-export type DegreeMatrix = Array<DegreeRow>
+type DegreeRow = ReadonlyArray<Degrees>
+export type DegreeMatrix = ReadonlyArray<DegreeRow>
