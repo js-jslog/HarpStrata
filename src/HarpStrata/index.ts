@@ -1,8 +1,8 @@
 import { PositionIds } from './Position/types'
-import { getDegreeMatrix } from './Degree'
-import { getActiveApparatusIds, getApparatus } from './Apparatus'
 import { getPosition } from './Position'
+import { getDegreeMatrix } from './Degree'
 import { ApparatusIds } from './Apparatus/types'
+import { getActiveApparatusIds, getApparatus } from './Apparatus'
 
 import { HarpStrata } from './types'
 

@@ -31,6 +31,7 @@ module.exports = {
             'enforceForRenamedProperties': true
         }],
         'import/order': ['error', {
+            'alphabetize': { order: 'desc' },
             'pathGroups': [
                 {
                   'pattern': './types',

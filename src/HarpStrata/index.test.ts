@@ -1,6 +1,6 @@
-import { ApparatusIds } from './Apparatus/types'
-import { PositionIds } from './Position/types'
 import { EXAMPLE_STRATA } from './testResources'
+import { PositionIds } from './Position/types'
+import { ApparatusIds } from './Apparatus/types'
 
 import { getHarpIds, getPositions, getHarpStrata} from './index'
 
