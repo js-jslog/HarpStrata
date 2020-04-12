@@ -1,20 +1,14 @@
 import { PositionIds, Position } from './types'
 
-export const FIRST: {
-  id: PositionIds.First;
-  root: 0;
-} = {
+export const FIRST: Position = {
   id: PositionIds.First,
   root: 0,
-}
+} as const
 
-export const SECOND: {
-  id: PositionIds.Second;
-  root: 7;
-} = {
+export const SECOND: Position = {
   id: PositionIds.Second,
   root: 7,
-}
+} as const
 
 const positionMap = new Map()
 positionMap.set(FIRST.id, FIRST)

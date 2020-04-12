@@ -4,6 +4,6 @@ export enum PositionIds {
 }
 
 export interface Position {
-  id: PositionIds;
-  root: number;
+  readonly id: PositionIds;
+  readonly root: number;
 }
