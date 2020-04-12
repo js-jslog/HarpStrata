@@ -8,7 +8,7 @@ export enum InteractionIds {
 }
 
 export interface Interaction {
-  id: InteractionIds;
+  readonly id: InteractionIds;
 }
 
 type InteractionRow = ReadonlyArray<Interaction>

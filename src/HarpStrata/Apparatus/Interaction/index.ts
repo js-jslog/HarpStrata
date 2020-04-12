@@ -1,8 +1,8 @@
-import { InteractionIds } from './types'
+import { InteractionIds, Interaction } from './types'
 
-export const OVERBLOW1: { id: InteractionIds.Overblow1 } = { id: InteractionIds.Overblow1 }
-export const BLOW: { id: InteractionIds.Blow } = { id: InteractionIds.Blow }
-export const DRAW: { id: InteractionIds.Draw } = { id: InteractionIds.Draw }
-export const BEND1: { id: InteractionIds.Bend1 } = { id: InteractionIds.Bend1 }
-export const BEND2: { id: InteractionIds.Bend2 } = { id: InteractionIds.Bend2 }
-export const BEND3: { id: InteractionIds.Bend3 } = { id: InteractionIds.Bend3 }
+export const OVERBLOW1: Interaction = { id: InteractionIds.Overblow1 } as const
+export const BLOW: Interaction = { id: InteractionIds.Blow } as const
+export const DRAW: Interaction = { id: InteractionIds.Draw } as const
+export const BEND1: Interaction = { id: InteractionIds.Bend1 } as const
+export const BEND2: Interaction = { id: InteractionIds.Bend2 } as const
+export const BEND3: Interaction = { id: InteractionIds.Bend3 } as const
