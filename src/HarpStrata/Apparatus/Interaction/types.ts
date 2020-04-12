@@ -11,6 +11,6 @@ export interface Interaction {
   id: InteractionIds;
 }
 
-type InteractionRow = Array<Interaction>
-export type InteractionMatrix = Array<InteractionRow>
+type InteractionRow = ReadonlyArray<Interaction>
+export type InteractionMatrix = ReadonlyArray<InteractionRow>
 
