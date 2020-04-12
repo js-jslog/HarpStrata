@@ -1,4 +1,4 @@
-export enum Degrees {
+export enum DegreeIds {
   Root = '1',
   Flat2 = 'b2',
   Second = '2',
@@ -13,5 +13,5 @@ export enum Degrees {
   Seventh = '7',
 }
 
-type DegreeRow = ReadonlyArray<Degrees>
+type DegreeRow = ReadonlyArray<DegreeIds>
 export type DegreeMatrix = ReadonlyArray<DegreeRow>
