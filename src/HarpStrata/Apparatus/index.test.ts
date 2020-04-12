@@ -11,9 +11,8 @@ test('getActiveApparatusIds function returns an array of the available apparatus
 })
 
 test('getApparatus function can return a major diatonic apparatus', () => {
-  const expectedMatrix = MAJOR_DIATONIC_APPARATUS
-  const actualMatrix = getApparatus(ApparatusIds.MajorDiatonic)
+  const actualApparatus = getApparatus(ApparatusIds.MajorDiatonic)
 
-  expect(actualMatrix).toStrictEqual(expectedMatrix)
+  expect(actualApparatus).toStrictEqual(MAJOR_DIATONIC_APPARATUS)
 })
 
