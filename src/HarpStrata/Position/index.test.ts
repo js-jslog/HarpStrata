@@ -1,6 +1,4 @@
-import { EXAMPLE_POSITIONS } from './testResources'
-
-import { PositionIds } from './types'
+import { PositionIds, Position } from './types'
 import { getActivePositionIds, getPosition } from './index'
 
 test('getActivePositionIds function returns an array of the available positions', () => {
@@ -11,7 +9,10 @@ test('getActivePositionIds function returns an array of the available positions'
 })
 
 test('getPosition function can return a first position', () => {
-  const { FIRST_POSITION } = EXAMPLE_POSITIONS
+  const FIRST_POSITION: Position = {
+    id: PositionIds.First,
+    root: 0,
+  } as const
   const actualPosition = getPosition(FIRST_POSITION.id)
 
   expect(actualPosition).toStrictEqual(FIRST_POSITION)
