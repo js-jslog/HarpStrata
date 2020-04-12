@@ -2,6 +2,7 @@ import { MAJOR_DIATONIC_APPARATUS } from './MAJOR_DIATONIC_APPARATUS'
 
 import { ApparatusIds, Apparatus } from './types'
 
+
 const apparatusMap = new Map()
 apparatusMap.set(MAJOR_DIATONIC_APPARATUS.id, MAJOR_DIATONIC_APPARATUS)
 

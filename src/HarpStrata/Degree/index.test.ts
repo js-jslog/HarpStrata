@@ -1,9 +1,10 @@
 import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/MAJOR_DIATONIC_APPARATUS'
 
 import { EXAMPLE_DEGREES } from './testResources'
-import { FOURTH } from './constants'
 
 import { getDegreeMatrix } from './index'
+import { FOURTH } from './constants'
+
 
 
 test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6) when halfsetp offset is 7', () => {

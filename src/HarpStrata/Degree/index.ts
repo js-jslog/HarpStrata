@@ -1,6 +1,6 @@
+import { DegreeMatrix } from './types'
 import { ORDERED_DEGREES } from './constants'
 
-import { DegreeMatrix } from './types'
 
 export const getDegreeMatrix = (halfstepMatrix, offset): DegreeMatrix => {
   const shiftedDegreeIds = [ ...ORDERED_DEGREES ]

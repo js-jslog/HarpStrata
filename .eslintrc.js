@@ -36,6 +36,10 @@ module.exports = {
                 {
                   'pattern': './types',
                   'group': 'index'
+                },
+                {
+                  'pattern': './constants',
+                  'group': 'index'
                 }
             ],
             'newlines-between': 'always'
