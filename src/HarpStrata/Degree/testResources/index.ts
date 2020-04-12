@@ -1,21 +1,35 @@
-import { DegreeIds, DegreeMatrix } from '../types'
+import { DegreeMatrix } from '../types'
+import {
+  ROOT,
+  FLAT2,
+  SECOND,
+  FLAT3,
+  THIRD,
+  FOURTH,
+  FLAT5,
+  FIFTH,
+  FLAT6,
+  SIXTH,
+  FLAT7,
+  SEVENTH
+} from '../constants'
 
 const MAJOR_DIATONIC_FIRST_POSITION: DegreeMatrix = [
-  [ DegreeIds.Flat3 , undefined       , undefined        , DegreeIds.Flat3 , ],
-  [ DegreeIds.Root  , DegreeIds.Third , DegreeIds.Fifth  , DegreeIds.Root  , ],
-  [ DegreeIds.Second, DegreeIds.Fifth , DegreeIds.Seventh, DegreeIds.Second, ],
-  [ DegreeIds.Flat2 , DegreeIds.Flat5 , DegreeIds.Flat7  , DegreeIds.Flat2 , ],
-  [ undefined       , DegreeIds.Fourth, DegreeIds.Sixth  , undefined       , ],
-  [ undefined       , undefined       , DegreeIds.Flat6  , undefined       , ],
+  [ FLAT3    , undefined, undefined, FLAT3 , ],
+  [ ROOT     , THIRD    , FIFTH    , ROOT  , ],
+  [ SECOND   , FIFTH    , SEVENTH  , SECOND, ],
+  [ FLAT2    , FLAT5    , FLAT7    , FLAT2 , ],
+  [ undefined, FOURTH   , SIXTH , undefined, ],
+  [ undefined, undefined, FLAT6 , undefined, ],
 ] as const
 
 const MAJOR_DIATONIC_SECOND_POSITION: DegreeMatrix = [
-  [ DegreeIds.Flat6 , undefined        , undefined       , DegreeIds.Flat6 , ],
-  [ DegreeIds.Fourth, DegreeIds.Sixth  , DegreeIds.Root  , DegreeIds.Fourth, ],
-  [ DegreeIds.Fifth , DegreeIds.Root   , DegreeIds.Third , DegreeIds.Fifth , ],
-  [ DegreeIds.Flat5 , DegreeIds.Seventh, DegreeIds.Flat3 , DegreeIds.Flat5 , ],
-  [ undefined       , DegreeIds.Flat7  , DegreeIds.Second, undefined       , ],
-  [ undefined       , undefined        , DegreeIds.Flat2 , undefined       , ],
+  [ FLAT6    , undefined, undefined, FLAT6    , ],
+  [ FOURTH   , SIXTH    , ROOT     , FOURTH   , ],
+  [ FIFTH    , ROOT     , THIRD    , FIFTH    , ],
+  [ FLAT5    , SEVENTH  , FLAT3    , FLAT5    , ],
+  [ undefined, FLAT7    , SECOND   , undefined, ],
+  [ undefined, undefined, FLAT2    , undefined, ],
 ] as const
 
 export const EXAMPLE_DEGREES = {

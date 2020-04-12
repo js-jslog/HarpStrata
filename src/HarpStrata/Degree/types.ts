@@ -13,5 +13,9 @@ export enum DegreeIds {
   Seventh = '7',
 }
 
-type DegreeRow = ReadonlyArray<DegreeIds>
+export interface Degree {
+  readonly id;
+}
+
+type DegreeRow = ReadonlyArray<Degree>
 export type DegreeMatrix = ReadonlyArray<DegreeRow>

@@ -1,13 +1,13 @@
 import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/MAJOR_DIATONIC_APPARATUS'
 
 import { EXAMPLE_DEGREES } from './testResources'
+import { FOURTH } from './constants'
 
-import { DegreeIds } from './types'
 import { getDegreeMatrix } from './index'
 
 
 test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6) when halfsetp offset is 7', () => {
-  const expectedArray = [[ DegreeIds.Fourth, ], [ DegreeIds.Fourth, ]]
+  const expectedArray = [[ FOURTH, ], [ FOURTH, ]]
   const actualArray = getDegreeMatrix([[ 0, ], [ 0, ]], 7)
 
   expect(actualArray).toStrictEqual(expectedArray)
