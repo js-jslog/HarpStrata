@@ -15,3 +15,10 @@ export const SECOND: {
   id: PositionIds.Second,
   root: 7,
 }
+
+const positionMap = new Map()
+positionMap.set(FIRST.id, FIRST)
+positionMap.set(SECOND.id, SECOND)
+
+export const getActivePositionIds = (): PositionIds[] => Array.from(positionMap.keys())
+export const getPosition = (positionId: PositionIds): Position => positionMap.get(positionId)
