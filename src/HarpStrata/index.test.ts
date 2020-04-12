@@ -13,14 +13,14 @@ test('getPositions function returns an array with \'first\' as one of the values
 
 test('getHarpStrata can return a first position major diatonic HarpStrata', () => {
   const { MAJOR_DIATONIC_FIRST_POSITION: expectedStrata } = EXAMPLE_STRATA
-  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, 'first')
+  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, PositionIds.First)
 
   expect(actualStrata).toStrictEqual(expectedStrata)
 })
 
 test('getHarpStrata can return a second position major diatonic HarpStrata', () => {
   const { MAJOR_DIATONIC_SECOND_POSITION: expectedStrata } = EXAMPLE_STRATA
-  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, 'second')
+  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, PositionIds.Second)
 
   expect(actualStrata).toStrictEqual(expectedStrata)
 })

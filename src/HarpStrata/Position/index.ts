@@ -1,4 +1,4 @@
-import { PositionIds } from './types'
+import { PositionIds, Position } from './types'
 
 export const FIRST: {
   id: PositionIds.First;
