@@ -2,6 +2,7 @@ import { getDegreeMatrix } from './Degree'
 import { getActiveApparatusIds, getApparatus } from './Apparatus'
 import { ApparatusIds } from './Apparatus/types'
 import { HarpStrata } from './types'
+import { PositionIds } from './Position/types'
 
 export const getHarpIds = getActiveApparatusIds
 
@@ -20,11 +21,7 @@ export const getHarpStrata = (apparatusId: ApparatusIds, position: string): Harp
   }
 }
 
-export enum Positions {
-  First = 'FIRST',
-  Second = 'SECOND',
-}
-export const getPositions = (): Positions[] => [
-  Positions.First,
-  Positions.Second,
+export const getPositions = (): PositionIds[] => [
+  PositionIds.First,
+  PositionIds.Second,
 ]
