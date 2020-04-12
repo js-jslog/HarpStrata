@@ -1,7 +1,10 @@
-import { getDegreeMatrix } from './index'
+import { MajorDiatonicApparatus } from '../Apparatus/MajorDiatonicApparatus'
+
 import { Degrees } from './types'
 import { EXAMPLE_DEGREES } from './testResources'
-import { MajorDiatonicApparatus } from '../Apparatus/MajorDiatonicApparatus'
+
+import { getDegreeMatrix } from './index'
+
 
 test('getDegreeMatrix function maps a simple 2d array of 0\'s to root degrees when halfsetp offset is 0', () => {
   const expectedArray = [[ Degrees.Root, ], [ Degrees.Root, ]]

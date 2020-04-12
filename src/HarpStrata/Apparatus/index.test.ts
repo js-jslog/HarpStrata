@@ -1,5 +1,6 @@
 import { MajorDiatonicApparatus } from './MajorDiatonicApparatus'
 import { ApparatusIds } from './types'
+
 import { getActiveApparatusIds, getApparatus } from './index'
 
 test('getActiveApparatusIds function returns an array of the available apparatus', () => {

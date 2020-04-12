@@ -1,6 +1,7 @@
-import { getActivePositionIds, getPosition } from './index'
 import { PositionIds } from './types'
 import { EXAMPLE_POSITIONS } from './testResources'
+
+import { getActivePositionIds, getPosition } from './index'
 
 test('getActivePositionIds function returns an array of the available positions', () => {
   const expectedArray = [ PositionIds.First, PositionIds.Second ]

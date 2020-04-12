@@ -20,6 +20,7 @@ module.exports = {
     },
     'plugins': [
         '@typescript-eslint',
+        'import',
         'jest'
     ],
     'rules': {
@@ -28,6 +29,9 @@ module.exports = {
             'object': true
         }, {
             'enforceForRenamedProperties': true
+        }],
+        'import/order': ['error', {
+            'newlines-between': 'always'
         }],
         'indent': [
             'error',

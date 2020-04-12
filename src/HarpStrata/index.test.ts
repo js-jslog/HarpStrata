@@ -1,7 +1,8 @@
 import { ApparatusIds } from './Apparatus/types'
-import { getHarpIds, getPositions, getHarpStrata} from './index'
 import { PositionIds } from './Position/types'
 import { EXAMPLE_STRATA } from './testResources'
+
+import { getHarpIds, getPositions, getHarpStrata} from './index'
 
 test('getHarpIds function returns an array with \'major-diatonic\' as one of the values', () => {
   expect(getHarpIds().includes(ApparatusIds.MajorDiatonic)).toBeTruthy()
