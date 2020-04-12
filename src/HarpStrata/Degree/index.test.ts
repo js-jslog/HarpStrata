@@ -1,8 +1,8 @@
 import { MajorDiatonicApparatus } from '../Apparatus/MajorDiatonicApparatus'
 
-import { Degrees } from './types'
 import { EXAMPLE_DEGREES } from './testResources'
 
+import { Degrees } from './types'
 import { getDegreeMatrix } from './index'
 
 

@@ -1,6 +1,6 @@
-import { PositionIds } from './types'
 import { EXAMPLE_POSITIONS } from './testResources'
 
+import { PositionIds } from './types'
 import { getActivePositionIds, getPosition } from './index'
 
 test('getActivePositionIds function returns an array of the available positions', () => {

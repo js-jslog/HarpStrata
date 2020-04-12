@@ -31,6 +31,12 @@ module.exports = {
             'enforceForRenamedProperties': true
         }],
         'import/order': ['error', {
+            'pathGroups': [
+                {
+                  'pattern': './types',
+                  'group': 'index'
+                }
+            ],
             'newlines-between': 'always'
         }],
         'indent': [

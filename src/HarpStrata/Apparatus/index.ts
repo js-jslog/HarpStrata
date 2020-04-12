@@ -1,5 +1,6 @@
-import { ApparatusIds, Apparatus } from './types'
 import { MajorDiatonicApparatus } from './MajorDiatonicApparatus'
+
+import { ApparatusIds, Apparatus } from './types'
 
 const apparatusMap = new Map()
 apparatusMap.set(MajorDiatonicApparatus.id, MajorDiatonicApparatus)
