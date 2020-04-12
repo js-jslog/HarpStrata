@@ -3,17 +3,14 @@ import { getActiveApparatusIds, getApparatus } from './Apparatus'
 import { ApparatusIds } from './Apparatus/types'
 import { HarpStrata } from './types'
 import { PositionIds } from './Position/types'
+import { getPosition } from './Position'
 
 export const getHarpIds = getActiveApparatusIds
 
-const positionMap = {
-  first: 0,
-  second: 7,
-}
-
-export const getHarpStrata = (apparatusId: ApparatusIds, position: string): HarpStrata => {
+export const getHarpStrata = (apparatusId: ApparatusIds, positionId: PositionIds): HarpStrata => {
   const apparatus = getApparatus(apparatusId)
-  const degrees = getDegreeMatrix(apparatus.halfsteps, positionMap[position])
+  const position = getPosition(positionId)
+  const degrees = getDegreeMatrix(apparatus.halfsteps, position.root)
 
   return {
     apparatus,
