@@ -4,8 +4,8 @@ export enum ApparatusIds {
   MajorDiatonic = 'MAJOR-DIATONIC',
 }
 
-type HalfstepRow = Array<number>
-export type HalfstepMatrix = Array<HalfstepRow>
+type HalfstepRow = ReadonlyArray<number>
+export type HalfstepMatrix = ReadonlyArray<HalfstepRow>
 
 export interface Apparatus {
   id: ApparatusIds;

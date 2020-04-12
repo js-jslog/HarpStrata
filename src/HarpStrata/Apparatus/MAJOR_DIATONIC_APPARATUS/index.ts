@@ -16,7 +16,7 @@ const halfsteps: HalfstepMatrix = [
   [ 1        , 6        , 10       , 13       , ],
   [ undefined, 5        , 9        , undefined, ],
   [ undefined, undefined, 8        , undefined, ],
-]
+] as const
 
 const interactions: InteractionMatrix = [
   [ OVERBLOW1, undefined, undefined, OVERBLOW1, ],
