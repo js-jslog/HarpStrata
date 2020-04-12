@@ -9,6 +9,11 @@ import { HarpStrata } from './types'
 
 export const getHarpIds = getActiveApparatusIds
 
+export const getPositions = (): readonly PositionIds[] => [
+  PositionIds.First,
+  PositionIds.Second,
+]
+
 export const getHarpStrata = (apparatusId: ApparatusIds, positionId: PositionIds): HarpStrata => {
   const apparatus = getApparatus(apparatusId)
   const position = getPosition(positionId)
@@ -19,8 +24,3 @@ export const getHarpStrata = (apparatusId: ApparatusIds, positionId: PositionIds
     degrees,
   }
 }
-
-export const getPositions = (): readonly PositionIds[] => [
-  PositionIds.First,
-  PositionIds.Second,
-]
