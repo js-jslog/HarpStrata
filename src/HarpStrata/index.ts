@@ -20,7 +20,7 @@ export const getHarpStrata = (apparatusId: ApparatusIds, positionId: PositionIds
   }
 }
 
-export const getPositions = (): PositionIds[] => [
+export const getPositions = (): readonly PositionIds[] => [
   PositionIds.First,
   PositionIds.Second,
 ]
