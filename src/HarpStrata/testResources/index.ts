@@ -1,14 +1,14 @@
 import { HarpStrata } from '../types'
 import { EXAMPLE_DEGREES } from '../Degree/testResources'
-import { MajorDiatonicApparatus } from '../Apparatus/MajorDiatonicApparatus'
+import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/MAJOR_DIATONIC_APPARATUS'
 
 const MAJOR_DIATONIC_FIRST_POSITION: HarpStrata = {
-  apparatus: MajorDiatonicApparatus,
+  apparatus: MAJOR_DIATONIC_APPARATUS,
   degrees: EXAMPLE_DEGREES.MAJOR_DIATONIC_FIRST_POSITION,
 }
 
 const MAJOR_DIATONIC_SECOND_POSITION: HarpStrata = {
-  apparatus: MajorDiatonicApparatus,
+  apparatus: MAJOR_DIATONIC_APPARATUS,
   degrees: EXAMPLE_DEGREES.MAJOR_DIATONIC_SECOND_POSITION,
 }
 
