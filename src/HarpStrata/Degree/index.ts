@@ -1,5 +1,7 @@
 import { DegreeIds, DegreeMatrix } from './types'
 
+// TODO: create Degree interface and objects rather
+// than using enumerators here
 const ORDERED_DEGREES: readonly DegreeIds[] = [
   DegreeIds.Root,
   DegreeIds.Flat2,
