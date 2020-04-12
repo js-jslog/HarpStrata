@@ -8,7 +8,7 @@ type HalfstepRow = ReadonlyArray<number>
 export type HalfstepMatrix = ReadonlyArray<HalfstepRow>
 
 export interface Apparatus {
-  id: ApparatusIds;
-  halfsteps: HalfstepMatrix;
-  interactions: InteractionMatrix;
+  readonly id: ApparatusIds;
+  readonly halfsteps: HalfstepMatrix;
+  readonly interactions: InteractionMatrix;
 }

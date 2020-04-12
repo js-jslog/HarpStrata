@@ -31,5 +31,5 @@ export const MAJOR_DIATONIC_APPARATUS: Apparatus = {
   id: ApparatusIds.MajorDiatonic,
   halfsteps,
   interactions,
-}
+} as const
 
