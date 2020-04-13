@@ -6,7 +6,6 @@ import { getDegreeMatrix } from './index'
 import { FOURTH } from './constants'
 
 
-
 test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6) when halfsetp offset is 7', () => {
   const expectedArray = [[ FOURTH, ], [ FOURTH, ]]
   const actualArray = getDegreeMatrix([[ 0, ], [ 0, ]], 7)

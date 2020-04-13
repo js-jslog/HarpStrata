@@ -25,6 +25,10 @@ module.exports = {
     ],
     'rules': {
         'eol-last': ['error', 'always' ],
+        'no-multiple-empty-lines': ['error', {
+            'max': 2,
+            'maxEOF': 1
+        }],
         'prefer-destructuring': ['error', {
             'array': true,
             'object': true
