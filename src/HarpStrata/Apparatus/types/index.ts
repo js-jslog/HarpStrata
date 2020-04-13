@@ -7,6 +7,6 @@ export enum ApparatusIds {
 
 export interface Apparatus {
   readonly id: ApparatusIds;
-  readonly halfsteps: HalfstepIndexMatrix;
-  readonly interactions: InteractionMatrix;
+  readonly halfstepIndexMatrix: HalfstepIndexMatrix;
+  readonly interactionMatrix: InteractionMatrix;
 }

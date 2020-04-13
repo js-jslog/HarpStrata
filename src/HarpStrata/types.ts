@@ -3,6 +3,6 @@ import { Apparatus } from './Apparatus/types'
 
 export interface HarpStrata {
   readonly apparatus: Apparatus;
-  readonly degrees: DegreeMatrix;
+  readonly degreeMatrix: DegreeMatrix;
 }
 

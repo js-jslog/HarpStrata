@@ -1,3 +1,5 @@
+import { HalfstepIndex } from '../../Apparatus/HalfstepIndex/types'
+
 export enum PositionIds {
   First = 'FIRST',
   Second = 'SECOND',
@@ -5,5 +7,5 @@ export enum PositionIds {
 
 export interface Position {
   readonly id: PositionIds;
-  readonly root: number;
+  readonly root: HalfstepIndex;
 }

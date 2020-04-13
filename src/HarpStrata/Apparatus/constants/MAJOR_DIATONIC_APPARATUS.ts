@@ -10,7 +10,7 @@ import {
 } from '../Interaction/constants'
 import { HalfstepIndexMatrix } from '../HalfstepIndex/types'
 
-const halfsteps: HalfstepIndexMatrix = [
+const halfstepIndexMatrix: HalfstepIndexMatrix = [
   [ 3        , undefined, undefined, 15       , ],
   [ 0        , 4        , 7        , 12       , ],
   [ 2        , 7        , 11       , 14       , ],
@@ -19,7 +19,7 @@ const halfsteps: HalfstepIndexMatrix = [
   [ undefined, undefined, 8        , undefined, ],
 ] as const
 
-const interactions: InteractionMatrix = [
+const interactionMatrix: InteractionMatrix = [
   [ OVERBLOW1, undefined, undefined, OVERBLOW1, ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , ],
   [ DRAW     , DRAW     , DRAW     , DRAW     , ],
@@ -30,7 +30,7 @@ const interactions: InteractionMatrix = [
 
 export const MAJOR_DIATONIC_APPARATUS: Apparatus = {
   id: ApparatusIds.MajorDiatonic,
-  halfsteps,
-  interactions,
+  halfstepIndexMatrix,
+  interactionMatrix,
 } as const
 

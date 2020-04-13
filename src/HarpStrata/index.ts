@@ -9,6 +9,7 @@ import { HarpStrata } from './types'
 
 export const getHarpIds = getActiveApparatusIds
 
+// TODO: convert to = getActivePositionIds
 export const getPositions = (): readonly PositionIds[] => [
   PositionIds.First,
   PositionIds.Second,
@@ -17,10 +18,10 @@ export const getPositions = (): readonly PositionIds[] => [
 export const getHarpStrata = (apparatusId: ApparatusIds, positionId: PositionIds): HarpStrata => {
   const apparatus = getApparatus(apparatusId)
   const position = getPosition(positionId)
-  const degrees = getDegreeMatrix(apparatus.halfsteps, position.root)
+  const degreeMatrix = getDegreeMatrix(apparatus.halfstepIndexMatrix, position.root)
 
   return {
     apparatus,
-    degrees,
+    degreeMatrix,
   }
 }
