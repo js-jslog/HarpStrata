@@ -8,9 +8,9 @@ import {
   BEND2,
   BEND3,
 } from '../Interaction/constants'
-import { HalfstepMatrix } from '../HalfstepIndex/types'
+import { HalfstepIndexMatrix } from '../HalfstepIndex/types'
 
-const halfsteps: HalfstepMatrix = [
+const halfsteps: HalfstepIndexMatrix = [
   [ 3        , undefined, undefined, 15       , ],
   [ 0        , 4        , 7        , 12       , ],
   [ 2        , 7        , 11       , 14       , ],
