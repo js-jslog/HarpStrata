@@ -11,7 +11,8 @@
         "test": "jest",
         "clear_jest": "jest --clearCache",
         "lint": "tsc --noEmit && eslint './**'",
-        "fix-lint": "eslint './**' --fix"
+        "fix-lint": "eslint './**' --fix",
+        "prepublish": "tsc"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",
