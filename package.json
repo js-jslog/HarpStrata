@@ -2,6 +2,8 @@
     "name": "tdd",
     "version": "0.1.0",
     "description": "A basic tdd project with typescript",
+    "main": "./lib/index.js",
+    "types": "./lib/index.d.ts",
     "private": true,
     "author": "js-jslog <josephsinfield@yahoo.com>",
     "license": "UNLICENSED",
