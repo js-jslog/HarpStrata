@@ -10,7 +10,7 @@
     "scripts": {
         "test": "jest",
         "clear_jest": "jest --clearCache",
-        "lint": "eslint './**'",
+        "lint": "tsc --noEmit && eslint './**'",
         "fix-lint": "eslint './**' --fix"
     },
     "devDependencies": {
