@@ -9,7 +9,7 @@
     "license": "UNLICENSED",
     "scripts": {
         "test": "jest",
-        "clear_jest": "jest --clearCache",
+        "clear-jest": "jest --clearCache",
         "lint": "tsc --noEmit && eslint './**'",
         "fix-lint": "eslint './**' --fix",
         "prepublish": "tsc"
