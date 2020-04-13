@@ -1,7 +1,6 @@
-import { MAJOR_DIATONIC_APPARATUS } from './MAJOR_DIATONIC_APPARATUS'
-
 import { ApparatusIds } from './types'
 import { getActiveApparatusIds, getApparatus } from './index'
+import { MAJOR_DIATONIC_APPARATUS } from './constants'
 
 test('getActiveApparatusIds function returns an array of the available apparatus', () => {
   const expectedArray = [ ApparatusIds.MajorDiatonic ]

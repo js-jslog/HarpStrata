@@ -1,6 +1,5 @@
-import { MAJOR_DIATONIC_APPARATUS } from './MAJOR_DIATONIC_APPARATUS'
-
 import { ApparatusIds, Apparatus } from './types'
+import { MAJOR_DIATONIC_APPARATUS } from './constants'
 
 
 const apparatusMap = new Map()

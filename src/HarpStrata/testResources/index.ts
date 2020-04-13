@@ -1,6 +1,6 @@
 import { HarpStrata } from '../types'
 import { EXAMPLE_DEGREES } from '../Degree/testResources'
-import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/MAJOR_DIATONIC_APPARATUS'
+import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
 
 const MAJOR_DIATONIC_FIRST_POSITION: HarpStrata = {
   apparatus: MAJOR_DIATONIC_APPARATUS,

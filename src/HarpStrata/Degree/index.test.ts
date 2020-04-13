@@ -1,4 +1,4 @@
-import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/MAJOR_DIATONIC_APPARATUS'
+import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
 
 import { EXAMPLE_DEGREES } from './testResources'
 
