@@ -11,11 +11,8 @@ export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: 
 
   return halfstepIndexMatrix.map((halfstepIndexRow) => {
     return halfstepIndexRow.map((halfstepIndex) => {
-      if (halfstepIndex === undefined) {
-        return undefined
-      } else {
-        return alignedDegreeIds[halfstepIndex % 12]
-      }
+      if (halfstepIndex === undefined) return undefined
+      return alignedDegreeIds[halfstepIndex % 12]
     })
   })
 }
