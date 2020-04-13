@@ -24,6 +24,7 @@ module.exports = {
         'jest'
     ],
     'rules': {
+        'eol-last': ['error', 'always' ],
         'prefer-destructuring': ['error', {
             'array': true,
             'object': true
