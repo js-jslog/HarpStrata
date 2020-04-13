@@ -11,10 +11,10 @@ export const getHarpIds = getActiveApparatusIds
 
 export const getPozitions = getActivePozitionIds
 
-export const getHarpStrata = (apparatusId: ApparatusIds, positionId: PozitionIds): HarpStrata => {
+export const getHarpStrata = (apparatusId: ApparatusIds, pozitionId: PozitionIds): HarpStrata => {
   const apparatus = getApparatus(apparatusId)
-  const position = getPozition(positionId)
-  const degreeMatrix = getDegreeMatrix(apparatus.halfstepIndexMatrix, position.root)
+  const pozition = getPozition(pozitionId)
+  const degreeMatrix = getDegreeMatrix(apparatus.halfstepIndexMatrix, pozition.root)
 
   return {
     apparatus,

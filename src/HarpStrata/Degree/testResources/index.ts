@@ -14,7 +14,7 @@ import {
   SEVENTH
 } from '../constants'
 
-const MAJOR_DIATONIC_FIRST_POSITION: DegreeMatrix = [
+const MAJOR_DIATONIC_FIRST_POZITION: DegreeMatrix = [
   [ FLAT3    , undefined, undefined, FLAT3 , ],
   [ ROOT     , THIRD    , FIFTH    , ROOT  , ],
   [ SECOND   , FIFTH    , SEVENTH  , SECOND, ],
@@ -23,7 +23,7 @@ const MAJOR_DIATONIC_FIRST_POSITION: DegreeMatrix = [
   [ undefined, undefined, FLAT6 , undefined, ],
 ] as const
 
-const MAJOR_DIATONIC_SECOND_POSITION: DegreeMatrix = [
+const MAJOR_DIATONIC_SECOND_POZITION: DegreeMatrix = [
   [ FLAT6    , undefined, undefined, FLAT6    , ],
   [ FOURTH   , SIXTH    , ROOT     , FOURTH   , ],
   [ FIFTH    , ROOT     , THIRD    , FIFTH    , ],
@@ -33,6 +33,6 @@ const MAJOR_DIATONIC_SECOND_POSITION: DegreeMatrix = [
 ] as const
 
 export const EXAMPLE_DEGREE_MATRICES = {
-  MAJOR_DIATONIC_FIRST_POSITION,
-  MAJOR_DIATONIC_SECOND_POSITION
+  MAJOR_DIATONIC_FIRST_POZITION,
+  MAJOR_DIATONIC_SECOND_POZITION
 } as const
