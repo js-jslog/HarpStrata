@@ -8,8 +8,8 @@
     "scripts": {
         "test": "jest",
         "clear_jest": "jest --clearCache",
-        "lint": "eslint 'src/**'",
-        "fix-lint": "eslint 'src/**' --fix"
+        "lint": "eslint './**'",
+        "fix-lint": "eslint './**' --fix"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",
