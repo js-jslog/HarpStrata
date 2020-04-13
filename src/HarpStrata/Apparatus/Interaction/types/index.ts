@@ -13,4 +13,3 @@ export interface Interaction {
 
 type InteractionRow = ReadonlyArray<Interaction>
 export type InteractionMatrix = ReadonlyArray<InteractionRow>
-

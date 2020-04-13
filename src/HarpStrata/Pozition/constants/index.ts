@@ -9,4 +9,3 @@ export const SECOND: Pozition = {
   id: PozitionIds.Second,
   root: 7,
 } as const
-

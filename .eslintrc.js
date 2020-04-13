@@ -27,7 +27,7 @@ module.exports = {
         'eol-last': ['error', 'always' ],
         'no-multiple-empty-lines': ['error', {
             'max': 2,
-            'maxEOF': 1
+            'maxEOF': 0
         }],
         'prefer-destructuring': ['error', {
             'array': true,

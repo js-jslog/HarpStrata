@@ -19,4 +19,3 @@ test('getDegreeMatrix maps a major diatonic halfstepmatrix in to a major diatoni
 
   expect(actualArray).toStrictEqual(MAJOR_DIATONIC_FIRST_POZITION)
 })
-

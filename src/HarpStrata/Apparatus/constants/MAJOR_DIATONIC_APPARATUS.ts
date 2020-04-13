@@ -33,4 +33,3 @@ export const MAJOR_DIATONIC_APPARATUS: Apparatus = {
   halfstepIndexMatrix,
   interactionMatrix,
 } as const
-

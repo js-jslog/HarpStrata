@@ -14,4 +14,3 @@ test('getApparatus function can return a major diatonic apparatus', () => {
 
   expect(actualApparatus).toStrictEqual(MAJOR_DIATONIC_APPARATUS)
 })
-

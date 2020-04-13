@@ -5,4 +5,3 @@ export interface HarpStrata {
   readonly apparatus: Apparatus;
   readonly degreeMatrix: DegreeMatrix;
 }
-

@@ -27,4 +27,3 @@ export const ORDERED_DEGREES: readonly Degree[] = [
   FLAT7,
   SEVENTH,
 ] as const
-
