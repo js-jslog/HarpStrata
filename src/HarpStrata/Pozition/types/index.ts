@@ -1,11 +1,11 @@
 import { HalfstepIndex } from '../../Apparatus/HalfstepIndex/types'
 
-export enum PositionIds {
+export enum PozitionIds {
   First = 'FIRST',
   Second = 'SECOND',
 }
 
-export interface Position {
-  readonly id: PositionIds;
+export interface Pozition {
+  readonly id: PozitionIds;
   readonly root: HalfstepIndex;
 }
