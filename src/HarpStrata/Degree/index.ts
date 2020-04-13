@@ -9,13 +9,18 @@ export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: 
 
   for (let i = 0; i < root; i++) {
     // TODO: there must be a better way to achieve this
+    // const shiftedDegreeIds = a.slice(-1 * root).concat(a.slice(0, (-1 * root)))
     const poppedDegreeIds = shiftedDegreeIds.pop()
     if (poppedDegreeIds) shiftedDegreeIds.unshift(poppedDegreeIds)
   }
 
   return halfstepIndexMatrix.map((row) => {
     return row.map((element) => {
-      return (element ? shiftedDegreeIds[element % 12] : undefined)
+      if (element === undefined) {
+        return undefined
+      } else {
+        return shiftedDegreeIds[element % 12]
+      }
     })
   })
 }
