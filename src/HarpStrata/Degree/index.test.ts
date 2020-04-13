@@ -1,6 +1,6 @@
 import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
 
-import { EXAMPLE_DEGREES } from './testResources'
+import { EXAMPLE_DEGREE_MATRICES } from './testResources'
 
 import { getDegreeMatrix } from './index'
 import { FOURTH } from './constants'
@@ -15,7 +15,7 @@ test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6)
 })
 
 test('getDegreeMatrix maps a major diatonic halfstepmatrix in to a major diatonic degreematrix in first position', () => {
-  const { MAJOR_DIATONIC_FIRST_POSITION } = EXAMPLE_DEGREES
+  const { MAJOR_DIATONIC_FIRST_POSITION } = EXAMPLE_DEGREE_MATRICES
   const actualArray = getDegreeMatrix(MAJOR_DIATONIC_APPARATUS.halfsteps, 0)
 
   expect(actualArray).toStrictEqual(MAJOR_DIATONIC_FIRST_POSITION)

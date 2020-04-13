@@ -32,7 +32,7 @@ const MAJOR_DIATONIC_SECOND_POSITION: DegreeMatrix = [
   [ undefined, undefined, FLAT2    , undefined, ],
 ] as const
 
-export const EXAMPLE_DEGREES = {
+export const EXAMPLE_DEGREE_MATRICES = {
   MAJOR_DIATONIC_FIRST_POSITION,
   MAJOR_DIATONIC_SECOND_POSITION
 } as const
