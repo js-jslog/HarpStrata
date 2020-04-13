@@ -7,7 +7,7 @@ import {
   BEND1,
   BEND2,
   BEND3,
-} from '../Interaction'
+} from '../Interaction/constants'
 
 const halfsteps: HalfstepMatrix = [
   [ 3        , undefined, undefined, 15       , ],

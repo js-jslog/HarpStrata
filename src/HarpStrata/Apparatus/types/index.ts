@@ -1,4 +1,4 @@
-import { InteractionMatrix } from './Interaction/types'
+import { InteractionMatrix } from '../Interaction/types'
 
 export enum ApparatusIds {
   MajorDiatonic = 'MAJOR-DIATONIC',

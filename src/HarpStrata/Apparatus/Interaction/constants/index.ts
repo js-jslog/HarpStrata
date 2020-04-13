@@ -1,4 +1,4 @@
-import { InteractionIds, Interaction } from './types'
+import { InteractionIds, Interaction } from '../types'
 
 export const OVERBLOW1: Interaction = { id: InteractionIds.Overblow1 } as const
 export const BLOW: Interaction = { id: InteractionIds.Blow } as const
