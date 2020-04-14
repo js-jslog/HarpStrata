@@ -1,5 +1,5 @@
 {
-    "name": "tdd",
+    "name": "harpstrata",
     "version": "0.1.0",
     "description": "A basic tdd project with typescript",
     "main": "./lib/index.js",
