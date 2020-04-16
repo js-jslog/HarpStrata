@@ -17,12 +17,14 @@ export {
   HalfstepIndexRow,
   HalfstepIndexMatrix,
 } from './Apparatus/types'
+
 export {
   DegreeIds,
   Degree,
   DegreeRow,
   DegreeMatrix
 } from './Degree/types'
+
 export {
   PozitionIds,
   Pozition
