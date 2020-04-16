@@ -10,3 +10,15 @@ export interface Apparatus {
   readonly halfstepIndexMatrix: HalfstepIndexMatrix;
   readonly interactionMatrix: InteractionMatrix;
 }
+
+export {
+  InteractionIds,
+  Interaction,
+  InteractionRow,
+  InteractionMatrix
+} from '../Interaction/types'
+export {
+  HalfstepIndex,
+  HalfstepIndexRow,
+  HalfstepIndexMatrix
+} from '../HalfstepIndex/types'
