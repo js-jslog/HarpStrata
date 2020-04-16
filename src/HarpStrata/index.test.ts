@@ -1,7 +1,6 @@
 import { EXAMPLE_STRATA } from './testResources'
-import { PozitionIds } from './Pozition/types'
-import { ApparatusIds } from './Apparatus/types'
 
+import { ApparatusIds, PozitionIds } from './types'
 import { getHarpIds, getPozitions, getHarpStrata} from './index'
 
 test('getHarpIds function returns an array with a major diatonic as one of the values', () => {
