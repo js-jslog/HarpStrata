@@ -2,7 +2,7 @@ import { getActivePozitionIds, getPozition } from './Pozition'
 import { getDegreeMatrix } from './Degree'
 import { getActiveApparatusIds, getApparatus } from './Apparatus'
 
-import { HarpStrata, PozitionIds, ApparatusIds } from './types'
+import type { HarpStrata, PozitionIds, ApparatusIds } from './types'
 
 
 export const getHarpIds = getActiveApparatusIds

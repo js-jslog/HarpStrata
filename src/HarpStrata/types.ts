@@ -1,5 +1,5 @@
-import { DegreeMatrix } from './Degree/types'
-import { Apparatus } from './Apparatus/types'
+import type { DegreeMatrix } from './Degree/types'
+import type { Apparatus } from './Apparatus/types'
 
 export interface HarpStrata {
   readonly apparatus: Apparatus;
