@@ -21,3 +21,22 @@ export const getHarpStrata = (apparatusId: ApparatusIds, pozitionId: PozitionIds
     degreeMatrix,
   }
 }
+
+export {
+  HarpStrata,
+  ApparatusIds,
+  Apparatus,
+  InteractionIds,
+  Interaction,
+  InteractionRow,
+  InteractionMatrix,
+  HalfstepIndex,
+  HalfstepIndexRow,
+  HalfstepIndexMatrix,
+  DegreeIds,
+  Degree,
+  DegreeRow,
+  DegreeMatrix,
+  PozitionIds,
+  Pozition
+} from './types'
