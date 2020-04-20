@@ -13,7 +13,11 @@
         "clear-jest": "jest --clearCache",
         "lint": "tsc --noEmit && eslint './**'",
         "fix-lint": "eslint './**' --fix",
-        "build": "tsc"
+        "build": "tsc",
+        "prepare" : "npm run build",
+        "prepublishOnly" : "npm test && npm run lint",
+        "preversion" : "npm test && npm run lint",
+        "postversion" : "git push && git push --tags"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",
