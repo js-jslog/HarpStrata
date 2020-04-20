@@ -2,6 +2,7 @@ import type { InteractionMask, HalfstepIndexMatrix } from '../types'
 
 export enum ApparatusIds {
   MajorDiatonic = 'MAJOR-DIATONIC',
+  CountryTuned = 'COUNTRY-TUNED',
 }
 
 export interface Apparatus {
