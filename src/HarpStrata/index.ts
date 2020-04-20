@@ -5,7 +5,7 @@ import { getActiveApparatusIds, getApparatus } from './Apparatus'
 import type { HarpStrata, PozitionIds, ApparatusIds } from './types'
 
 
-export const getHarpIds = getActiveApparatusIds
+export const getApparatusIds = getActiveApparatusIds
 
 export const getPozitionIds = getActivePozitionIds
 
