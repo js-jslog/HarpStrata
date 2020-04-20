@@ -12,7 +12,7 @@
         "clear-jest": "jest --clearCache",
         "lint": "tsc --noEmit && eslint './**'",
         "fix-lint": "eslint './**' --fix",
-        "prepublish": "tsc"
+        "build": "rm -rf ./lib && tsc"
     },
     "devDependencies": {
         "@types/jest": "^25.2.1",
