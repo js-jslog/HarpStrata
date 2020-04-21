@@ -12,6 +12,7 @@ import {
 } from '../Interaction/constants'
 
 const halfstepIndexMatrix: HalfstepIndexMatrix = [
+  //    1          2          3          4          5          6          7          8          9         10
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 34        ],
   [ 3        , undefined, undefined, 15       , 18       , 22       , undefined, 27       , 30       , 35        ],
   [ 0        , 4        , 7        , 12       , 16       , 19       , 24       , 28       , 31       , 36        ],
@@ -22,6 +23,7 @@ const halfstepIndexMatrix: HalfstepIndexMatrix = [
 ] as const
 
 const interactionMatrix: InteractionMatrix = [
+  //    1          2          3          4          5          6          7          8          9         10
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, BLOWBEND2 ],
   [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, BLOWBEND1, BLOWBEND1, BLOWBEND1 ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
