@@ -1,12 +1,14 @@
 import { ApparatusIds, Apparatus, InteractionMatrix, HalfstepIndexMatrix } from '../types'
 import {
-  OVERBLOW2,
-  OVERBLOW1,
   BLOW,
   DRAW,
   BEND1,
   BEND2,
   BEND3,
+  BLOWBEND1,
+  BLOWBEND2,
+  OVERDRAW1,
+  OVERBLOW1,
 } from '../Interaction/constants'
 
 const halfstepIndexMatrix: HalfstepIndexMatrix = [
@@ -20,11 +22,11 @@ const halfstepIndexMatrix: HalfstepIndexMatrix = [
 ] as const
 
 const interactionMatrix: InteractionMatrix = [
-  [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, OVERBLOW2 ],
-  [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1 ],
+  [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, BLOWBEND2 ],
+  [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, BLOWBEND1, BLOWBEND1, BLOWBEND1 ],
   [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
   [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
-  [ BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , undefined, BEND1    , BEND1     ],
+  [ BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , OVERDRAW1, undefined, OVERDRAW1, OVERDRAW1 ],
   [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
   [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
