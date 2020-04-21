@@ -1,4 +1,4 @@
-import { ApparatusIds, Apparatus, InteractionMask, HalfstepIndexMatrix } from '../types'
+import { ApparatusIds, Apparatus, InteractionMatrix, HalfstepIndexMatrix } from '../types'
 import {
   OVERBLOW2,
   OVERBLOW1,
@@ -19,12 +19,18 @@ const halfstepIndexMatrix: HalfstepIndexMatrix = [
   [ undefined, undefined, 8        , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
-const interactionMask: InteractionMask = [
-  OVERBLOW2, OVERBLOW1, BLOW, DRAW, BEND1, BEND2, BEND3
+const interactionMatrix: InteractionMatrix = [
+  [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, OVERBLOW2 ],
+  [ OVERBLOW1, undefined, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1, undefined, OVERBLOW1, OVERBLOW1, OVERBLOW1 ],
+  [ BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW     , BLOW      ],
+  [ DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW     , DRAW      ],
+  [ BEND1    , BEND1    , BEND1    , BEND1    , undefined, BEND1    , BEND1    , undefined, BEND1    , BEND1     ],
+  [ undefined, BEND2    , BEND2    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
+  [ undefined, undefined, BEND3    , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
 export const COUNTRY_TUNED_APPARATUS: Apparatus = {
   id: ApparatusIds.CountryTuned,
   halfstepIndexMatrix,
-  interactionMask,
+  interactionMatrix,
 } as const
