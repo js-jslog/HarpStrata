@@ -1,8 +1,14 @@
 import type { HalfstepIndexMatrix } from '../types'
 
-import type { PitchIds, PitchMatrix } from './types'
-import { ORDERED_PITCHES } from './constants'
+import type { PitchIds, PitchMatrix, Pitch } from './types'
+import { C, Db, ORDERED_PITCHES } from './constants'
 
+const pitchMap = new Map()
+pitchMap.set(C.id, C)
+pitchMap.set(Db.id, Db)
+
+export const getActivePitchIds = (): PitchIds[] => Array.from(pitchMap.keys())
+export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
 
 export const getPitchMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, harpKeyPitch: PitchIds): PitchMatrix => {
   const orderedPitchIds = ORDERED_PITCHES.map(pitch => pitch.id)

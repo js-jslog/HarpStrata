@@ -2,7 +2,9 @@ import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
 
 import { EXAMPLE_PITCH_MATRICES } from './testResources'
 
-import { getPitchMatrix } from './index'
+import { PitchIds } from './types'
+import type { Pitch } from './types'
+import { getPitchMatrix, getActivePitchIds, getPitch } from './index'
 import { C, F } from './constants'
 
 
@@ -25,4 +27,18 @@ test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic
   const actualArray = getPitchMatrix(MAJOR_DIATONIC_APPARATUS.halfstepIndexMatrix, F.id)
 
   expect(actualArray).toStrictEqual(MAJOR_DIATONIC_F_HARMONICA)
+})
+
+test('getActivePitchIds function returns an array of the available pitches', () => {
+  const expectedArray = [ PitchIds.C, PitchIds.Db ]
+  const actualArray = getActivePitchIds()
+
+  expect(actualArray).toStrictEqual(expectedArray)
+})
+
+test('getPitch function can return a first pozition', () => {
+  const C_PITCH: Pitch = { id: PitchIds.C } as const
+  const actualPitch = getPitch(C_PITCH.id)
+
+  expect(actualPitch).toStrictEqual(C_PITCH)
 })
