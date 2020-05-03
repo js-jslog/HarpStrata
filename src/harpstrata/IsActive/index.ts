@@ -26,3 +26,8 @@ export const getIsActiveMatrixForPitches = (siblingDisplayMatrices: SiblingDispl
   const isActiveMatrix: IsActiveMatrix = pitchMatrix.map(mapPitchRow)
   return isActiveMatrix
 }
+
+export const getIsActiveMatrix = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds>): IsActiveMatrix => {
+  const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
+  return getIsActiveMatrixForDegrees(siblingDisplayMatrices, activeDegreeIds)
+}
