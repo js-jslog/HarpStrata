@@ -24,3 +24,5 @@ export const getPitchMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, keyPitc
     })
   })
 }
+
+export type { PitchIds, PitchMatrix } from './types'

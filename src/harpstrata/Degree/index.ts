@@ -16,3 +16,5 @@ export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: 
     })
   })
 }
+
+export type { Degree, DegreeIds, DegreeRow, DegreeMatrix } from './types'
