@@ -28,6 +28,10 @@ export const getIsActiveMatrixForPitches = (siblingDisplayMatrices: SiblingDispl
 }
 
 export const getIsActiveMatrix = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds>): IsActiveMatrix => {
-  const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
-  return getIsActiveMatrixForDegrees(siblingDisplayMatrices, activeDegreeIds)
+  if (activeElementIds[0] in Object.values(DegreeIds)) {
+    const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
+    return getIsActiveMatrixForDegrees(siblingDisplayMatrices, activeDegreeIds)
+  }
+  const activePitchIds = activeElementIds as ReadonlyArray<PitchIds>
+  return getIsActiveMatrixForPitches(siblingDisplayMatrices, activePitchIds)
 }
