@@ -5,7 +5,7 @@ import { DegreeIds } from '../Degree'
 
 import { SiblingDisplayMatrices, IsActiveIds, IsActiveRow, IsActiveMatrix } from './types'
 
-export const getIsActiveMatrixForDegrees = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<DegreeIds>): IsActiveMatrix => {
+const getIsActiveMatrixForDegrees = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<DegreeIds>): IsActiveMatrix => {
   const [ degreeMatrix ] = siblingDisplayMatrices
   const mapDegree = (degree: Degree | undefined): IsActiveIds | undefined => (
     degree && activeElementIds.includes(degree.id) ? IsActiveIds.Active : IsActiveIds.Inactive
@@ -16,7 +16,7 @@ export const getIsActiveMatrixForDegrees = (siblingDisplayMatrices: SiblingDispl
   return isActiveMatrix
 }
 
-export const getIsActiveMatrixForPitches = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<PitchIds>): IsActiveMatrix => {
+const getIsActiveMatrixForPitches = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<PitchIds>): IsActiveMatrix => {
   const [ , pitchMatrix ] = siblingDisplayMatrices
   const mapPitch = (pitch: Pitch | undefined): IsActiveIds | undefined => (
     pitch && activeElementIds.includes(pitch.id) ? IsActiveIds.Active : IsActiveIds.Inactive

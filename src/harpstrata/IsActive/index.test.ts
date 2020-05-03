@@ -5,7 +5,7 @@ import { DegreeIds } from '../Degree'
 
 import { IsActiveIds } from './types'
 import type { SiblingDisplayMatrices } from './types'
-import { getIsActiveMatrix, getIsActiveMatrixForDegrees, getIsActiveMatrixForPitches } from './index'
+import { getIsActiveMatrix } from './index'
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', () => {
   const degreeMatrix = [
@@ -27,27 +27,7 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
 
-test('getIsActiveMatrixForDegrees returns the IsActiveMatrix when given Degree Elements', () => {
-  const degreeMatrix = [
-    [ ROOT , SECOND ],
-    [ THIRD, FOURTH ],
-  ]
-  const pitchMatrix = [
-    [ C, D ],
-    [ E, F ],
-  ]
-  const siblingDisplayMatrices: SiblingDisplayMatrices = [ degreeMatrix, pitchMatrix ]
-  const activeDegreeIds = [ DegreeIds.Root, DegreeIds.Fourth ]
-  const expectedIsActiveMatrix = [
-    [ IsActiveIds.Active  , IsActiveIds.Inactive ],
-    [ IsActiveIds.Inactive, IsActiveIds.Active   ],
-  ]
-  const actualIsActiveMatrix = getIsActiveMatrixForDegrees(siblingDisplayMatrices, activeDegreeIds)
-
-  expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
-})
-
-test('getIsActiveMatrixForPitches returns the IsActiveMatrix when given Pitch Elements', () => {
+test('getIsActiveMatrix returns the IsActiveMatrix when given Pitch Elements', () => {
   const degreeMatrix = [
     [ ROOT , SECOND ],
     [ THIRD, FOURTH ],
@@ -62,7 +42,7 @@ test('getIsActiveMatrixForPitches returns the IsActiveMatrix when given Pitch El
     [ IsActiveIds.Inactive  , IsActiveIds.Active ],
     [ IsActiveIds.Active, IsActiveIds.Inactive   ],
   ]
-  const actualIsActiveMatrix = getIsActiveMatrixForPitches(siblingDisplayMatrices, activePitchIds)
+  const actualIsActiveMatrix = getIsActiveMatrix(siblingDisplayMatrices, activePitchIds)
 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
