@@ -8,6 +8,20 @@ import { getPitchMatrix, getActivePitchIds, getPitch } from './index'
 import { C, F } from './constants'
 
 
+test('getActivePitchIds function returns an array of the available pitches', () => {
+  const expectedArray = [ PitchIds.C, PitchIds.Db ]
+  const actualArray = getActivePitchIds()
+
+  expect(actualArray).toStrictEqual(expectedArray)
+})
+
+test('getPitch function can return a first pozition', () => {
+  const C_PITCH: Pitch = { id: PitchIds.C } as const
+  const actualPitch = getPitch(C_PITCH.id)
+
+  expect(actualPitch).toStrictEqual(C_PITCH)
+})
+
 test('getPitchMatrix function maps a simple 2d array of 0\'s to the input key pitch of C', () => {
   const expectedArray = [[ C, ], [ C, ]]
   const actualArray = getPitchMatrix([[ 0, ], [ 0, ]], C.id)
@@ -27,18 +41,4 @@ test('getPitchMatrix maps a major diatonic halfstepmatrix in to a major diatonic
   const actualArray = getPitchMatrix(MAJOR_DIATONIC_APPARATUS.halfstepIndexMatrix, F.id)
 
   expect(actualArray).toStrictEqual(MAJOR_DIATONIC_F_HARMONICA)
-})
-
-test('getActivePitchIds function returns an array of the available pitches', () => {
-  const expectedArray = [ PitchIds.C, PitchIds.Db ]
-  const actualArray = getActivePitchIds()
-
-  expect(actualArray).toStrictEqual(expectedArray)
-})
-
-test('getPitch function can return a first pozition', () => {
-  const C_PITCH: Pitch = { id: PitchIds.C } as const
-  const actualPitch = getPitch(C_PITCH.id)
-
-  expect(actualPitch).toStrictEqual(C_PITCH)
 })
