@@ -17,4 +17,5 @@ export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: 
   })
 }
 
-export type { Degree, DegreeIds, DegreeRow, DegreeMatrix } from './types'
+export type { Degree, DegreeRow, DegreeMatrix } from './types'
+export { DegreeIds } from './types'

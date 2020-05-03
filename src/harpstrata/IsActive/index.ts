@@ -1,8 +1,8 @@
 import { DegreeIds, Degree, DegreeRow } from '../Degree'
 
-import { SiblingDisplayMatrices, DisplayElementIds, IsActiveIds, IsActiveRow, IsActiveMatrix } from './types'
+import { SiblingDisplayMatrices, IsActiveIds, IsActiveRow, IsActiveMatrix } from './types'
 
-export const getIsActiveMatrix = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: DegreeIds[]): IsActiveMatrix => {
+export const getIsActiveMatrixForDegrees = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<DegreeIds>): IsActiveMatrix => {
   const [ degreeMatrix ] = siblingDisplayMatrices
   const mapDegree = (degree: Degree | undefined): IsActiveIds | undefined => (
     degree && activeElementIds.includes(degree.id) ? IsActiveIds.Active : IsActiveIds.Inactive
