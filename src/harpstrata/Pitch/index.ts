@@ -10,9 +10,9 @@ pitchMap.set(Db.id, Db)
 export const getActivePitchIds = (): PitchIds[] => Array.from(pitchMap.keys())
 export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
 
-export const getPitchMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, harpKeyPitch: PitchIds): PitchMatrix => {
+export const getPitchMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, keyPitchId: PitchIds): PitchMatrix => {
   const orderedPitchIds = ORDERED_PITCHES.map(pitch => pitch.id)
-  const pitchIndex = orderedPitchIds.indexOf(harpKeyPitch)
+  const pitchIndex = orderedPitchIds.indexOf(keyPitchId)
   const arrayHead = [ ...ORDERED_PITCHES.slice(pitchIndex) ]
   const arrayTail = [ ...ORDERED_PITCHES.slice(0, (pitchIndex)) ]
   const alignedPitchIds = [ ...arrayHead, ...arrayTail ]
