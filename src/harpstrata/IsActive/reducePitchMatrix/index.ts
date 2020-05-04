@@ -1,5 +1,5 @@
-import type { Pitch, PitchRow, PitchIds } from '../../Pitch'
-import type { DegreeRow, DegreeMatrix, DegreeIds } from '../../Degree'
+import type { Pitch, PitchRow, PitchMatrix, PitchIds } from '../../Pitch'
+import type { Degree, DegreeRow, DegreeMatrix, DegreeIds } from '../../Degree'
 
 export type ReducedRowState = {
   readonly degreeRow: DegreeRow;
@@ -8,6 +8,16 @@ export type ReducedRowState = {
 }
 export type ReducedMatrixState = {
   readonly degreeMatrix: DegreeMatrix;
+  readonly activePitchIds: ReadonlyArray<PitchIds>;
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
+}
+export type ReducedDegreeRowState = {
+  readonly pitchRow: PitchRow;
+  readonly activePitchIds: ReadonlyArray<PitchIds>;
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
+}
+export type ReducedDegreeMatrixState = {
+  readonly pitchMatrix: PitchMatrix;
   readonly activePitchIds: ReadonlyArray<PitchIds>;
   readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
 }
@@ -42,4 +52,15 @@ export const reducePitchMatrix = (reducedState: ReducedMatrixState, nextPitchRow
   }
 
   return reducedMatrix
+}
+
+export const reduceDegreeRow = (reducedState: ReducedDegreeRowState, nextDegree: Degree | undefined): ReducedDegreeRowState => {
+  const { pitchRow, activePitchIds, activeDegreeIds } = reducedState
+  const [ thisPitch, ...remainingPitchRow ] = pitchRow
+
+  if (thisPitch === undefined || nextDegree === undefined) return { ...reducedState, pitchRow: remainingPitchRow }
+  if (activePitchIds.includes(thisPitch.id)) return { ...reducedState, pitchRow: remainingPitchRow }
+  if (!activeDegreeIds.includes(nextDegree.id)) return { ...reducedState, pitchRow: remainingPitchRow }
+
+  return { ...reducedState, pitchRow: remainingPitchRow, activePitchIds: [ ...activePitchIds, thisPitch.id ]}
 }
