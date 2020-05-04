@@ -31,6 +31,8 @@ export const reducePitchMatrix = (reducedState: ReducedMatrixState, nextPitchRow
     activePitchIds, activeDegreeIds, degreeRow: thisDegreeRow
   }
 
+  if (activePitchIds.length === activeDegreeIds.length) return reducedState
+
   const reducedRow: ReducedRowState = nextPitchRow.reduce(reducePitchRow, initialState)
 
   const reducedMatrix: ReducedMatrixState = {
