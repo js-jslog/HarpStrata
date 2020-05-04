@@ -3,7 +3,7 @@ import { PitchIds } from '../Pitch'
 import type { Degree, DegreeRow } from '../Degree'
 import { DegreeIds } from '../Degree'
 
-import { reducePitchesMatrixToActives, reduceDegreeMatrix } from './reducePitchMatrix'
+import { reducePitchesMatrixToActives, reduceDegreeMatrixToActives } from './reducePitchMatrix'
 
 import { SiblingDisplayMatrices, IsActiveIds, IsActiveRow, IsActiveMatrix } from './types'
 
@@ -49,8 +49,8 @@ export const getCounterpartDegreeIds = (siblingDisplayMatrices: SiblingDisplayMa
 
 export const getCounterpartPitchIds = (siblingDisplayMatrices: SiblingDisplayMatrices, activeDegreeIds: ReadonlyArray<DegreeIds>): ReadonlyArray<PitchIds> => {
   const [ degreeMatrix, pitchMatrix ] = siblingDisplayMatrices
-  const initialState = { pitchMatrix, activePitchIds: [], activeDegreeIds }
-  const reducedState = degreeMatrix.reduce(reduceDegreeMatrix, initialState)
+  const initialState = { degreeMatrix, pitchMatrix, activePitchIds: [], activeDegreeIds }
+  const reducedState = degreeMatrix.reduce(reduceDegreeMatrixToActives, initialState)
   const { activePitchIds } = reducedState
 
   return activePitchIds

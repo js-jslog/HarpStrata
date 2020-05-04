@@ -3,8 +3,8 @@ import type { PitchMatrix, PitchRow } from '../../Pitch'
 import { DegreeIds, ROOT, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH } from '../../Degree'
 import type { DegreeMatrix, DegreeRow } from '../../Degree'
 
-import type { MatrixAccumulator, RowAccumulator, ReducedDegreeRowState, ReducedDegreeMatrixState } from './index'
-import { reducePitchesMatrixToActives, reducePitchesRowToActives, reduceDegreeRow, reduceDegreeMatrix } from './index'
+import type { MatrixAccumulator, RowAccumulator } from './index'
+import { reducePitchesMatrixToActives, reducePitchesRowToActives, reduceDegreeRowToActives, reduceDegreeMatrixToActives } from './index'
 
 test('reducePitchesRowToActives will take a list of active PitchIds and create an array of equivalent DegreeIds given an paired Pitch and Degree row', () => {
   const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
@@ -38,15 +38,15 @@ test('reducePitchesMatrixToActives will take a list of active PitchIds and creat
   expect(activeDegreeIds).toStrictEqual(expectedDegreeIds)
 })
 
-test('reduceDegreeRow will take a list of active DegreeIds and create an array of equivalent PitchIds given an paired Pitch and Degree row', () => {
+test('reduceDegreeRowToActives will take a list of active DegreeIds and create an array of equivalent PitchIds given an paired Pitch and Degree row', () => {
   const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
   const pitchRow: PitchRow = [ C, D, E, F ]
   const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth ]
   const expectedPitchIds = [ PitchIds.D, PitchIds.F ]
 
-  const initialState: ReducedDegreeRowState = { pitchRow, activePitchIds: [], activeDegreeIds }
+  const initialState: RowAccumulator = { degreeRow, pitchRow, activePitchIds: [], activeDegreeIds }
 
-  const { activePitchIds } = degreeRow.reduce(reduceDegreeRow, initialState)
+  const { activePitchIds } = degreeRow.reduce(reduceDegreeRowToActives, initialState)
 
   expect(activePitchIds).toStrictEqual(expectedPitchIds)
 })
@@ -63,9 +63,9 @@ test('reducePitchMatrix will take a list of active DegreeIds and create an array
   const expectedPitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
   const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
 
-  const initialState: ReducedDegreeMatrixState = { pitchMatrix, activePitchIds: [], activeDegreeIds }
+  const initialState: MatrixAccumulator = { degreeMatrix, pitchMatrix, activePitchIds: [], activeDegreeIds }
 
-  const { activePitchIds } = degreeMatrix.reduce(reduceDegreeMatrix, initialState)
+  const { activePitchIds } = degreeMatrix.reduce(reduceDegreeMatrixToActives, initialState)
 
   expect(activePitchIds).toStrictEqual(expectedPitchIds)
 })
