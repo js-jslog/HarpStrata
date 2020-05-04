@@ -7,16 +7,17 @@ import { IsActiveIds } from './types'
 import type { SiblingDisplayMatrices } from './types'
 import { getIsActiveMatrix, getCounterpartDegreeIds, getCounterpartPitchIds } from './index'
 
+const degreeMatrix = [
+  [ ROOT , SECOND ],
+  [ THIRD, FOURTH ],
+]
+const pitchMatrix = [
+  [ C, D ],
+  [ E, F ],
+]
+const siblingDisplayMatrices: SiblingDisplayMatrices = [ degreeMatrix, pitchMatrix ]
+
 test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', () => {
-  const degreeMatrix = [
-    [ ROOT , SECOND ],
-    [ THIRD, FOURTH ],
-  ]
-  const pitchMatrix = [
-    [ C, D ],
-    [ E, F ],
-  ]
-  const siblingDisplayMatrices: SiblingDisplayMatrices = [ degreeMatrix, pitchMatrix ]
   const activeDegreeIds = [ DegreeIds.Root, DegreeIds.Fourth ]
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Active  , IsActiveIds.Inactive ],
@@ -28,15 +29,6 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', 
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given Pitch Elements', () => {
-  const degreeMatrix = [
-    [ ROOT , SECOND ],
-    [ THIRD, FOURTH ],
-  ]
-  const pitchMatrix = [
-    [ C, D ],
-    [ E, F ],
-  ]
-  const siblingDisplayMatrices: SiblingDisplayMatrices = [ degreeMatrix, pitchMatrix ]
   const activePitchIds = [ PitchIds.D, PitchIds.E ]
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Inactive  , IsActiveIds.Active ],
@@ -48,15 +40,6 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Pitch Elements', (
 })
 
 test('getCounterpartDegreeIds returns the DegreeIds[] for a given PitchIds[]', () => {
-  const degreeMatrix = [
-    [ ROOT , SECOND ],
-    [ THIRD, FOURTH ],
-  ]
-  const pitchMatrix = [
-    [ C, D ],
-    [ E, F ],
-  ]
-  const siblingDisplayMatrices: SiblingDisplayMatrices = [ degreeMatrix, pitchMatrix ]
   const activePitchIds = [ PitchIds.D, PitchIds.E ]
   const expectedCounterpartIds = [ DegreeIds.Second, DegreeIds.Third ]
   const actualCounterpartIds = getCounterpartDegreeIds(siblingDisplayMatrices, activePitchIds)
@@ -65,15 +48,6 @@ test('getCounterpartDegreeIds returns the DegreeIds[] for a given PitchIds[]', (
 })
 
 test('getCounterpartPitchIds returns the PitchIds[] for a given DegreeIds[]', () => {
-  const degreeMatrix = [
-    [ ROOT , SECOND ],
-    [ THIRD, FOURTH ],
-  ]
-  const pitchMatrix = [
-    [ C, D ],
-    [ E, F ],
-  ]
-  const siblingDisplayMatrices: SiblingDisplayMatrices = [ degreeMatrix, pitchMatrix ]
   const activeDegreeIds = [ DegreeIds.Second, DegreeIds.Third ]
   const expectedCounterpartIds = [ PitchIds.D, PitchIds.E ]
   const actualCounterpartIds = getCounterpartPitchIds(siblingDisplayMatrices, activeDegreeIds)
