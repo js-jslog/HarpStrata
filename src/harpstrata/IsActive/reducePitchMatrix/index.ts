@@ -64,3 +64,24 @@ export const reduceDegreeRow = (reducedState: ReducedDegreeRowState, nextDegree:
 
   return { ...reducedState, pitchRow: remainingPitchRow, activePitchIds: [ ...activePitchIds, thisPitch.id ]}
 }
+
+export const reduceDegreeMatrix = (reducedState: ReducedDegreeMatrixState, nextDegreeRow: DegreeRow): ReducedDegreeMatrixState => {
+  const { pitchMatrix, activePitchIds, activeDegreeIds } = reducedState
+  const [ thisPitchRow, ...remainingPitchMatrix ] = pitchMatrix
+
+  const initialState: ReducedDegreeRowState = {
+    activePitchIds, activeDegreeIds, pitchRow: thisPitchRow
+  }
+
+  if (activePitchIds.length === activeDegreeIds.length) return reducedState
+
+  const reducedRow: ReducedDegreeRowState = nextDegreeRow.reduce(reduceDegreeRow, initialState)
+
+  const reducedMatrix: ReducedDegreeMatrixState = {
+    pitchMatrix: remainingPitchMatrix,
+    activePitchIds: reducedRow.activePitchIds,
+    activeDegreeIds: reducedRow.activeDegreeIds,
+  }
+
+  return reducedMatrix
+}
