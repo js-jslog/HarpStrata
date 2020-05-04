@@ -15,16 +15,6 @@ export type MatrixAccumulator = {
   readonly activePitchIds: ReadonlyArray<PitchIds>;
 }
 
-export type ReducedRowState = {
-  readonly degreeRow: DegreeRow;
-  readonly activePitchIds: ReadonlyArray<PitchIds>;
-  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
-}
-export type ReducedMatrixState = {
-  readonly degreeMatrix: DegreeMatrix;
-  readonly activePitchIds: ReadonlyArray<PitchIds>;
-  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
-}
 export type ReducedDegreeRowState = {
   readonly pitchRow: PitchRow;
   readonly activePitchIds: ReadonlyArray<PitchIds>;
@@ -47,17 +37,6 @@ export const reducePitchesRowToActives = (accumulator: RowAccumulator, nextPitch
   return { ...accumulator, degreeRow: remainingDegreeRow, activeDegreeIds: [ ...activeDegreeIds, thisDegree.id ]}
 }
 
-export const reducePitchRow = (reducedState: ReducedRowState, nextPitch: Pitch | undefined): ReducedRowState => {
-  const { degreeRow, activePitchIds, activeDegreeIds } = reducedState
-  const [ thisDegree, ...remainingDegreeRow ] = degreeRow
-
-  if (thisDegree === undefined || nextPitch === undefined) return { ...reducedState, degreeRow: remainingDegreeRow }
-  if (activeDegreeIds.includes(thisDegree.id)) return { ...reducedState, degreeRow: remainingDegreeRow }
-  if (!activePitchIds.includes(nextPitch.id)) return { ...reducedState, degreeRow: remainingDegreeRow }
-
-  return { ...reducedState, degreeRow: remainingDegreeRow, activeDegreeIds: [ ...activeDegreeIds, thisDegree.id ]}
-}
-
 export const reducePitchesMatrixToActives = (accumulator: MatrixAccumulator, nextPitchRow: PitchRow): MatrixAccumulator => {
   const { degreeMatrix, activePitchIds, activeDegreeIds } = accumulator
   const [ thisDegreeRow, ...remainingDegreeMatrix ] = degreeMatrix
@@ -76,27 +55,6 @@ export const reducePitchesMatrixToActives = (accumulator: MatrixAccumulator, nex
     activePitchIds: reducedRow.activePitchIds,
     activeDegreeIds: reducedRow.activeDegreeIds,
   }
-}
-
-export const reducePitchMatrix = (reducedState: ReducedMatrixState, nextPitchRow: PitchRow): ReducedMatrixState => {
-  const { degreeMatrix, activePitchIds, activeDegreeIds } = reducedState
-  const [ thisDegreeRow, ...remainingDegreeMatrix ] = degreeMatrix
-
-  const initialState: ReducedRowState = {
-    activePitchIds, activeDegreeIds, degreeRow: thisDegreeRow
-  }
-
-  if (activePitchIds.length === activeDegreeIds.length) return reducedState
-
-  const reducedRow: ReducedRowState = nextPitchRow.reduce(reducePitchRow, initialState)
-
-  const reducedMatrix: ReducedMatrixState = {
-    degreeMatrix: remainingDegreeMatrix,
-    activePitchIds: reducedRow.activePitchIds,
-    activeDegreeIds: reducedRow.activeDegreeIds,
-  }
-
-  return reducedMatrix
 }
 
 export const reduceDegreeRow = (reducedState: ReducedDegreeRowState, nextDegree: Degree | undefined): ReducedDegreeRowState => {
