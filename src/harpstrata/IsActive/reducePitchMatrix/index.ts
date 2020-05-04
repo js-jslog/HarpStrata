@@ -58,6 +58,26 @@ export const reducePitchRow = (reducedState: ReducedRowState, nextPitch: Pitch |
   return { ...reducedState, degreeRow: remainingDegreeRow, activeDegreeIds: [ ...activeDegreeIds, thisDegree.id ]}
 }
 
+export const reducePitchesMatrixToActives = (accumulator: MatrixAccumulator, nextPitchRow: PitchRow): MatrixAccumulator => {
+  const { degreeMatrix, activePitchIds, activeDegreeIds } = accumulator
+  const [ thisDegreeRow, ...remainingDegreeMatrix ] = degreeMatrix
+
+  const initialState: RowAccumulator = {
+    activePitchIds, activeDegreeIds, degreeRow: thisDegreeRow, pitchRow: nextPitchRow
+  }
+
+  if (activePitchIds.length === activeDegreeIds.length) return accumulator
+
+  const reducedRow: RowAccumulator = nextPitchRow.reduce(reducePitchesRowToActives, initialState)
+
+  return {
+    ...accumulator,
+    degreeMatrix: remainingDegreeMatrix,
+    activePitchIds: reducedRow.activePitchIds,
+    activeDegreeIds: reducedRow.activeDegreeIds,
+  }
+}
+
 export const reducePitchMatrix = (reducedState: ReducedMatrixState, nextPitchRow: PitchRow): ReducedMatrixState => {
   const { degreeMatrix, activePitchIds, activeDegreeIds } = reducedState
   const [ thisDegreeRow, ...remainingDegreeMatrix ] = degreeMatrix

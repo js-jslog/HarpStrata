@@ -3,8 +3,8 @@ import type { PitchMatrix, PitchRow } from '../../Pitch'
 import { DegreeIds, ROOT, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH } from '../../Degree'
 import type { DegreeMatrix, DegreeRow } from '../../Degree'
 
-import type { ReducedRowState, RowAccumulator,ReducedMatrixState, ReducedDegreeRowState, ReducedDegreeMatrixState } from './index'
-import { reducePitchRow, reducePitchesRowToActives, reducePitchMatrix, reduceDegreeRow, reduceDegreeMatrix } from './index'
+import type { ReducedRowState, MatrixAccumulator, RowAccumulator,ReducedMatrixState, ReducedDegreeRowState, ReducedDegreeMatrixState } from './index'
+import { reducePitchesMatrixToActives, reducePitchRow, reducePitchesRowToActives, reducePitchMatrix, reduceDegreeRow, reduceDegreeMatrix } from './index'
 
 test('reducePitchesRowToActives will take a list of active PitchIds and create an array of equivalent DegreeIds given an paired Pitch and Degree row', () => {
   const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
@@ -15,6 +15,25 @@ test('reducePitchesRowToActives will take a list of active PitchIds and create a
   const initialState: RowAccumulator = { pitchRow, degreeRow, activePitchIds, activeDegreeIds: [] }
 
   const { activeDegreeIds } = pitchRow.reduce(reducePitchesRowToActives, initialState)
+
+  expect(activeDegreeIds).toStrictEqual(expectedDegreeIds)
+})
+
+test('reducePitchesMatrixToActives will take a list of active PitchIds and create an array of equivalent DegreeIds given a paired Pitch and Degree matrix', () => {
+  const degreeMatrix: DegreeMatrix = [
+    [ ROOT , SECOND, THIRD, FOURTH ],
+    [ FIFTH, SIXTH, SEVENTH, ROOT  ],
+  ]
+  const pitchMatrix: PitchMatrix = [
+    [ C, D, E, F ],
+    [ G, A, B, C ],
+  ]
+  const activePitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
+  const expectedDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
+
+  const initialState: MatrixAccumulator = { pitchMatrix, degreeMatrix, activePitchIds, activeDegreeIds: [] }
+
+  const { activeDegreeIds } = pitchMatrix.reduce(reducePitchesMatrixToActives, initialState)
 
   expect(activeDegreeIds).toStrictEqual(expectedDegreeIds)
 })
