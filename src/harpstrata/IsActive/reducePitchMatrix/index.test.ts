@@ -3,8 +3,21 @@ import type { PitchMatrix, PitchRow } from '../../Pitch'
 import { DegreeIds, ROOT, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH } from '../../Degree'
 import type { DegreeMatrix, DegreeRow } from '../../Degree'
 
-import type { ReducedRowState, ReducedMatrixState, ReducedDegreeRowState, ReducedDegreeMatrixState } from './index'
-import { reducePitchRow, reducePitchMatrix, reduceDegreeRow, reduceDegreeMatrix } from './index'
+import type { ReducedRowState, RowAccumulator,ReducedMatrixState, ReducedDegreeRowState, ReducedDegreeMatrixState } from './index'
+import { reducePitchRow, reducePitchesRowToActives, reducePitchMatrix, reduceDegreeRow, reduceDegreeMatrix } from './index'
+
+test('reducePitchesRowToActives will take a list of active PitchIds and create an array of equivalent DegreeIds given an paired Pitch and Degree row', () => {
+  const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
+  const pitchRow: PitchRow = [ C, D, E, F ]
+  const activePitchIds = [ PitchIds.D, PitchIds.F ]
+  const expectedDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth ]
+
+  const initialState: RowAccumulator = { pitchRow, degreeRow, activePitchIds, activeDegreeIds: [] }
+
+  const { activeDegreeIds } = pitchRow.reduce(reducePitchesRowToActives, initialState)
+
+  expect(activeDegreeIds).toStrictEqual(expectedDegreeIds)
+})
 
 test('reducePitchRow will take a list of active PitchIds and create an array of equivalent DegreeIds given an paired Pitch and Degree row', () => {
   const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]

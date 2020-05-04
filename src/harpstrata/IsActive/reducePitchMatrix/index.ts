@@ -1,6 +1,20 @@
 import type { Pitch, PitchRow, PitchMatrix, PitchIds } from '../../Pitch'
 import type { Degree, DegreeRow, DegreeMatrix, DegreeIds } from '../../Degree'
 
+export type RowAccumulator = {
+  readonly degreeRow: DegreeRow;
+  readonly pitchRow: PitchRow;
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
+  readonly activePitchIds: ReadonlyArray<PitchIds>;
+}
+
+export type MatrixAccumulator = {
+  readonly degreeMatrix: DegreeMatrix;
+  readonly pitchMatrix: PitchMatrix;
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
+  readonly activePitchIds: ReadonlyArray<PitchIds>;
+}
+
 export type ReducedRowState = {
   readonly degreeRow: DegreeRow;
   readonly activePitchIds: ReadonlyArray<PitchIds>;
@@ -20,6 +34,17 @@ export type ReducedDegreeMatrixState = {
   readonly pitchMatrix: PitchMatrix;
   readonly activePitchIds: ReadonlyArray<PitchIds>;
   readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
+}
+
+export const reducePitchesRowToActives = (accumulator: RowAccumulator, nextPitch: Pitch | undefined): RowAccumulator => {
+  const { degreeRow, activePitchIds, activeDegreeIds } = accumulator
+  const [ thisDegree, ...remainingDegreeRow ] = degreeRow
+
+  if (thisDegree === undefined || nextPitch === undefined) return { ...accumulator, degreeRow: remainingDegreeRow }
+  if (activeDegreeIds.includes(thisDegree.id)) return { ...accumulator, degreeRow: remainingDegreeRow }
+  if (!activePitchIds.includes(nextPitch.id)) return { ...accumulator, degreeRow: remainingDegreeRow }
+
+  return { ...accumulator, degreeRow: remainingDegreeRow, activeDegreeIds: [ ...activeDegreeIds, thisDegree.id ]}
 }
 
 export const reducePitchRow = (reducedState: ReducedRowState, nextPitch: Pitch | undefined): ReducedRowState => {
