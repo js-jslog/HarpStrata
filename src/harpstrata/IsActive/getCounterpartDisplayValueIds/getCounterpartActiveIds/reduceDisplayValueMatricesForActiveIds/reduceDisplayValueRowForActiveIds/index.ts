@@ -1,5 +1,5 @@
-import type { Pitch, PitchRow, PitchIds } from '../../../../Pitch'
-import type { Degree, DegreeRow, DegreeIds } from '../../../../Degree'
+import type { Pitch, PitchRow, PitchIds } from '../../../../../Pitch'
+import type { Degree, DegreeRow, DegreeIds } from '../../../../../Degree'
 
 export type RowAccumulator = {
   readonly degreeRow: DegreeRow;

@@ -1,6 +1,6 @@
-import { IsActiveProps } from '../types'
-import { PitchIds } from '../../Pitch'
-import { DegreeIds } from '../../Degree'
+import { IsActiveProps } from '../../types'
+import { PitchIds } from '../../../Pitch'
+import { DegreeIds } from '../../../Degree'
 
 import { reducePitchMatrixForActiveIds, reduceDegreeMatrixForActiveIds } from './reduceDisplayValueMatricesForActiveIds'
 
