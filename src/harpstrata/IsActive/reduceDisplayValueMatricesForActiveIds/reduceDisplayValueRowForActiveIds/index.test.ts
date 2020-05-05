@@ -6,7 +6,7 @@ import type { DegreeRow } from '../../../Degree'
 import type { RowAccumulator } from './index'
 import { reducePitchRowForActiveIds, reduceDegreeRowForActiveIds } from './index'
 
-test('reducePitchRowForActiveIds will take a list of active PitchIds and create an array of equivalent DegreeIds given an paired Pitch and Degree row', () => {
+test('reducePitchRowForActiveIds operates as a reducer to contribute to the counterpart `activePitchIds` part of it\'s accumulator object', () => {
   const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
   const pitchRow: PitchRow = [ C, D, E, F ]
   const activePitchIds = [ PitchIds.D, PitchIds.F ]
@@ -19,7 +19,7 @@ test('reducePitchRowForActiveIds will take a list of active PitchIds and create 
   expect(activeDegreeIds).toStrictEqual(expectedDegreeIds)
 })
 
-test('reduceDegreeRowForActiveIds will take a list of active DegreeIds and create an array of equivalent PitchIds given an paired Pitch and Degree row', () => {
+test('reduceDegreeRowForActiveIds operates as a reducer to contribute to the counterpart `activeDegreeIds` part of it\'s accumulator object', () => {
   const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
   const pitchRow: PitchRow = [ C, D, E, F ]
   const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth ]
