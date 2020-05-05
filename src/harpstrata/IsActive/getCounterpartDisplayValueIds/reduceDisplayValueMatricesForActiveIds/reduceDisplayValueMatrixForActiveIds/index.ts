@@ -1,7 +1,7 @@
 import type { RowAccumulator } from '../reduceDisplayValueRowForActiveIds'
 import { reduceDegreeRowForActiveIds, reducePitchRowForActiveIds } from '../reduceDisplayValueRowForActiveIds'
-import type { PitchRow, PitchMatrix, PitchIds } from '../../../Pitch'
-import type { DegreeRow, DegreeMatrix, DegreeIds } from '../../../Degree'
+import type { PitchRow, PitchMatrix, PitchIds } from '../../../../Pitch'
+import type { DegreeRow, DegreeMatrix, DegreeIds } from '../../../../Degree'
 
 export type MatrixAccumulator = {
   readonly degreeMatrix: DegreeMatrix;
