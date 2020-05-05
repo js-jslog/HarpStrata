@@ -1,12 +1,22 @@
-import type { PitchMatrix } from '../../Pitch'
-import type { DegreeMatrix } from '../../Degree'
+import type { PitchIds, PitchMatrix } from '../../Pitch'
+import type { DegreeIds, DegreeMatrix } from '../../Degree'
 
 export enum IsActiveIds {
   Active = 'ACTIVE',
   Inactive = 'INACTIVE',
 }
 
-export type SiblingDisplayMatrices = [ DegreeMatrix, PitchMatrix ]
-
 export type IsActiveRow = ReadonlyArray<IsActiveIds | undefined>
 export type IsActiveMatrix = ReadonlyArray<IsActiveRow>
+
+export interface IsActiveProps {
+  degreeMatrix: DegreeMatrix;
+  pitchMatrix: PitchMatrix;
+  activeElementIds: ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds>;
+}
+
+export interface IsActiveReturn {
+  isActiveMatrix: IsActiveMatrix;
+  activeDegreeIds: ReadonlyArray<DegreeIds>;
+  activePitchIds: ReadonlyArray<PitchIds>;
+}

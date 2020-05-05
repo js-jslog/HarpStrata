@@ -1,14 +1,12 @@
-import { SiblingDisplayMatrices, IsActiveMatrix } from '../types'
-import { PitchIds } from '../../Pitch'
+import type { IsActiveProps, IsActiveMatrix } from '../types'
 import { DegreeIds } from '../../Degree'
 
 import { getIsActiveMatrixForDegrees, getIsActiveMatrixForPitches } from './getIsActiveMatrixForSpecificType'
 
-export const getIsActiveMatrix = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds>): IsActiveMatrix => {
+export const getIsActiveMatrix = (props: IsActiveProps): IsActiveMatrix => {
+  const { activeElementIds } = props
   if (activeElementIds[0] in Object.values(DegreeIds)) {
-    const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
-    return getIsActiveMatrixForDegrees(siblingDisplayMatrices, activeDegreeIds)
+    return getIsActiveMatrixForDegrees(props)
   }
-  const activePitchIds = activeElementIds as ReadonlyArray<PitchIds>
-  return getIsActiveMatrixForPitches(siblingDisplayMatrices, activePitchIds)
+  return getIsActiveMatrixForPitches(props)
 }

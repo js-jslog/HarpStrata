@@ -1,13 +1,14 @@
-import { SiblingDisplayMatrices, IsActiveIds, IsActiveRow, IsActiveMatrix } from '../../types'
+import { IsActiveProps, IsActiveIds, IsActiveRow, IsActiveMatrix } from '../../types'
 import type { Pitch, PitchRow } from '../../../Pitch'
 import { PitchIds } from '../../../Pitch'
 import type { Degree, DegreeRow } from '../../../Degree'
 import { DegreeIds } from '../../../Degree'
 
-export const getIsActiveMatrixForDegrees = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<DegreeIds>): IsActiveMatrix => {
-  const [ degreeMatrix ] = siblingDisplayMatrices
+export const getIsActiveMatrixForDegrees = (props: IsActiveProps): IsActiveMatrix => {
+  const { degreeMatrix, activeElementIds } = props
+  const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
   const mapDegree = (degree: Degree | undefined): IsActiveIds | undefined => (
-    degree && activeElementIds.includes(degree.id) ? IsActiveIds.Active : IsActiveIds.Inactive
+    degree && activeDegreeIds.includes(degree.id) ? IsActiveIds.Active : IsActiveIds.Inactive
   )
   const mapDegreeRow = (degreeRow: DegreeRow): IsActiveRow => (degreeRow.map(mapDegree))
 
@@ -15,10 +16,11 @@ export const getIsActiveMatrixForDegrees = (siblingDisplayMatrices: SiblingDispl
   return isActiveMatrix
 }
 
-export const getIsActiveMatrixForPitches = (siblingDisplayMatrices: SiblingDisplayMatrices, activeElementIds: ReadonlyArray<PitchIds>): IsActiveMatrix => {
-  const [ , pitchMatrix ] = siblingDisplayMatrices
+export const getIsActiveMatrixForPitches = (props: IsActiveProps): IsActiveMatrix => {
+  const { pitchMatrix, activeElementIds } = props
+  const activePitchIds = activeElementIds as ReadonlyArray<PitchIds>
   const mapPitch = (pitch: Pitch | undefined): IsActiveIds | undefined => (
-    pitch && activeElementIds.includes(pitch.id) ? IsActiveIds.Active : IsActiveIds.Inactive
+    pitch && activePitchIds.includes(pitch.id) ? IsActiveIds.Active : IsActiveIds.Inactive
   )
   const mapPitchRow = (pitch: PitchRow): IsActiveRow => (pitch.map(mapPitch))
 
