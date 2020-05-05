@@ -15,7 +15,7 @@ export type MatrixAccumulator = {
   readonly activePitchIds: ReadonlyArray<PitchIds>;
 }
 
-export const reducePitchesRowToActives = (accumulator: RowAccumulator, nextPitch: Pitch | undefined): RowAccumulator => {
+export const reducePitchRowForActiveIds = (accumulator: RowAccumulator, nextPitch: Pitch | undefined): RowAccumulator => {
   const { degreeRow, activePitchIds, activeDegreeIds } = accumulator
   const [ thisDegree, ...remainingDegreeRow ] = degreeRow
 
@@ -26,7 +26,7 @@ export const reducePitchesRowToActives = (accumulator: RowAccumulator, nextPitch
   return { ...accumulator, degreeRow: remainingDegreeRow, activeDegreeIds: [ ...activeDegreeIds, thisDegree.id ]}
 }
 
-export const reducePitchesMatrixToActives = (accumulator: MatrixAccumulator, nextPitchRow: PitchRow): MatrixAccumulator => {
+export const reducePitchMatrixForActiveIds = (accumulator: MatrixAccumulator, nextPitchRow: PitchRow): MatrixAccumulator => {
   const { degreeMatrix, activePitchIds, activeDegreeIds } = accumulator
   const [ thisDegreeRow, ...remainingDegreeMatrix ] = degreeMatrix
 
@@ -36,7 +36,7 @@ export const reducePitchesMatrixToActives = (accumulator: MatrixAccumulator, nex
 
   if (activePitchIds.length === activeDegreeIds.length) return accumulator
 
-  const reducedRow: RowAccumulator = nextPitchRow.reduce(reducePitchesRowToActives, initialState)
+  const reducedRow: RowAccumulator = nextPitchRow.reduce(reducePitchRowForActiveIds, initialState)
 
   return {
     ...accumulator,
@@ -46,7 +46,7 @@ export const reducePitchesMatrixToActives = (accumulator: MatrixAccumulator, nex
   }
 }
 
-export const reduceDegreeRowToActives = (accumulator: RowAccumulator, nextDegree: Degree | undefined): RowAccumulator => {
+export const reduceDegreeRowForActiveIds = (accumulator: RowAccumulator, nextDegree: Degree | undefined): RowAccumulator => {
   const { pitchRow, activePitchIds, activeDegreeIds } = accumulator
   const [ thisPitch, ...remainingPitchRow ] = pitchRow
 
@@ -57,7 +57,7 @@ export const reduceDegreeRowToActives = (accumulator: RowAccumulator, nextDegree
   return { ...accumulator, pitchRow: remainingPitchRow, activePitchIds: [ ...activePitchIds, thisPitch.id ]}
 }
 
-export const reduceDegreeMatrixToActives = (accumulator: MatrixAccumulator, nextDegreeRow: DegreeRow): MatrixAccumulator => {
+export const reduceDegreeMatrixForActiveIds = (accumulator: MatrixAccumulator, nextDegreeRow: DegreeRow): MatrixAccumulator => {
   const { pitchMatrix, activePitchIds, activeDegreeIds } = accumulator
   const [ thisPitchRow, ...remainingPitchMatrix ] = pitchMatrix
 
@@ -67,7 +67,7 @@ export const reduceDegreeMatrixToActives = (accumulator: MatrixAccumulator, next
 
   if (activePitchIds.length === activeDegreeIds.length) return accumulator
 
-  const reducedRow: RowAccumulator = nextDegreeRow.reduce(reduceDegreeRowToActives, initialState)
+  const reducedRow: RowAccumulator = nextDegreeRow.reduce(reduceDegreeRowForActiveIds, initialState)
 
   return {
     ...accumulator,
