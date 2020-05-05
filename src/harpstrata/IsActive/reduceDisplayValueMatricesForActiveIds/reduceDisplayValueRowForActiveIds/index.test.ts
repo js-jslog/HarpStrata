@@ -6,9 +6,10 @@ import type { DegreeRow } from '../../../Degree'
 import type { RowAccumulator } from './index'
 import { reducePitchRowForActiveIds, reduceDegreeRowForActiveIds } from './index'
 
+const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
+const pitchRow: PitchRow = [ C, D, E, F ]
+
 test('reducePitchRowForActiveIds operates as a reducer to contribute to the counterpart `activePitchIds` part of it\'s accumulator object', () => {
-  const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
-  const pitchRow: PitchRow = [ C, D, E, F ]
   const activePitchIds = [ PitchIds.D, PitchIds.F ]
   const expectedDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth ]
 
@@ -20,8 +21,6 @@ test('reducePitchRowForActiveIds operates as a reducer to contribute to the coun
 })
 
 test('reduceDegreeRowForActiveIds operates as a reducer to contribute to the counterpart `activeDegreeIds` part of it\'s accumulator object', () => {
-  const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
-  const pitchRow: PitchRow = [ C, D, E, F ]
   const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth ]
   const expectedPitchIds = [ PitchIds.D, PitchIds.F ]
 
