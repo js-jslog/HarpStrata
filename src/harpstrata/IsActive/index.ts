@@ -3,7 +3,7 @@ import { PitchIds } from '../Pitch'
 import type { Degree, DegreeRow } from '../Degree'
 import { DegreeIds } from '../Degree'
 
-import { reducePitchMatrixForActiveIds, reduceDegreeMatrixForActiveIds } from './reducePitchMatrix'
+import { reducePitchMatrixForActiveIds, reduceDegreeMatrixForActiveIds } from './reduceDisplayValueMatricesForActiveIds'
 
 import { SiblingDisplayMatrices, IsActiveIds, IsActiveRow, IsActiveMatrix } from './types'
 
