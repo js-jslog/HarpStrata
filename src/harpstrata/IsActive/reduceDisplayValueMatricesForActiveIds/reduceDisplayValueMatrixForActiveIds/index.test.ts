@@ -6,7 +6,7 @@ import type { DegreeMatrix } from '../../../Degree'
 import type { MatrixAccumulator } from './index'
 import { reducePitchMatrixForActiveIds, reduceDegreeMatrixForActiveIds } from './index'
 
-test('reducePitchMatrixForActiveIds will take a list of active PitchIds and create an array of equivalent DegreeIds given a paired Pitch and Degree matrix', () => {
+test('reducePitchMatrixForActiveIds operates as a reducer to contribute to the counterpart `activePitchIds` part of it\'s accumulator object', () => {
   const degreeMatrix: DegreeMatrix = [
     [ ROOT , SECOND, THIRD, FOURTH ],
     [ FIFTH, SIXTH, SEVENTH, ROOT  ],
@@ -25,7 +25,7 @@ test('reducePitchMatrixForActiveIds will take a list of active PitchIds and crea
   expect(activeDegreeIds).toStrictEqual(expectedDegreeIds)
 })
 
-test('reduceDegreeMatrixForActiveIds will take a list of active DegreeIds and create an array of equivalent PitchIds given an paired Pitch and Degree row', () => {
+test('reduceDegreeMatrixForActiveIds operates as a reducer to contribute to the counterpart `activeDegreeIds` part of it\'s accumulator object', () => {
   const degreeMatrix: DegreeMatrix = [
     [ ROOT , SECOND, THIRD, FOURTH ],
     [ FIFTH, SIXTH, SEVENTH, ROOT  ],
