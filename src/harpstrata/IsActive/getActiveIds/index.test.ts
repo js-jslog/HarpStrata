@@ -44,35 +44,15 @@ const { degreeMatrix, pitchMatrix, isActiveComplex: { activePitchIds: examplePit
 test('getActiveIds returns the active ids for a given PitchIds[]', () => {
   const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: examplePitchIds }
   const actualActiveIds = getActiveIds(isActiveProps)
+  const expectedActiveIds = { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }
 
-  const { activeDegreeIds: returnedActiveDegreeIds, activePitchIds: returnedActivePitchIds } = actualActiveIds
-  const expectedDegreeIds = exampleDegreeIds as DegreeIds[]
-  const expectedPitchIds = examplePitchIds as PitchIds[]
-  const actualDegreeIds = returnedActiveDegreeIds as DegreeIds[]
-  const actualPitchIds = returnedActivePitchIds as PitchIds[]
-
-  // this is the most elegant solution I could find to the problem of comparing unordered arrays
-  expect(actualDegreeIds).toEqual(expect.arrayContaining(expectedDegreeIds))
-  expect(expectedDegreeIds).toEqual(expect.arrayContaining(actualDegreeIds))
-
-  expect(actualPitchIds).toEqual(expect.arrayContaining(expectedPitchIds))
-  expect(expectedPitchIds).toEqual(expect.arrayContaining(actualPitchIds))
+  expect(actualActiveIds).toEqual(expectedActiveIds)
 })
 
 test('getActiveIds returns the active ids for a given DegreeIds[]', () => {
   const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
   const actualActiveIds = getActiveIds(isActiveProps)
+  const expectedActiveIds = { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }
 
-  const { activeDegreeIds: returnedActiveDegreeIds, activePitchIds: returnedActivePitchIds } = actualActiveIds
-  const expectedDegreeIds = exampleDegreeIds as DegreeIds[]
-  const expectedPitchIds = examplePitchIds as PitchIds[]
-  const actualDegreeIds = returnedActiveDegreeIds as DegreeIds[]
-  const actualPitchIds = returnedActivePitchIds as PitchIds[]
-
-  // this is the most elegant solution I could find to the problem of comparing unordered arrays
-  expect(actualDegreeIds).toEqual(expect.arrayContaining(expectedDegreeIds))
-  expect(expectedDegreeIds).toEqual(expect.arrayContaining(actualDegreeIds))
-
-  expect(actualPitchIds).toEqual(expect.arrayContaining(expectedPitchIds))
-  expect(expectedPitchIds).toEqual(expect.arrayContaining(actualPitchIds))
+  expect(actualActiveIds).toEqual(expectedActiveIds)
 })
