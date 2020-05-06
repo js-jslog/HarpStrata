@@ -15,7 +15,7 @@ export interface IsActiveProps {
   activeElementIds: ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds>;
 }
 
-export interface IsActiveReturn {
+export type IsActiveComplex = {
   isActiveMatrix: IsActiveMatrix;
   activeDegreeIds: ReadonlyArray<DegreeIds>;
   activePitchIds: ReadonlyArray<PitchIds>;
