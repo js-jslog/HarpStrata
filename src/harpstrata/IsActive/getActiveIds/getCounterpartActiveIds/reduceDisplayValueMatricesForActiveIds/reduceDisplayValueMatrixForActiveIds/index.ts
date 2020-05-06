@@ -25,8 +25,8 @@ export const reducePitchMatrixForActiveIds = (accumulator: MatrixAccumulator, ne
   return {
     ...accumulator,
     degreeMatrix: remainingDegreeMatrix,
-    activePitchIds: reducedRow.activePitchIds,
-    activeDegreeIds: reducedRow.activeDegreeIds,
+    activePitchIds: [ ...reducedRow.activePitchIds ].sort(),
+    activeDegreeIds: [ ...reducedRow.activeDegreeIds ].sort(),
   }
 }
 
@@ -45,7 +45,7 @@ export const reduceDegreeMatrixForActiveIds = (accumulator: MatrixAccumulator, n
   return {
     ...accumulator,
     pitchMatrix: remainingPitchMatrix,
-    activePitchIds: reducedRow.activePitchIds,
-    activeDegreeIds: reducedRow.activeDegreeIds,
+    activePitchIds: [ ...reducedRow.activePitchIds ].sort(),
+    activeDegreeIds: [ ...reducedRow.activeDegreeIds ].sort(),
   }
 }
