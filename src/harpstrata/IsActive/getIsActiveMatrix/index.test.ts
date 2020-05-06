@@ -1,5 +1,6 @@
 import { IsActiveIds } from '../types'
 import type { IsActiveProps } from '../types'
+import { EXAMPLE_STRATA } from '../../testResources'
 import { C, D, E, F, PitchIds } from '../../Pitch'
 import { ROOT, SECOND, THIRD, FOURTH, DegreeIds } from '../../Degree'
 
@@ -48,3 +49,33 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Pitch Elements', (
 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
+
+test('getIsActiveMatrix returns the IsActiveMatrix including undefined when given Pitch Elements', () => {
+  const degreeMatrix = [
+    [ undefined , SECOND ],
+    [ THIRD, FOURTH ],
+  ]
+  const pitchMatrix = [
+    [ undefined, D ],
+    [ E, F ],
+  ]
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: [ PitchIds.D, PitchIds.E ] }
+  const expectedIsActiveMatrix = [
+    [ undefined         , IsActiveIds.Active     ],
+    [ IsActiveIds.Active, IsActiveIds.Inactive   ],
+  ]
+  const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
+
+  expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
+})
+
+
+//test('getIsActiveMatrix returns the IsActiveMatrix when given Degree elements against large element matrices', () => {
+//  const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
+//  const { degreeMatrix, pitchMatrix, isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
+//
+//  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
+//  const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
+//
+//  expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)
+//})
