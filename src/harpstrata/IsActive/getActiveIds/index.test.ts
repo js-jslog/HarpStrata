@@ -8,8 +8,6 @@ import { DegreeIds } from '../../Degree'
 import { getActiveIds } from './index'
 
 
-const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
-
 const degreeMatrix = [
   [ ROOT , SECOND ],
   [ THIRD, FOURTH ],
@@ -41,18 +39,22 @@ test('getActiveIds returns the active ids for a given DegreeIds[]', () => {
 })
 
 test('getActiveIds returns the active ids for a given PitchIds[]', () => {
-  const { degreeMatrix, pitchMatrix, isActiveComplex: { activePitchIds, activeDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: activePitchIds }
-  const expectedActiveIds = { activeDegreeIds, activePitchIds }
-  const actualActiveIds = getActiveIds(isActiveProps)
-  const { activeDegreeIds: returnedActiveDegreeIds, activePitchIds: returnedActivePitchIds } = actualActiveIds
+  const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
+  const { degreeMatrix, pitchMatrix, isActiveComplex: { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
 
-  const castExpectedActiveDegreeIds = expectedActiveIds.activeDegreeIds as DegreeIds[]
-  const castReturnedActiveDegreeIds = returnedActiveDegreeIds as DegreeIds[]
-  const castExpectedActivePitchIds = expectedActiveIds.activePitchIds as PitchIds[]
-  const castReturnedActivePitchIds = returnedActivePitchIds as PitchIds[]
-  expect(castReturnedActiveDegreeIds).toEqual(expect.arrayContaining(castExpectedActiveDegreeIds))
-  expect(castExpectedActiveDegreeIds).toEqual(expect.arrayContaining(castReturnedActiveDegreeIds))
-  expect(castReturnedActivePitchIds).toEqual(expect.arrayContaining(castExpectedActivePitchIds))
-  expect(castExpectedActivePitchIds).toEqual(expect.arrayContaining(castReturnedActivePitchIds))
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: examplePitchIds }
+  const actualActiveIds = getActiveIds(isActiveProps)
+
+  const { activeDegreeIds: returnedActiveDegreeIds, activePitchIds: returnedActivePitchIds } = actualActiveIds
+  const expectedDegreeIds = exampleDegreeIds as DegreeIds[]
+  const expectedPitchIds = examplePitchIds as PitchIds[]
+  const actualDegreeIds = returnedActiveDegreeIds as DegreeIds[]
+  const actualPitchIds = returnedActivePitchIds as PitchIds[]
+
+  // this is the most elegant solution I could find to the problem of comparing unordered arrays
+  expect(actualDegreeIds).toEqual(expect.arrayContaining(expectedDegreeIds))
+  expect(expectedDegreeIds).toEqual(expect.arrayContaining(actualDegreeIds))
+
+  expect(actualPitchIds).toEqual(expect.arrayContaining(expectedPitchIds))
+  expect(expectedPitchIds).toEqual(expect.arrayContaining(actualPitchIds))
 })
