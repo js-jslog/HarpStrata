@@ -8,16 +8,16 @@ import { DegreeIds } from '../../Degree'
 import { getActiveIds } from './index'
 
 
-const degreeMatrix = [
+const basicDegreeMatrix = [
   [ ROOT , SECOND ],
   [ THIRD, FOURTH ],
 ]
-const pitchMatrix = [
+const basicPitchMatrix = [
   [ C, D ],
   [ E, F ],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix, pitchMatrix, activeElementIds: []
+  degreeMatrix: basicDegreeMatrix, pitchMatrix: basicPitchMatrix, activeElementIds: []
 }
 
 test('getActiveIds returns the active ids for a given PitchIds[]', () => {
@@ -38,10 +38,10 @@ test('getActiveIds returns the active ids for a given DegreeIds[]', () => {
   expect(actualActiveIds).toStrictEqual(expectedActiveIds)
 })
 
-test('getActiveIds returns the active ids for a given PitchIds[]', () => {
-  const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
-  const { degreeMatrix, pitchMatrix, isActiveComplex: { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
+const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
+const { degreeMatrix, pitchMatrix, isActiveComplex: { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
 
+test('getActiveIds returns the active ids for a given PitchIds[]', () => {
   const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: examplePitchIds }
   const actualActiveIds = getActiveIds(isActiveProps)
 
@@ -60,9 +60,6 @@ test('getActiveIds returns the active ids for a given PitchIds[]', () => {
 })
 
 test('getActiveIds returns the active ids for a given DegreeIds[]', () => {
-  const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
-  const { degreeMatrix, pitchMatrix, isActiveComplex: { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
-
   const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
   const actualActiveIds = getActiveIds(isActiveProps)
 
