@@ -69,13 +69,12 @@ test('getIsActiveMatrix returns the IsActiveMatrix including undefined when give
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
 
+test('getIsActiveMatrix returns the IsActiveMatrix when given Degree elements against large element matrices', () => {
+  const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
+  const { degreeMatrix, pitchMatrix, isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
 
-//test('getIsActiveMatrix returns the IsActiveMatrix when given Degree elements against large element matrices', () => {
-//  const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
-//  const { degreeMatrix, pitchMatrix, isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
-//
-//  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
-//  const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
-//
-//  expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)
-//})
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
+  const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
+
+  expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)
+})
