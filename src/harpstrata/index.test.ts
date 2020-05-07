@@ -17,16 +17,20 @@ test('getPitchIds function returns an array with a C as one of the values', () =
 
 test('getHarpStrata can return a first pozition C major diatonic HarpStrata with major pentatonic holes active', () => {
   const { C_MAJOR_DIATONIC_FIRST_POZITION: expectedStrata } = EXAMPLE_STRATA
-  const { isActiveComplex: { activeDegreeIds }} = expectedStrata
-  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.First, PitchIds.C, activeDegreeIds)
+  const { isActiveComplex: { activeDegreeIds,  activePitchIds }} = expectedStrata
+  const strataFromDegreeIds = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.First, PitchIds.C, activeDegreeIds)
+  const strataFromPitchIds = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.First, PitchIds.C, activePitchIds)
 
-  expect(actualStrata).toStrictEqual(expectedStrata)
+  expect(strataFromDegreeIds).toEqual(expectedStrata)
+  expect(strataFromPitchIds).toEqual(expectedStrata)
 })
 
 test('getHarpStrata can return a second pozition C major diatonic HarpStrata with major pentatonic holes active', () => {
   const { C_MAJOR_DIATONIC_SECOND_POZITION: expectedStrata } = EXAMPLE_STRATA
-  const { isActiveComplex: { activeDegreeIds }} = expectedStrata
-  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.Second, PitchIds.C, activeDegreeIds)
+  const { isActiveComplex: { activeDegreeIds,  activePitchIds }} = expectedStrata
+  const strataFromDegreeIds = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.Second, PitchIds.C, activeDegreeIds)
+  const strataFromPitchIds = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.Second, PitchIds.C, activePitchIds)
 
-  expect(actualStrata).toEqual(expectedStrata)
+  expect(strataFromDegreeIds).toEqual(expectedStrata)
+  expect(strataFromPitchIds).toEqual(expectedStrata)
 })
