@@ -70,8 +70,11 @@ test('getIsActiveMatrix returns the IsActiveMatrix including undefined when give
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given Degree elements against large element matrices', () => {
-  const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
-  const { degreeMatrix, pitchMatrix, isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
+  const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+    degreeMatrix,
+    pitchMatrix,
+    isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activeDegreeIds: exampleDegreeIds }
+  }} = EXAMPLE_STRATA
 
   const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)

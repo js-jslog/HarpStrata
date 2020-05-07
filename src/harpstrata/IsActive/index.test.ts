@@ -2,10 +2,12 @@ import { EXAMPLE_STRATA } from '../testResources'
 
 import { getIsActiveComplex } from './index'
 
-const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
-const { degreeMatrix, pitchMatrix, isActiveComplex } = C_MAJOR_DIATONIC_FIRST_POZITION
+const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+  degreeMatrix,
+  pitchMatrix,
+  isActiveComplex,
+}} = EXAMPLE_STRATA
 const { activeDegreeIds, activePitchIds } = isActiveComplex
-
 
 test('getIsActiveComplex returns the IsActiveComplex for a c major diatonic harmonica with the c major pentatonic scale degrees active', () => {
   const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: activeDegreeIds }

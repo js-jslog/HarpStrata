@@ -38,8 +38,11 @@ test('getActiveIds returns the active ids for a given DegreeIds[]', () => {
   expect(actualActiveIds).toStrictEqual(expectedActiveIds)
 })
 
-const { C_MAJOR_DIATONIC_FIRST_POZITION } = EXAMPLE_STRATA
-const { degreeMatrix, pitchMatrix, isActiveComplex: { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }} = C_MAJOR_DIATONIC_FIRST_POZITION
+const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+  degreeMatrix,
+  pitchMatrix,
+  isActiveComplex: { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }
+}} = EXAMPLE_STRATA
 
 test('getActiveIds returns the active ids for a given PitchIds[]', () => {
   const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: examplePitchIds }
