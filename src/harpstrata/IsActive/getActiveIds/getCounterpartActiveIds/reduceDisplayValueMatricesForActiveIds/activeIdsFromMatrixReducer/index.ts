@@ -1,5 +1,5 @@
 import type { RowAccumulator } from '../activeIdsFromRowReducer'
-import { reduceDegreeRowForActiveIds, reducePitchRowForActiveIds } from '../activeIdsFromRowReducer'
+import { activeIdsFromPitchRow, activeIdsFromDegreeRow } from '../activeIdsFromRowReducer'
 import type { PitchRow, PitchMatrix, PitchIds } from '../../../../../Pitch'
 import type { DegreeRow, DegreeMatrix, DegreeIds } from '../../../../../Degree'
 
@@ -20,7 +20,7 @@ export const reducePitchMatrixForActiveIds = (accumulator: MatrixAccumulator, ne
 
   if (activePitchIds.length === activeDegreeIds.length) return accumulator
 
-  const reducedRow: RowAccumulator = nextPitchRow.reduce(reducePitchRowForActiveIds, initialState)
+  const reducedRow: RowAccumulator = nextPitchRow.reduce(activeIdsFromPitchRow, initialState)
 
   return {
     ...accumulator,
@@ -40,7 +40,7 @@ export const reduceDegreeMatrixForActiveIds = (accumulator: MatrixAccumulator, n
 
   if (activePitchIds.length === activeDegreeIds.length) return accumulator
 
-  const reducedRow: RowAccumulator = nextDegreeRow.reduce(reduceDegreeRowForActiveIds, initialState)
+  const reducedRow: RowAccumulator = nextDegreeRow.reduce(activeIdsFromDegreeRow, initialState)
 
   return {
     ...accumulator,

@@ -8,7 +8,7 @@ export type RowAccumulator = {
   readonly activePitchIds: ReadonlyArray<PitchIds>;
 }
 
-export const reducePitchRowForActiveIds = (accumulator: RowAccumulator, nextPitch: Pitch | undefined): RowAccumulator => {
+export const activeIdsFromPitchRow = (accumulator: RowAccumulator, nextPitch: Pitch | undefined): RowAccumulator => {
   const { degreeRow, activePitchIds, activeDegreeIds } = accumulator
   const [ thisDegree, ...remainingDegreeRow ] = degreeRow
 
@@ -19,7 +19,7 @@ export const reducePitchRowForActiveIds = (accumulator: RowAccumulator, nextPitc
   return { ...accumulator, degreeRow: remainingDegreeRow, activeDegreeIds: [ ...activeDegreeIds, thisDegree.id ]}
 }
 
-export const reduceDegreeRowForActiveIds = (accumulator: RowAccumulator, nextDegree: Degree | undefined): RowAccumulator => {
+export const activeIdsFromDegreeRow = (accumulator: RowAccumulator, nextDegree: Degree | undefined): RowAccumulator => {
   const { pitchRow, activePitchIds, activeDegreeIds } = accumulator
   const [ thisPitch, ...remainingPitchRow ] = pitchRow
 
