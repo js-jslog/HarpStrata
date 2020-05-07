@@ -10,7 +10,7 @@ export type MatrixAccumulator = {
   readonly activePitchIds: ReadonlyArray<PitchIds>;
 }
 
-export const reducePitchMatrixForActiveIds = (accumulator: MatrixAccumulator, nextPitchRow: PitchRow): MatrixAccumulator => {
+export const activeIdsFromPitchMatrix = (accumulator: MatrixAccumulator, nextPitchRow: PitchRow): MatrixAccumulator => {
   const { degreeMatrix, activePitchIds, activeDegreeIds } = accumulator
   const [ thisDegreeRow, ...remainingDegreeMatrix ] = degreeMatrix
 
@@ -30,7 +30,7 @@ export const reducePitchMatrixForActiveIds = (accumulator: MatrixAccumulator, ne
   }
 }
 
-export const reduceDegreeMatrixForActiveIds = (accumulator: MatrixAccumulator, nextDegreeRow: DegreeRow): MatrixAccumulator => {
+export const activeIdsFromDegreeMatrix = (accumulator: MatrixAccumulator, nextDegreeRow: DegreeRow): MatrixAccumulator => {
   const { pitchMatrix, activePitchIds, activeDegreeIds } = accumulator
   const [ thisPitchRow, ...remainingPitchMatrix ] = pitchMatrix
 
