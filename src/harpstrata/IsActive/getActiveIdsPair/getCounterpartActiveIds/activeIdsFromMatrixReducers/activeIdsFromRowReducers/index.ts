@@ -1,11 +1,12 @@
-import type { Pitch, PitchRow, PitchIds } from '../../../../../Pitch'
-import type { Degree, DegreeRow, DegreeIds } from '../../../../../Degree'
+import type { ActivePitchIds, ActiveDegreeIds } from '../../../types'
+import type { Pitch, PitchRow } from '../../../../../Pitch'
+import type { Degree, DegreeRow } from '../../../../../Degree'
 
 export type RowAccumulator = {
   readonly degreeRow: DegreeRow;
   readonly pitchRow: PitchRow;
-  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
-  readonly activePitchIds: ReadonlyArray<PitchIds>;
+  readonly activeDegreeIds: ActiveDegreeIds;
+  readonly activePitchIds: ActivePitchIds;
 }
 
 export const activeIdsFromPitchRow = (accumulator: RowAccumulator, nextPitch: Pitch | undefined): RowAccumulator => {

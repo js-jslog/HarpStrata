@@ -1,13 +1,14 @@
 import type { RowAccumulator } from '../activeIdsFromRowReducers'
 import { activeIdsFromPitchRow, activeIdsFromDegreeRow } from '../activeIdsFromRowReducers'
-import type { PitchRow, PitchMatrix, PitchIds } from '../../../../../Pitch'
-import type { DegreeRow, DegreeMatrix, DegreeIds } from '../../../../../Degree'
+import type { ActivePitchIds, ActiveDegreeIds } from '../../../types'
+import type { PitchRow, PitchMatrix } from '../../../../../Pitch'
+import type { DegreeRow, DegreeMatrix } from '../../../../../Degree'
 
 export type MatrixAccumulator = {
   readonly degreeMatrix: DegreeMatrix;
   readonly pitchMatrix: PitchMatrix;
-  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
-  readonly activePitchIds: ReadonlyArray<PitchIds>;
+  readonly activeDegreeIds: ActiveDegreeIds;
+  readonly activePitchIds: ActivePitchIds;
 }
 
 export const activeIdsFromPitchMatrix = (accumulator: MatrixAccumulator, nextPitchRow: PitchRow): MatrixAccumulator => {
