@@ -12,11 +12,11 @@ interface ActiveIds {
 export const getActiveIds = (props: IsActiveProps): ActiveIds => {
   const { activeElementIds } = props
   if (activeElementIds[0] in Object.values(DegreeIds)) {
-    const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
+    const activeDegreeIds = [ ...activeElementIds as ReadonlyArray<DegreeIds> ].sort()
     const activePitchIds = [ ...getCounterpartPitchIds(props) ].sort()
     return { activeDegreeIds, activePitchIds }
   }
-  const activePitchIds = activeElementIds as ReadonlyArray<PitchIds>
+  const activePitchIds = [ ...activeElementIds as ReadonlyArray<PitchIds> ].sort()
   const activeDegreeIds = [ ...getCounterpartDegreeIds(props) ].sort()
   return { activeDegreeIds, activePitchIds }
 }
