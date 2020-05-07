@@ -3,7 +3,7 @@ import type { IsActiveProps } from '../../types'
 import { C, D, E, F, PitchIds } from '../../../Pitch'
 import { ROOT, SECOND, THIRD, FOURTH, DegreeIds } from '../../../Degree'
 
-import { getIsActiveMatrixForDegrees, getIsActiveMatrixForPitches,  } from './index'
+import { getMatrixGivenPitch, getMatrixGivenDegree,  } from './index'
 
 const degreeMatrix = [
   [ ROOT , SECOND ],
@@ -17,24 +17,24 @@ const baseIsActiveProps: IsActiveProps = {
   degreeMatrix, pitchMatrix, activeElementIds: []
 }
 
-test('getIsActiveMatrixForDegrees returns the IsActiveMatrix when given Degree Elements', () => {
+test('getMatrixGivenDegree returns a IsActiveMatrix using Degree objects', () => {
   const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Active  , IsActiveIds.Inactive ],
     [ IsActiveIds.Inactive, IsActiveIds.Active   ],
   ]
-  const actualIsActiveMatrix = getIsActiveMatrixForDegrees(isActiveProps)
+  const actualIsActiveMatrix = getMatrixGivenDegree(isActiveProps)
 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
 
-test('getIsActiveMatrixForPitches returns the IsActiveMatrix when given Pitch Elements', () => {
+test('getMatrixGivenPitch returns a IsActiveMatrix using Pitch objects', () => {
   const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ PitchIds.D, PitchIds.E ] }
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Inactive  , IsActiveIds.Active ],
     [ IsActiveIds.Active, IsActiveIds.Inactive   ],
   ]
-  const actualIsActiveMatrix = getIsActiveMatrixForPitches(isActiveProps)
+  const actualIsActiveMatrix = getMatrixGivenPitch(isActiveProps)
 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
