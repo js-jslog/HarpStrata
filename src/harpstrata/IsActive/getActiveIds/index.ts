@@ -13,10 +13,10 @@ export const getActiveIds = (props: IsActiveProps): ActiveIds => {
   const { activeElementIds } = props
   if (activeElementIds[0] in Object.values(DegreeIds)) {
     const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
-    const activePitchIds = getCounterpartPitchIds(props)
+    const activePitchIds = [ ...getCounterpartPitchIds(props) ].sort()
     return { activeDegreeIds, activePitchIds }
   }
   const activePitchIds = activeElementIds as ReadonlyArray<PitchIds>
-  const activeDegreeIds = getCounterpartDegreeIds(props)
+  const activeDegreeIds = [ ...getCounterpartDegreeIds(props) ].sort()
   return { activeDegreeIds, activePitchIds }
 }
