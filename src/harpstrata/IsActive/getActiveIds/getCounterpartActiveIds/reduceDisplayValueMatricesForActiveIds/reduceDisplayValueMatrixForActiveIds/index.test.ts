@@ -7,17 +7,17 @@ import type { MatrixAccumulator } from './index'
 import { reducePitchMatrixForActiveIds, reduceDegreeMatrixForActiveIds } from './index'
 
 const degreeMatrix: DegreeMatrix = [
-  [ FOURTH , SECOND, THIRD, ROOT ],
+  [ ROOT , SECOND, THIRD, FOURTH ],
   [ FIFTH, SIXTH, SEVENTH, ROOT  ],
 ]
 const pitchMatrix: PitchMatrix = [
-  [ F, D, E, C ],
+  [ C, D, E, F ],
   [ G, A, B, C ],
 ]
 
 test('reducePitchMatrixForActiveIds operates as a reducer to contribute to the counterpart `activePitchIds` part of it\'s accumulator object', () => {
-  const activePitchIds = [ PitchIds.D, PitchIds.C, PitchIds.G ].sort()
-  const expectedDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Root, DegreeIds.Fifth ].sort()
+  const activePitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
+  const expectedDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
 
   const initialState: MatrixAccumulator = { pitchMatrix, degreeMatrix, activePitchIds, activeDegreeIds: [] }
 
@@ -27,8 +27,8 @@ test('reducePitchMatrixForActiveIds operates as a reducer to contribute to the c
 })
 
 test('reduceDegreeMatrixForActiveIds operates as a reducer to contribute to the counterpart `activeDegreeIds` part of it\'s accumulator object', () => {
-  const expectedPitchIds = [ PitchIds.D, PitchIds.C, PitchIds.G ].sort()
-  const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Root, DegreeIds.Fifth ].sort()
+  const expectedPitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
+  const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
 
   const initialState: MatrixAccumulator = { degreeMatrix, pitchMatrix, activePitchIds: [], activeDegreeIds }
 
