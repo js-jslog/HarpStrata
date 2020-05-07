@@ -25,19 +25,19 @@ const C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC_MATRIX: IsActiveMatrix
   [ undefined, undefined, Inactive , undefined, undefined, undefined, undefined, undefined, undefined, undefined ],
 ] as const
 
-const MAJOR_PENTATONIC_SCALE_DEGREES: ReadonlyArray<DegreeIds> = [ DegreeIds.Root, DegreeIds.Second, DegreeIds.Third, DegreeIds.Fifth, DegreeIds.Sixth ] as const
-const MAJOR_PENTATONIC_PITCHES_C_KEY: ReadonlyArray<PitchIds> = [ PitchIds.A, PitchIds.C, PitchIds.D, PitchIds.E, PitchIds.G ] as const
+const MAJOR_PENTATONIC_SCALE_DEGREE_IDS: ReadonlyArray<DegreeIds> = [ DegreeIds.Root, DegreeIds.Second, DegreeIds.Third, DegreeIds.Fifth, DegreeIds.Sixth ] as const
+const C_MAJOR_PENTATONIC_PITCH_IDS: ReadonlyArray<PitchIds> = [ PitchIds.A, PitchIds.C, PitchIds.D, PitchIds.E, PitchIds.G ] as const
 const G_MAJOR_PENTATONIC_PITCH_IDS: ReadonlyArray<PitchIds> = [ PitchIds.A, PitchIds.B, PitchIds.D, PitchIds.E, PitchIds.G ] as const
 
 const C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC = {
   isActiveMatrix: C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC_MATRIX,
-  activeDegreeIds: MAJOR_PENTATONIC_SCALE_DEGREES,
-  activePitchIds: MAJOR_PENTATONIC_PITCHES_C_KEY,
+  activeDegreeIds: MAJOR_PENTATONIC_SCALE_DEGREE_IDS,
+  activePitchIds: C_MAJOR_PENTATONIC_PITCH_IDS,
 } as const
 
 const C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC = {
   isActiveMatrix: C_MAJOR_DIATONIC_SECOND_POZITION_G_MAJOR_PENTATONIC_MATRIX,
-  activeDegreeIds: MAJOR_PENTATONIC_SCALE_DEGREES,
+  activeDegreeIds: MAJOR_PENTATONIC_SCALE_DEGREE_IDS,
   activePitchIds: G_MAJOR_PENTATONIC_PITCH_IDS,
 } as const
 
