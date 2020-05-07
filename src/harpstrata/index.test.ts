@@ -23,9 +23,10 @@ test('getHarpStrata can return a first pozition C major diatonic HarpStrata with
   expect(actualStrata).toStrictEqual(expectedStrata)
 })
 
-//test('getHarpStrata can return a second pozition C major diatonic HarpStrata with major pentatonic holes active', () => {
-//  const { C_MAJOR_DIATONIC_SECOND_POZITION: expectedStrata } = EXAMPLE_STRATA
-//  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.Second, PitchIds.C)
-//
-//  expect(actualStrata).toStrictEqual(expectedStrata)
-//})
+test('getHarpStrata can return a second pozition C major diatonic HarpStrata with major pentatonic holes active', () => {
+  const { C_MAJOR_DIATONIC_SECOND_POZITION: expectedStrata } = EXAMPLE_STRATA
+  const { isActiveComplex: { activeDegreeIds }} = expectedStrata
+  const actualStrata = getHarpStrata(ApparatusIds.MajorDiatonic, PozitionIds.Second, PitchIds.C, activeDegreeIds)
+
+  expect(actualStrata).toEqual(expectedStrata)
+})
