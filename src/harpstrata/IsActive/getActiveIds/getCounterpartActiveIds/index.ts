@@ -2,7 +2,7 @@ import { IsActiveProps } from '../../types'
 import { PitchIds } from '../../../Pitch'
 import { DegreeIds } from '../../../Degree'
 
-import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './reduceDisplayValueMatricesForActiveIds'
+import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './activeIdsFromMatrixReducers'
 
 
 export const getCounterpartDegreeIds = (props: IsActiveProps): ReadonlyArray<DegreeIds> => {
