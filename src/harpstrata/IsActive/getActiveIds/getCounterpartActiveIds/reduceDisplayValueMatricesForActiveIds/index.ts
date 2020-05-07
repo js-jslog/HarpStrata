@@ -1,3 +1,3 @@
-export { reducePitchMatrixForActiveIds, reduceDegreeMatrixForActiveIds } from './activeIdsFromMatrixReducer'
-export type { RowAccumulator } from './activeIdsFromRowReducer'
-export type { MatrixAccumulator } from './activeIdsFromMatrixReducer'
+export { reducePitchMatrixForActiveIds, reduceDegreeMatrixForActiveIds } from './activeIdsFromMatrixReducers'
+export type { RowAccumulator } from './activeIdsFromRowReducers'
+export type { MatrixAccumulator } from './activeIdsFromMatrixReducers'
