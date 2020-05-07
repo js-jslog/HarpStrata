@@ -1,5 +1,5 @@
-import type { RowAccumulator } from '../ActiveIdsFromRowReducer'
-import { reduceDegreeRowForActiveIds, reducePitchRowForActiveIds } from '../ActiveIdsFromRowReducer'
+import type { RowAccumulator } from '../activeIdsFromRowReducer'
+import { reduceDegreeRowForActiveIds, reducePitchRowForActiveIds } from '../activeIdsFromRowReducer'
 import type { PitchRow, PitchMatrix, PitchIds } from '../../../../../Pitch'
 import type { DegreeRow, DegreeMatrix, DegreeIds } from '../../../../../Degree'
 
