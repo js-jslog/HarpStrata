@@ -5,7 +5,7 @@ import { getCounterpartDegreeIds, getCounterpartPitchIds } from './getCounterpar
 
 import { ActiveIdsPair, ActivePitchIds, ActiveDegreeIds } from './types'
 
-export const getActiveIds = (props: IsActiveProps): ActiveIdsPair => {
+export const getActiveIdsPair = (props: IsActiveProps): ActiveIdsPair => {
   const { activeElementIds } = props
   if (activeElementIds[0] in Object.values(DegreeIds)) {
     const activeDegreeIds = [ ...activeElementIds as ActiveDegreeIds ].sort()
