@@ -5,6 +5,7 @@ import { PitchIds } from '../../Pitch'
 import { ROOT, SECOND, THIRD, FOURTH } from '../../Degree/constants'
 import { DegreeIds } from '../../Degree'
 
+import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from './types'
 import { getActiveIds } from './index'
 
 
@@ -17,22 +18,27 @@ const basicPitchMatrix = [
   [ E, F ],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix: basicDegreeMatrix, pitchMatrix: basicPitchMatrix, activeElementIds: []
+  degreeMatrix: basicDegreeMatrix, pitchMatrix: basicPitchMatrix, activeElementIds: [] as ActiveIds
 }
 
 test('getActiveIds returns the active ids for a given PitchIds[]', () => {
-  const activePitchIds = [ PitchIds.D, PitchIds.E ]
+  const activePitchIds: ActiveIds = [ PitchIds.D, PitchIds.E ]
   const isActiveProps = { ...baseIsActiveProps, activeElementIds: activePitchIds }
-  const expectedActiveIds = { activeDegreeIds: [ DegreeIds.Second, DegreeIds.Third ], activePitchIds }
+  const expectedActiveIdsPair = {
+    activeDegreeIds: [ DegreeIds.Second, DegreeIds.Third ] as ActiveDegreeIds,
+    activePitchIds: activePitchIds as ActivePitchIds
+  }
   const actualActiveIds = getActiveIds(isActiveProps)
 
-  expect(actualActiveIds).toStrictEqual(expectedActiveIds)
+  expect(actualActiveIds).toStrictEqual(expectedActiveIdsPair)
 })
 
 test('getActiveIds returns the active ids for a given DegreeIds[]', () => {
-  const activeDegreeIds = [ DegreeIds.Second, DegreeIds.Third ]
+  const activeDegreeIds: ActiveIds = [ DegreeIds.Second, DegreeIds.Third ]
   const isActiveProps = { ...baseIsActiveProps, activeElementIds: activeDegreeIds }
-  const expectedActiveIds = { activePitchIds: [ PitchIds.D, PitchIds.E ], activeDegreeIds }
+  const expectedActiveIds = {
+    activePitchIds: [ PitchIds.D, PitchIds.E ] as ActivePitchIds,
+    activeDegreeIds: activeDegreeIds as ActiveDegreeIds }
   const actualActiveIds = getActiveIds(isActiveProps)
 
   expect(actualActiveIds).toStrictEqual(expectedActiveIds)
@@ -45,17 +51,23 @@ const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
 }} = EXAMPLE_STRATA
 
 test('getActiveIds returns the active ids for a given PitchIds[]', () => {
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: examplePitchIds }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: examplePitchIds as ActiveIds }
   const actualActiveIds = getActiveIds(isActiveProps)
-  const expectedActiveIds = { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }
+  const expectedActiveIds = {
+    activePitchIds: examplePitchIds as ActivePitchIds,
+    activeDegreeIds: exampleDegreeIds as ActiveDegreeIds,
+  }
 
   expect(actualActiveIds).toEqual(expectedActiveIds)
 })
 
 test('getActiveIds returns the active ids for a given DegreeIds[]', () => {
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds as ActiveIds }
   const actualActiveIds = getActiveIds(isActiveProps)
-  const expectedActiveIds = { activePitchIds: examplePitchIds, activeDegreeIds: exampleDegreeIds }
+  const expectedActiveIds = {
+    activePitchIds: examplePitchIds as ActivePitchIds,
+    activeDegreeIds: exampleDegreeIds as ActiveDegreeIds,
+  }
 
   expect(actualActiveIds).toEqual(expectedActiveIds)
 })
