@@ -15,7 +15,7 @@ const pitchMatrix = [
   [ E, F ],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix, pitchMatrix, activeElementIds: []
+  degreeMatrix, pitchMatrix, activeIds: []
 }
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given an empty array or active elements', () => {
@@ -29,7 +29,7 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given an empty array or 
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Active  , IsActiveIds.Inactive ],
     [ IsActiveIds.Inactive, IsActiveIds.Active   ],
@@ -40,7 +40,7 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', 
 })
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given Pitch Elements', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ PitchIds.D, PitchIds.E ] }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Inactive  , IsActiveIds.Active ],
     [ IsActiveIds.Active, IsActiveIds.Inactive   ],
@@ -59,7 +59,7 @@ test('getIsActiveMatrix returns the IsActiveMatrix including undefined when give
     [ undefined, D ],
     [ E, F ],
   ]
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: [ PitchIds.D, PitchIds.E ] }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedIsActiveMatrix = [
     [ undefined         , IsActiveIds.Active     ],
     [ IsActiveIds.Active, IsActiveIds.Inactive   ],
@@ -76,7 +76,7 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Degree elements ag
     isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activeDegreeIds: exampleDegreeIds }
   }} = EXAMPLE_STRATA
 
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: exampleDegreeIds }
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
   expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)

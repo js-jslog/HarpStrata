@@ -20,7 +20,7 @@ export const getHarpStrata = (apparatusId: ApparatusIds, pozitionId: PozitionIds
   const pitch = getPitch(keyPitchId)
   const degreeMatrix = getDegreeMatrix(apparatus.halfstepIndexMatrix, pozition.root)
   const pitchMatrix = getPitchMatrix(apparatus.halfstepIndexMatrix, pitch.id)
-  const isActiveComplex = getIsActiveComplex({degreeMatrix, pitchMatrix, activeElementIds: activeIds })
+  const isActiveComplex = getIsActiveComplex({degreeMatrix, pitchMatrix, activeIds: activeIds })
 
   return {
     apparatus,

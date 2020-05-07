@@ -13,11 +13,11 @@ const pitchMatrix = [
   [ E, F ],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix, pitchMatrix, activeElementIds: []
+  degreeMatrix, pitchMatrix, activeIds: []
 }
 
 test('getCounterpartDegreeIds returns the DegreeIds[] for a given PitchIds[]', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ PitchIds.D, PitchIds.E ] }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedCounterpartIds = [ DegreeIds.Second, DegreeIds.Third ]
   const actualCounterpartIds = getCounterpartDegreeIds(isActiveProps)
 
@@ -25,7 +25,7 @@ test('getCounterpartDegreeIds returns the DegreeIds[] for a given PitchIds[]', (
 })
 
 test('getCounterpartPitchIds returns the PitchIds[] for a given DegreeIds[]', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ DegreeIds.Second, DegreeIds.Third ] }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Second, DegreeIds.Third ] }
   const expectedCounterpartIds = [ PitchIds.D, PitchIds.E ]
   const actualCounterpartIds = getCounterpartPitchIds(isActiveProps)
 

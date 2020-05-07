@@ -14,11 +14,11 @@ const pitchMatrix = [
   [ E, F ],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix, pitchMatrix, activeElementIds: []
+  degreeMatrix, pitchMatrix, activeIds: []
 }
 
 test('getMatrixGivenDegree returns a IsActiveMatrix using Degree objects', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Active  , IsActiveIds.Inactive ],
     [ IsActiveIds.Inactive, IsActiveIds.Active   ],
@@ -29,7 +29,7 @@ test('getMatrixGivenDegree returns a IsActiveMatrix using Degree objects', () =>
 })
 
 test('getMatrixGivenPitch returns a IsActiveMatrix using Pitch objects', () => {
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: [ PitchIds.D, PitchIds.E ] }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Inactive  , IsActiveIds.Active ],
     [ IsActiveIds.Active, IsActiveIds.Inactive   ],

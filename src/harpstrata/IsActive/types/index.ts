@@ -1,3 +1,4 @@
+import type { ActiveIds } from '../getActiveIdsPair'
 import type { PitchIds, PitchMatrix } from '../../Pitch'
 import type { DegreeIds, DegreeMatrix } from '../../Degree'
 
@@ -12,7 +13,7 @@ export type IsActiveMatrix = ReadonlyArray<IsActiveRow>
 export interface IsActiveProps {
   degreeMatrix: DegreeMatrix;
   pitchMatrix: PitchMatrix;
-  activeElementIds: ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds>;
+  activeIds: ActiveIds;
 }
 
 export type IsActiveComplex = {

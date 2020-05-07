@@ -18,12 +18,12 @@ const basicPitchMatrix = [
   [ E, F ],
 ]
 const baseIsActiveProps: IsActiveProps = {
-  degreeMatrix: basicDegreeMatrix, pitchMatrix: basicPitchMatrix, activeElementIds: [] as ActiveIds
+  degreeMatrix: basicDegreeMatrix, pitchMatrix: basicPitchMatrix, activeIds: [] as ActiveIds
 }
 
 test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
   const activePitchIds: ActiveIds = [ PitchIds.D, PitchIds.E ]
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: activePitchIds }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: activePitchIds }
   const expectedActiveIdsPair = {
     activeDegreeIds: [ DegreeIds.Second, DegreeIds.Third ] as ActiveDegreeIds,
     activePitchIds: activePitchIds as ActivePitchIds
@@ -35,7 +35,7 @@ test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
 
 test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
   const activeDegreeIds: ActiveIds = [ DegreeIds.Second, DegreeIds.Third ]
-  const isActiveProps = { ...baseIsActiveProps, activeElementIds: activeDegreeIds }
+  const isActiveProps = { ...baseIsActiveProps, activeIds: activeDegreeIds }
   const expectedActiveIds = {
     activePitchIds: [ PitchIds.D, PitchIds.E ] as ActivePitchIds,
     activeDegreeIds: activeDegreeIds as ActiveDegreeIds }
@@ -51,7 +51,7 @@ const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
 }} = EXAMPLE_STRATA
 
 test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: examplePitchIds as ActiveIds }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: examplePitchIds as ActiveIds }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
   const expectedActiveIds = {
     activePitchIds: examplePitchIds as ActivePitchIds,
@@ -62,7 +62,7 @@ test('getActiveIdsPair returns the active ids for a given PitchIds[]', () => {
 })
 
 test('getActiveIdsPair returns the active ids for a given DegreeIds[]', () => {
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: exampleDegreeIds as ActiveIds }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: exampleDegreeIds as ActiveIds }
   const actualActiveIds = getActiveIdsPair(isActiveProps)
   const expectedActiveIds = {
     activePitchIds: examplePitchIds as ActivePitchIds,

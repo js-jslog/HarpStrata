@@ -6,13 +6,15 @@ import { getCounterpartDegreeIds, getCounterpartPitchIds } from './getCounterpar
 import type { ActiveIdsPair, ActivePitchIds, ActiveDegreeIds } from './types'
 
 export const getActiveIdsPair = (props: IsActiveProps): ActiveIdsPair => {
-  const { activeElementIds } = props
-  if (activeElementIds[0] in Object.values(DegreeIds)) {
-    const activeDegreeIds = [ ...activeElementIds as ActiveDegreeIds ].sort()
+  const { activeIds } = props
+  if (activeIds[0] in Object.values(DegreeIds)) {
+    const activeDegreeIds = [ ...activeIds as ActiveDegreeIds ].sort()
     const activePitchIds = [ ...getCounterpartPitchIds(props) ].sort()
     return { activeDegreeIds, activePitchIds }
   }
-  const activePitchIds = [ ...activeElementIds as ActivePitchIds ].sort()
+  const activePitchIds = [ ...activeIds as ActivePitchIds ].sort()
   const activeDegreeIds = [ ...getCounterpartDegreeIds(props) ].sort()
   return { activeDegreeIds, activePitchIds }
 }
+
+export type { ActiveIds } from './types'

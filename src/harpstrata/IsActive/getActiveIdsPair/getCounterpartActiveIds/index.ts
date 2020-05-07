@@ -6,8 +6,8 @@ import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './activeIds
 
 
 export const getCounterpartDegreeIds = (props: IsActiveProps): ReadonlyArray<DegreeIds> => {
-  const { degreeMatrix, pitchMatrix, activeElementIds } = props
-  const activePitchIds = activeElementIds as ReadonlyArray<PitchIds>
+  const { degreeMatrix, pitchMatrix, activeIds } = props
+  const activePitchIds = activeIds as ReadonlyArray<PitchIds>
   const initialState = { pitchMatrix, degreeMatrix, activePitchIds, activeDegreeIds: [] }
   const reducedState = pitchMatrix.reduce(activeIdsFromPitchMatrix, initialState)
   const { activeDegreeIds } = reducedState
@@ -16,8 +16,8 @@ export const getCounterpartDegreeIds = (props: IsActiveProps): ReadonlyArray<Deg
 }
 
 export const getCounterpartPitchIds = (props: IsActiveProps): ReadonlyArray<PitchIds> => {
-  const { degreeMatrix, pitchMatrix, activeElementIds } = props
-  const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
+  const { degreeMatrix, pitchMatrix, activeIds } = props
+  const activeDegreeIds = activeIds as ReadonlyArray<DegreeIds>
   const initialState = { degreeMatrix, pitchMatrix, activePitchIds: [], activeDegreeIds }
   const reducedState = degreeMatrix.reduce(activeIdsFromDegreeMatrix, initialState)
   const { activePitchIds } = reducedState

@@ -5,8 +5,8 @@ import type { Degree, DegreeRow } from '../../../Degree'
 import { DegreeIds } from '../../../Degree'
 
 export const getMatrixGivenDegree = (props: IsActiveProps): IsActiveMatrix => {
-  const { degreeMatrix, activeElementIds } = props
-  const activeDegreeIds = activeElementIds as ReadonlyArray<DegreeIds>
+  const { degreeMatrix, activeIds } = props
+  const activeDegreeIds = activeIds as ReadonlyArray<DegreeIds>
   const mapDegree = (degree: Degree | undefined): IsActiveIds | undefined => {
     if (degree === undefined) return undefined
     return (degree && activeDegreeIds.includes(degree.id) ? IsActiveIds.Active : IsActiveIds.Inactive)
@@ -18,8 +18,8 @@ export const getMatrixGivenDegree = (props: IsActiveProps): IsActiveMatrix => {
 }
 
 export const getMatrixGivenPitch = (props: IsActiveProps): IsActiveMatrix => {
-  const { pitchMatrix, activeElementIds } = props
-  const activePitchIds = activeElementIds as ReadonlyArray<PitchIds>
+  const { pitchMatrix, activeIds } = props
+  const activePitchIds = activeIds as ReadonlyArray<PitchIds>
   const mapPitch = (pitch: Pitch | undefined): IsActiveIds | undefined => {
     if (pitch === undefined) return undefined
     return pitch && activePitchIds.includes(pitch.id) ? IsActiveIds.Active : IsActiveIds.Inactive

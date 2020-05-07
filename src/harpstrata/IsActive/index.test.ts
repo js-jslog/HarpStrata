@@ -10,7 +10,7 @@ const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
 const { activeDegreeIds, activePitchIds } = isActiveComplex
 
 test('getIsActiveComplex returns the IsActiveComplex for a c major diatonic harmonica with the c major pentatonic scale degrees active', () => {
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: activeDegreeIds }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: activeDegreeIds }
   const actualIsActiveComplex = getIsActiveComplex(isActiveProps)
   const expectedIsActiveComplex = isActiveComplex
 
@@ -18,7 +18,7 @@ test('getIsActiveComplex returns the IsActiveComplex for a c major diatonic harm
 })
 
 test('getIsActiveComplex returns the IsActiveComplex for a c major diatonic harmonica with the c major pentatonic scale pitches active', () => {
-  const isActiveProps = { degreeMatrix, pitchMatrix, activeElementIds: activePitchIds }
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: activePitchIds }
   const actualIsActiveComplex = getIsActiveComplex(isActiveProps)
   const expectedIsActiveComplex = isActiveComplex
 
