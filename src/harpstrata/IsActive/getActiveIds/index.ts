@@ -4,9 +4,9 @@ import { DegreeIds } from '../../Degree'
 
 import { getCounterpartDegreeIds, getCounterpartPitchIds } from './getCounterpartActiveIds'
 
-interface ActiveIds {
-  activeDegreeIds: ReadonlyArray<DegreeIds>;
-  activePitchIds: ReadonlyArray<PitchIds>;
+type ActiveIds = {
+  readonly activeDegreeIds: ReadonlyArray<DegreeIds>;
+  readonly activePitchIds: ReadonlyArray<PitchIds>;
 }
 
 export const getActiveIds = (props: IsActiveProps): ActiveIds => {
