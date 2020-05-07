@@ -3,7 +3,7 @@ import { DegreeIds } from '../../Degree'
 
 import { getCounterpartDegreeIds, getCounterpartPitchIds } from './getCounterpartActiveIds'
 
-import { ActiveIdsPair, ActivePitchIds, ActiveDegreeIds } from './types'
+import type { ActiveIdsPair, ActivePitchIds, ActiveDegreeIds } from './types'
 
 export const getActiveIdsPair = (props: IsActiveProps): ActiveIdsPair => {
   const { activeElementIds } = props
