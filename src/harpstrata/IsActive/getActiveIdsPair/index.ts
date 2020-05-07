@@ -17,4 +17,4 @@ export const getActiveIdsPair = (props: IsActiveProps): ActiveIdsPair => {
   return { activeDegreeIds, activePitchIds }
 }
 
-export type { ActiveIds } from './types'
+export type { ActiveIds, ActivePitchIds, ActiveDegreeIds } from './types'

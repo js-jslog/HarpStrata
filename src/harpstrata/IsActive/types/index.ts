@@ -1,6 +1,6 @@
-import type { ActiveIds } from '../getActiveIdsPair'
-import type { PitchIds, PitchMatrix } from '../../Pitch'
-import type { DegreeIds, DegreeMatrix } from '../../Degree'
+import type { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../getActiveIdsPair'
+import type { PitchMatrix } from '../../Pitch'
+import type { DegreeMatrix } from '../../Degree'
 
 export enum IsActiveIds {
   Active = 'ACTIVE',
@@ -18,6 +18,6 @@ export interface IsActiveProps {
 
 export type IsActiveComplex = {
   isActiveMatrix: IsActiveMatrix;
-  activeDegreeIds: ReadonlyArray<DegreeIds>;
-  activePitchIds: ReadonlyArray<PitchIds>;
+  activeDegreeIds: ActiveDegreeIds;
+  activePitchIds: ActivePitchIds;
 }
