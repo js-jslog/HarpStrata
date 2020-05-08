@@ -1,5 +1,5 @@
-import { ActivePitchIds, ActiveDegreeIds } from '../types'
-import { IsActiveProps } from '../../types'
+import type { ActivePitchIds, ActiveDegreeIds } from '../types'
+import type { IsActiveProps } from '../../types'
 
 import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './activeIdsFromMatrixReducers'
 
