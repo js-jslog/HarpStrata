@@ -1,4 +1,4 @@
-import { EXAMPLE_STRATA } from '../testResources'
+import { EXAMPLE_STRATA } from '../HarpStrata'
 
 import { ApparatusIds, PozitionIds, PitchIds } from './types'
 import { getApparatusIds, getPozitionIds, getHarpStrata, getPitchIds } from './index'

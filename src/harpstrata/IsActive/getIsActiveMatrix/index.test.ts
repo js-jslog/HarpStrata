@@ -1,6 +1,6 @@
 import type { IsActiveProps } from '../types'
-import { EXAMPLE_STRATA } from '../../testResources'
 import { C, D, E, F, PitchIds } from '../../Pitch'
+import { EXAMPLE_STRATA } from '../../HarpStrata'
 import { ROOT, SECOND, THIRD, FOURTH, DegreeIds } from '../../Degree'
 
 import { IsActiveIds } from './types'

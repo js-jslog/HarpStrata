@@ -59,3 +59,4 @@ export {
 
 export type { ActiveDegreeIds, ActivePitchIds, ActiveIds, IsActiveMatrix, IsActiveRow, IsActiveComplex } from '../IsActive'
 export { IsActiveIds } from '../IsActive'
+export { EXAMPLE_STRATA } from './testResources'
