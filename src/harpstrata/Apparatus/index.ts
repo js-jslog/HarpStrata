@@ -20,3 +20,8 @@ export { InteractionIds } from './Interaction'
 export type { Apparatus } from './types'
 export type { Interaction, InteractionMatrix, InteractionRow } from './Interaction'
 export type { HalfstepIndex, HalfstepIndexMatrix, HalfstepIndexRow } from './HalfstepIndex'
+export {
+  MAJOR_DIATONIC_APPARATUS,
+  COUNTRY_TUNED_APPARATUS,
+  NATURAL_MINOR_APPARATUS,
+} from './constants'
