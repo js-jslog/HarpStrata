@@ -8,7 +8,7 @@ import {
   BEND3,
   BLOWBEND1,
   BLOWBEND2,
-} from '../Interaction/constants'
+} from '../Interaction'
 
 const halfstepIndexMatrix: HalfstepIndexMatrix = [
   //    1          2          3          4          5          6          7          8          9         10
