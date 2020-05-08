@@ -1,4 +1,5 @@
-import { ApparatusIds, Apparatus, InteractionMatrix, HalfstepIndexMatrix } from '../types'
+import { ApparatusIds } from '../types'
+import type { Apparatus, InteractionMatrix, HalfstepIndexMatrix } from '../types'
 import {
   BLOW,
   DRAW,
