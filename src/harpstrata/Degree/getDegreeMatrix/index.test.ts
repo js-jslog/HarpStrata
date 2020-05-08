@@ -1,9 +1,10 @@
 import { EXAMPLE_DEGREE_MATRICES } from '../testResources'
 import { FOURTH } from '../constants'
-import { MAJOR_DIATONIC_APPARATUS } from '../../Apparatus/constants'
+import { ApparatusIds, getApparatus } from '../../Apparatus'
 
 import { getDegreeMatrix } from './index'
 
+const MAJOR_DIATONIC_APPARATUS = getApparatus(ApparatusIds.MajorDiatonic)
 
 test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6) when halfsetp offset is 7', () => {
   const expectedArray = [[ FOURTH, ], [ FOURTH, ]]
