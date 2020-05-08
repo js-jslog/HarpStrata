@@ -7,7 +7,7 @@ export enum ApparatusIds {
   NaturalMinor = 'NATURAL-MINOR',
 }
 
-export interface Apparatus {
+export type Apparatus = {
   readonly id: ApparatusIds;
   readonly halfstepIndexMatrix: HalfstepIndexMatrix;
   readonly interactionMatrix: InteractionMatrix;
@@ -19,6 +19,7 @@ export {
   InteractionRow,
   InteractionMatrix
 } from '../Interaction/types'
+
 export {
   HalfstepIndex,
   HalfstepIndexRow,

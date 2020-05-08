@@ -11,7 +11,7 @@ export type HarpStrataProps = {
   readonly activeIds: ActiveIds;
 }
 
-export interface HarpStrata {
+export type HarpStrata = {
   readonly apparatus: Apparatus;
   readonly degreeMatrix: DegreeMatrix;
   readonly pitchMatrix: PitchMatrix;

@@ -5,7 +5,7 @@ export enum PozitionIds {
   Second = 'SECOND',
 }
 
-export interface Pozition {
+export type Pozition = {
   readonly id: PozitionIds;
   readonly root: HalfstepIndex;
 }
