@@ -1,6 +1,7 @@
 import type { IsActiveProps, IsActiveComplex } from '../types'
-import { getIsActiveMatrix } from '../getIsActiveMatrix'
-import { getActiveIdsPair } from '../getActiveIdsPair'
+
+import { getIsActiveMatrix } from './getIsActiveMatrix'
+import { getActiveIdsPair } from './getActiveIdsPair'
 
 export const getIsActiveComplex = (isActiveProps: IsActiveProps): IsActiveComplex => {
   return {
@@ -8,3 +9,6 @@ export const getIsActiveComplex = (isActiveProps: IsActiveProps): IsActiveComple
     ...getActiveIdsPair(isActiveProps),
   }
 }
+export type { IsActiveMatrix, IsActiveRow } from './getIsActiveMatrix'
+export { IsActiveIds } from './getIsActiveMatrix'
+export type { ActiveDegreeIds, ActivePitchIds, ActiveIds } from './getActiveIdsPair'

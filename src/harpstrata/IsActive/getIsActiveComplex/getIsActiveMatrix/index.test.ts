@@ -1,7 +1,7 @@
-import type { IsActiveProps } from '../types'
-import { C, D, E, F, PitchIds } from '../../Pitch'
-import { EXAMPLE_STRATA } from '../../HarpStrata'
-import { ROOT, SECOND, THIRD, FOURTH, DegreeIds } from '../../Degree'
+import type { IsActiveProps } from '../../types'
+import { C, D, E, F, PitchIds } from '../../../Pitch'
+import { EXAMPLE_STRATA } from '../../../HarpStrata'
+import { ROOT, SECOND, THIRD, FOURTH, DegreeIds } from '../../../Degree'
 
 import { IsActiveIds } from './types'
 import { getIsActiveMatrix } from './index'

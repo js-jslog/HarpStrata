@@ -1,5 +1,5 @@
-import type { IsActiveProps } from '../types'
-import { DegreeIds } from '../../Degree'
+import type { IsActiveProps } from '../../types'
+import { DegreeIds } from '../../../Degree'
 
 import { getMatrixGivenDegree, getMatrixGivenPitch } from './getIsActiveMatrixForSpecificType'
 

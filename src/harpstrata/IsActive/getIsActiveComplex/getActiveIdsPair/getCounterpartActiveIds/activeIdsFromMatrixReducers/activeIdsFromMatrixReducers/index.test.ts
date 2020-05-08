@@ -1,7 +1,7 @@
-import { PitchIds, C, D, E, F, G, A, B } from '../../../../../Pitch'
-import type { PitchMatrix } from '../../../../../Pitch'
-import { DegreeIds, ROOT, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH } from '../../../../../Degree'
-import type { DegreeMatrix } from '../../../../../Degree'
+import { PitchIds, C, D, E, F, G, A, B } from '../../../../../../Pitch'
+import type { PitchMatrix } from '../../../../../../Pitch'
+import { DegreeIds, ROOT, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH } from '../../../../../../Degree'
+import type { DegreeMatrix } from '../../../../../../Degree'
 
 import type { MatrixAccumulator } from './index'
 import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './index'

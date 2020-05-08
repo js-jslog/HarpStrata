@@ -1,9 +1,9 @@
 import { IsActiveIds, IsActiveRow, IsActiveMatrix } from '../types'
-import { IsActiveProps } from '../../types'
-import type { Pitch, PitchRow } from '../../../Pitch'
-import { PitchIds } from '../../../Pitch'
-import type { Degree, DegreeRow } from '../../../Degree'
-import { DegreeIds } from '../../../Degree'
+import { IsActiveProps } from '../../../types'
+import type { Pitch, PitchRow } from '../../../../Pitch'
+import { PitchIds } from '../../../../Pitch'
+import type { Degree, DegreeRow } from '../../../../Degree'
+import { DegreeIds } from '../../../../Degree'
 
 export const getMatrixGivenDegree = (props: IsActiveProps): IsActiveMatrix => {
   const { degreeMatrix, activeIds } = props

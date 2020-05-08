@@ -1,5 +1,5 @@
-import { PitchIds } from '../../../Pitch'
-import { DegreeIds } from '../../../Degree'
+import { PitchIds } from '../../../../Pitch'
+import { DegreeIds } from '../../../../Degree'
 
 export type ActiveDegreeIds = ReadonlyArray<DegreeIds>
 export type ActivePitchIds = ReadonlyArray<PitchIds>
