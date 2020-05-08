@@ -51,4 +51,5 @@ export {
   Pitch
 } from './types'
 
-export type { ActiveDegreeIds, ActivePitchIds, ActiveIds, IsActiveComplex } from './IsActive'
+export type { ActiveDegreeIds, ActivePitchIds, ActiveIds, IsActiveMatrix, IsActiveRow, IsActiveComplex } from './IsActive'
+export { IsActiveIds } from './IsActive'

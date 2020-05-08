@@ -1,4 +1,4 @@
-import { IsActiveIds } from '../../types'
+import { IsActiveIds } from '../types'
 import type { IsActiveProps } from '../../types'
 import { C, D, E, F, PitchIds } from '../../../Pitch'
 import { ROOT, SECOND, THIRD, FOURTH, DegreeIds } from '../../../Degree'
