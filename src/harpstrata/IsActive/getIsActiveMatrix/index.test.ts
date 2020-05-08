@@ -20,8 +20,8 @@ const baseIsActiveProps: IsActiveProps = {
 
 test('getIsActiveMatrix returns the IsActiveMatrix when given an empty array or active elements', () => {
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Inactive  , IsActiveIds.Inactive ],
-    [ IsActiveIds.Inactive, IsActiveIds.Inactive   ],
+    [ IsActiveIds.Inactive, IsActiveIds.Inactive ],
+    [ IsActiveIds.Inactive, IsActiveIds.Inactive ],
   ]
   const actualIsActiveMatrix = getIsActiveMatrix(baseIsActiveProps)
 
