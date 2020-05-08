@@ -4,7 +4,7 @@ import type { PitchMatrix } from '../../Pitch'
 import type { DegreeMatrix } from '../../Degree'
 
 
-export interface IsActiveProps {
+export type IsActiveProps = {
   degreeMatrix: DegreeMatrix;
   pitchMatrix: PitchMatrix;
   activeIds: ActiveIds;
