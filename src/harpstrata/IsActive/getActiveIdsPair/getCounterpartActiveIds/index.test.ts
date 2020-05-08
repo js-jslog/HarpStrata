@@ -16,7 +16,7 @@ const baseIsActiveProps: IsActiveProps = {
   degreeMatrix, pitchMatrix, activeIds: []
 }
 
-test('getCounterpartDegreeIds returns the DegreeIds[] for a given PitchIds[]', () => {
+test('getCounterpartDegreeIds returns the ActiveDegreeIds for a given ActivePitchIds', () => {
   const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedCounterpartIds = [ DegreeIds.Second, DegreeIds.Third ]
   const actualCounterpartIds = getCounterpartDegreeIds(isActiveProps)
@@ -24,7 +24,7 @@ test('getCounterpartDegreeIds returns the DegreeIds[] for a given PitchIds[]', (
   expect(actualCounterpartIds).toStrictEqual(expectedCounterpartIds)
 })
 
-test('getCounterpartPitchIds returns the PitchIds[] for a given DegreeIds[]', () => {
+test('getCounterpartPitchIds returns the ActivePitchIds for a given ActiveDegreeIds', () => {
   const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Second, DegreeIds.Third ] }
   const expectedCounterpartIds = [ PitchIds.D, PitchIds.E ]
   const actualCounterpartIds = getCounterpartPitchIds(isActiveProps)
