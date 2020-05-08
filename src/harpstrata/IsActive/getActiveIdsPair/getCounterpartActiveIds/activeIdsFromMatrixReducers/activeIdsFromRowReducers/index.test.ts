@@ -11,7 +11,7 @@ const pitchRow: PitchRow = [ C, D, E, F ]
 
 test('activeIdsFromPitchRow operates as a reducer to contribute to the counterpart `activePitchIds` part of it\'s accumulator object', () => {
   const activePitchIds = [ PitchIds.D, PitchIds.F ]
-  const expectedDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth ]
+  const expectedDegreeIds = [ DegreeIds.Second, DegreeIds.Fourth ]
 
   const initialState: RowAccumulator = { pitchRow, degreeRow, activePitchIds, activeDegreeIds: [] }
 
@@ -21,7 +21,7 @@ test('activeIdsFromPitchRow operates as a reducer to contribute to the counterpa
 })
 
 test('activeIdsFromDegreeRow operates as a reducer to contribute to the counterpart `activeDegreeIds` part of it\'s accumulator object', () => {
-  const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth ]
+  const activeDegreeIds = [ DegreeIds.Second, DegreeIds.Fourth ]
   const expectedPitchIds = [ PitchIds.D, PitchIds.F ]
 
   const initialState: RowAccumulator = { degreeRow, pitchRow, activePitchIds: [], activeDegreeIds }
