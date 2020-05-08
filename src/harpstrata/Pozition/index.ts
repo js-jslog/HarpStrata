@@ -8,4 +8,5 @@ pozitionMap.set(SECOND.id, SECOND)
 export const getActivePozitionIds = (): PozitionIds[] => Array.from(pozitionMap.keys())
 export const getPozition = (pozitionId: PozitionIds): Pozition => pozitionMap.get(pozitionId)
 
-export type { PozitionIds, Pozition } from './types'
+export { PozitionIds } from './types'
+export type { Pozition } from './types'

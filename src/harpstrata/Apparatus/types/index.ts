@@ -1,5 +1,5 @@
-import { InteractionMatrix } from '../types'
-import { HalfstepIndexMatrix } from '../types'
+import { InteractionMatrix } from '../Interaction'
+import { HalfstepIndexMatrix } from '../HalfstepIndex'
 
 export enum ApparatusIds {
   MajorDiatonic = 'MAJOR-DIATONIC',
@@ -12,16 +12,3 @@ export type Apparatus = {
   readonly halfstepIndexMatrix: HalfstepIndexMatrix;
   readonly interactionMatrix: InteractionMatrix;
 }
-
-export {
-  InteractionIds,
-  Interaction,
-  InteractionRow,
-  InteractionMatrix
-} from '../Interaction/types'
-
-export {
-  HalfstepIndex,
-  HalfstepIndexRow,
-  HalfstepIndexMatrix
-} from '../HalfstepIndex/types'

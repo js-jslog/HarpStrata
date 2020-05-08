@@ -1,7 +1,9 @@
+import { PozitionIds } from '../Pozition'
+import { PitchIds } from '../Pitch'
 import { EXAMPLE_STRATA } from '../HarpStrata'
+import { ApparatusIds } from '../Apparatus'
 
-import { ApparatusIds, PozitionIds, PitchIds } from './types'
-import { getApparatusIds, getPozitionIds, getHarpStrata, getPitchIds } from './index'
+import { getApparatusIds, getPozitionIds, getPitchIds, getHarpStrata } from './index'
 
 test('getApparatusIds function returns an array with a major diatonic as one of the values', () => {
   expect(getApparatusIds().includes(ApparatusIds.MajorDiatonic)).toBeTruthy()
