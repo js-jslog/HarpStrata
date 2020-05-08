@@ -18,7 +18,7 @@ const baseIsActiveProps: IsActiveProps = {
   degreeMatrix, pitchMatrix, activeIds: []
 }
 
-test('getIsActiveMatrix returns the IsActiveMatrix when given an empty array or active elements', () => {
+test('getIsActiveMatrix returns the IsActiveMatrix when given an empty list of ActiveIds', () => {
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Inactive, IsActiveIds.Inactive ],
     [ IsActiveIds.Inactive, IsActiveIds.Inactive ],
@@ -28,7 +28,7 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given an empty array or 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
 
-test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', () => {
+test('getIsActiveMatrix returns the IsActiveMatrix when given ActiveDegreeIds', () => {
   const isActiveProps = { ...baseIsActiveProps, activeIds: [ DegreeIds.Root, DegreeIds.Fourth ] }
   const expectedIsActiveMatrix = [
     [ IsActiveIds.Active  , IsActiveIds.Inactive ],
@@ -39,18 +39,18 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Degree Elements', 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
 
-test('getIsActiveMatrix returns the IsActiveMatrix when given Pitch Elements', () => {
+test('getIsActiveMatrix returns the IsActiveMatrix when given ActivePitchIds', () => {
   const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Inactive  , IsActiveIds.Active ],
-    [ IsActiveIds.Active, IsActiveIds.Inactive   ],
+    [ IsActiveIds.Inactive, IsActiveIds.Active   ],
+    [ IsActiveIds.Active  , IsActiveIds.Inactive ],
   ]
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
 
-test('getIsActiveMatrix returns the IsActiveMatrix including undefined when given Pitch Elements', () => {
+test('getIsActiveMatrix returns the IsActiveMatrix including undefined when given ActivePitchIds', () => {
   const degreeMatrix = [
     [ undefined, SECOND ],
     [ THIRD    , FOURTH ],
