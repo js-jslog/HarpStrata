@@ -81,3 +81,16 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given ActiveDegreeIs aga
 
   expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)
 })
+
+test('getIsActiveMatrix returns the IsActiveMatrix when given ActivePitchIs against large element matrices', () => {
+  const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
+    degreeMatrix,
+    pitchMatrix,
+    isActiveComplex: { isActiveMatrix: exampleIsActiveMatrix, activePitchIds: examplePitchIds }
+  }} = EXAMPLE_STRATA
+
+  const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: examplePitchIds }
+  const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
+
+  expect(actualIsActiveMatrix).toStrictEqual(exampleIsActiveMatrix)
+})
