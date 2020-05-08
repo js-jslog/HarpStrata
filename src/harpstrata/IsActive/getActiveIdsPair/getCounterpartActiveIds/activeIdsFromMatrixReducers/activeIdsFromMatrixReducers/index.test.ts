@@ -7,8 +7,8 @@ import type { MatrixAccumulator } from './index'
 import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './index'
 
 const degreeMatrix: DegreeMatrix = [
-  [ ROOT , SECOND, THIRD, FOURTH ],
-  [ FIFTH, SIXTH, SEVENTH, ROOT  ],
+  [ ROOT , SECOND, THIRD  , FOURTH ],
+  [ FIFTH, SIXTH , SEVENTH, ROOT   ],
 ]
 const pitchMatrix: PitchMatrix = [
   [ C, D, E, F ],
