@@ -31,8 +31,8 @@ test('getMatrixGivenDegree returns a IsActiveMatrix using Degree objects', () =>
 test('getMatrixGivenPitch returns a IsActiveMatrix using Pitch objects', () => {
   const isActiveProps = { ...baseIsActiveProps, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedIsActiveMatrix = [
-    [ IsActiveIds.Inactive  , IsActiveIds.Active ],
-    [ IsActiveIds.Active, IsActiveIds.Inactive   ],
+    [ IsActiveIds.Inactive, IsActiveIds.Active   ],
+    [ IsActiveIds.Active  , IsActiveIds.Inactive ],
   ]
   const actualIsActiveMatrix = getMatrixGivenPitch(isActiveProps)
 
