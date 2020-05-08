@@ -1,3 +1,4 @@
+import type { ActiveDegreeIds, ActivePitchIds } from '../../../types'
 import { PitchIds, C, D, E, F, G, A, B } from '../../../../../Pitch'
 import type { PitchMatrix } from '../../../../../Pitch'
 import { DegreeIds, ROOT, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH } from '../../../../../Degree'
@@ -16,10 +17,10 @@ const pitchMatrix: PitchMatrix = [
 ]
 
 test('activeIdsFromPitchMatrix operates as a reducer to contribute to the counterpart `activePitchIds` part of it\'s accumulator object', () => {
-  const activePitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
-  const expectedDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
+  const activePitchIds: ActivePitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
+  const expectedDegreeIds: ActiveDegreeIds = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
 
-  const initialState: MatrixAccumulator = { pitchMatrix, degreeMatrix, activePitchIds, activeDegreeIds: [] }
+  const initialState: MatrixAccumulator = { pitchMatrix, degreeMatrix, activePitchIds, activeDegreeIds: [] as ActiveDegreeIds }
 
   const { activeDegreeIds } = pitchMatrix.reduce(activeIdsFromPitchMatrix, initialState)
 
@@ -27,10 +28,10 @@ test('activeIdsFromPitchMatrix operates as a reducer to contribute to the counte
 })
 
 test('activeIdsFromDegreeMatrix operates as a reducer to contribute to the counterpart `activeDegreeIds` part of it\'s accumulator object', () => {
-  const expectedPitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
-  const activeDegreeIds: DegreeIds[] = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
+  const expectedPitchIds: ActivePitchIds = [ PitchIds.D, PitchIds.F, PitchIds.G ]
+  const activeDegreeIds: ActiveDegreeIds = [ DegreeIds.Second, DegreeIds.Fourth, DegreeIds.Fifth ]
 
-  const initialState: MatrixAccumulator = { degreeMatrix, pitchMatrix, activePitchIds: [], activeDegreeIds }
+  const initialState: MatrixAccumulator = { degreeMatrix, pitchMatrix, activePitchIds: [] as ActivePitchIds, activeDegreeIds }
 
   const { activePitchIds } = degreeMatrix.reduce(activeIdsFromDegreeMatrix, initialState)
 
