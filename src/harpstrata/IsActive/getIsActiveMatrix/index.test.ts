@@ -52,17 +52,17 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given Pitch Elements', (
 
 test('getIsActiveMatrix returns the IsActiveMatrix including undefined when given Pitch Elements', () => {
   const degreeMatrix = [
-    [ undefined , SECOND ],
-    [ THIRD, FOURTH ],
+    [ undefined, SECOND ],
+    [ THIRD    , FOURTH ],
   ]
   const pitchMatrix = [
     [ undefined, D ],
-    [ E, F ],
+    [ E        , F ],
   ]
   const isActiveProps = { degreeMatrix, pitchMatrix, activeIds: [ PitchIds.D, PitchIds.E ] }
   const expectedIsActiveMatrix = [
-    [ undefined         , IsActiveIds.Active     ],
-    [ IsActiveIds.Active, IsActiveIds.Inactive   ],
+    [ undefined         , IsActiveIds.Active   ],
+    [ IsActiveIds.Active, IsActiveIds.Inactive ],
   ]
   const actualIsActiveMatrix = getIsActiveMatrix(isActiveProps)
 
