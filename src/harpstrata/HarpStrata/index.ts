@@ -36,27 +36,5 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
   }
 }
 
-export {
-  HarpStrata,
-  ApparatusIds,
-  Apparatus,
-  InteractionIds,
-  Interaction,
-  InteractionRow,
-  InteractionMatrix,
-  HalfstepIndex,
-  HalfstepIndexRow,
-  HalfstepIndexMatrix,
-  DegreeIds,
-  Degree,
-  DegreeRow,
-  DegreeMatrix,
-  PozitionIds,
-  Pozition,
-  PitchIds,
-  Pitch
-} from './types'
-
-export type { ActiveDegreeIds, ActivePitchIds, ActiveIds, IsActiveMatrix, IsActiveRow, IsActiveComplex } from '../IsActive'
-export { IsActiveIds } from '../IsActive'
+export { HarpStrataProps, HarpStrata } from './types'
 export { EXAMPLE_STRATA } from './testResources'
