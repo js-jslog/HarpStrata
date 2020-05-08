@@ -1,6 +1,6 @@
-import type { HarpStrata } from '../types'
 import { EXAMPLE_PITCH_MATRICES } from '../Pitch/testResources'
 import { EXAMPLE_IS_ACTIVE_COMPLEXES } from '../IsActive'
+import type { HarpStrata } from '../HarpStrata'
 import { EXAMPLE_DEGREE_MATRICES } from '../Degree/testResources'
 import { MAJOR_DIATONIC_APPARATUS } from '../Apparatus/constants'
 

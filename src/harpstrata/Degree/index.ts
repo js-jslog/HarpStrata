@@ -1,4 +1,4 @@
-import type { HalfstepIndexMatrix, HalfstepIndex } from '../types'
+import type { HalfstepIndexMatrix, HalfstepIndex } from '../Apparatus'
 
 import type { DegreeMatrix } from './types'
 import { ORDERED_DEGREES } from './constants'

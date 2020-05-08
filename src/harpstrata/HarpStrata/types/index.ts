@@ -1,8 +1,8 @@
-import type { PozitionIds } from './Pozition'
-import type { PitchIds, PitchMatrix } from './Pitch'
-import type { ActiveIds, IsActiveComplex } from './IsActive'
-import type { DegreeMatrix } from './Degree'
-import type { Apparatus, ApparatusIds } from './Apparatus'
+import type { PozitionIds } from '../../Pozition'
+import type { PitchIds, PitchMatrix } from '../../Pitch'
+import type { ActiveIds, IsActiveComplex } from '../../IsActive'
+import type { DegreeMatrix } from '../../Degree'
+import type { Apparatus, ApparatusIds } from '../../Apparatus'
 
 export type HarpStrataProps = {
   readonly apparatusId: ApparatusIds;
@@ -28,21 +28,21 @@ export {
   HalfstepIndex,
   HalfstepIndexRow,
   HalfstepIndexMatrix,
-} from './Apparatus/types'
+} from '../../Apparatus/types'
 
 export {
   DegreeIds,
   Degree,
   DegreeRow,
   DegreeMatrix
-} from './Degree/types'
+} from '../../Degree/types'
 
 export {
   PozitionIds,
   Pozition
-} from './Pozition/types'
+} from '../../Pozition/types'
 
 export {
   PitchIds,
   Pitch
-} from './Pitch/types'
+} from '../../Pitch/types'

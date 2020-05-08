@@ -1,4 +1,4 @@
-import type { HalfstepIndex } from '../../types'
+import type { HalfstepIndex } from '../../Apparatus'
 
 export enum PozitionIds {
   First = 'FIRST',

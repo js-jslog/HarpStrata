@@ -1,8 +1,8 @@
-import { getActivePozitionIds, getPozition } from './Pozition'
-import { getPitchMatrix, getActivePitchIds, getPitch } from './Pitch'
-import { getIsActiveComplex } from './IsActive'
-import { getDegreeMatrix } from './Degree'
-import { getActiveApparatusIds, getApparatus } from './Apparatus'
+import { getActivePozitionIds, getPozition } from '../Pozition'
+import { getPitchMatrix, getActivePitchIds, getPitch } from '../Pitch'
+import { getIsActiveComplex } from '../IsActive'
+import { getDegreeMatrix } from '../Degree'
+import { getActiveApparatusIds, getApparatus } from '../Apparatus'
 
 import type { HarpStrataProps, HarpStrata } from './types'
 
@@ -57,5 +57,5 @@ export {
   Pitch
 } from './types'
 
-export type { ActiveDegreeIds, ActivePitchIds, ActiveIds, IsActiveMatrix, IsActiveRow, IsActiveComplex } from './IsActive'
-export { IsActiveIds } from './IsActive'
+export type { ActiveDegreeIds, ActivePitchIds, ActiveIds, IsActiveMatrix, IsActiveRow, IsActiveComplex } from '../IsActive'
+export { IsActiveIds } from '../IsActive'
