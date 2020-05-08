@@ -69,7 +69,7 @@ test('getIsActiveMatrix returns the IsActiveMatrix including undefined when give
   expect(actualIsActiveMatrix).toStrictEqual(expectedIsActiveMatrix)
 })
 
-test('getIsActiveMatrix returns the IsActiveMatrix when given Degree elements against large element matrices', () => {
+test('getIsActiveMatrix returns the IsActiveMatrix when given ActiveDegreeIs against large element matrices', () => {
   const { C_MAJOR_DIATONIC_FIRST_POZITION_C_MAJOR_PENTATONIC: {
     degreeMatrix,
     pitchMatrix,
