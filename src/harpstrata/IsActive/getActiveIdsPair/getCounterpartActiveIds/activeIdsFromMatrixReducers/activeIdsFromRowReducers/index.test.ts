@@ -6,7 +6,7 @@ import type { DegreeRow } from '../../../../../Degree'
 import type { RowAccumulator } from './index'
 import { activeIdsFromPitchRow, activeIdsFromDegreeRow } from './index'
 
-const degreeRow: DegreeRow = [ ROOT , SECOND, THIRD, FOURTH ]
+const degreeRow: DegreeRow = [ ROOT, SECOND, THIRD, FOURTH ]
 const pitchRow: PitchRow = [ C, D, E, F ]
 
 test('activeIdsFromPitchRow operates as a reducer to contribute to the counterpart `activePitchIds` part of it\'s accumulator object', () => {
