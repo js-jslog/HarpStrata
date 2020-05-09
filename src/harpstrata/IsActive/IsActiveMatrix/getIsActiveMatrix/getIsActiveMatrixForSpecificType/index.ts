@@ -1,4 +1,4 @@
-import { IsActiveIds, IsActiveRow, IsActiveMatrix } from '../types'
+import { IsActiveIds, IsActiveRow, IsActiveMatrix } from '../../types'
 import { IsActiveProps } from '../../../types'
 import type { Pitch, PitchRow } from '../../../../Pitch'
 import { PitchIds } from '../../../../Pitch'

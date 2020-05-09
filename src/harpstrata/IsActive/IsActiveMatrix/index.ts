@@ -1,2 +1,4 @@
-export type { IsActiveMatrix, IsActiveRow } from './getIsActiveMatrix'
-export { IsActiveIds, getIsActiveMatrix } from './getIsActiveMatrix'
+export { getIsActiveMatrix } from './getIsActiveMatrix'
+export type { IsActiveMatrix, IsActiveRow } from './types'
+export { IsActiveIds } from './types'
+export { EXAMPLE_IS_ACTIVE_MATRICES } from './testResources'
