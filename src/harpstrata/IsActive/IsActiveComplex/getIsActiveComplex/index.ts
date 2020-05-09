@@ -1,4 +1,5 @@
-import type { IsActiveProps, IsActiveComplex } from '../../types'
+import type { IsActiveComplex } from '../types'
+import type { IsActiveProps } from '../../types'
 import { getIsActiveMatrix } from '../../IsActiveMatrix'
 import { getActiveIdsPair } from '../../ActiveIds'
 
