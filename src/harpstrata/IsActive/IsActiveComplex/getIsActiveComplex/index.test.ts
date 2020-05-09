@@ -1,4 +1,4 @@
-import { EXAMPLE_STRATA } from '../../HarpStrata'
+import { EXAMPLE_STRATA } from '../../../HarpStrata'
 
 import { getIsActiveComplex } from './index'
 
