@@ -1,6 +1,6 @@
-import { getActiveIdsPair } from '../getActiveIdsPair'
 import type { IsActiveProps, IsActiveComplex } from '../../types'
 import { getIsActiveMatrix } from '../../IsActiveMatrix'
+import { getActiveIdsPair } from '../../ActiveIds'
 
 export const getIsActiveComplex = (isActiveProps: IsActiveProps): IsActiveComplex => {
   return {

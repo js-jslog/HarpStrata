@@ -1,5 +1,5 @@
 import type { IsActiveMatrix } from '../IsActiveMatrix'
-import type { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../IsActiveComplex'
+import type { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../ActiveIds'
 import type { PitchMatrix } from '../../Pitch'
 import type { DegreeMatrix } from '../../Degree'
 

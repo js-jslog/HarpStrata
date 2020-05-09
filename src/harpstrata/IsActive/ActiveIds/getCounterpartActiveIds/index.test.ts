@@ -1,6 +1,6 @@
-import type { IsActiveProps } from '../../../types'
-import { PitchIds, C, D, E, F } from '../../../../Pitch'
-import { DegreeIds, ROOT, SECOND, THIRD, FOURTH } from '../../../../Degree'
+import type { IsActiveProps } from '../../types'
+import { PitchIds, C, D, E, F } from '../../../Pitch'
+import { DegreeIds, ROOT, SECOND, THIRD, FOURTH } from '../../../Degree'
 
 import { getCounterpartDegreeIds, getCounterpartPitchIds } from './index'
 
