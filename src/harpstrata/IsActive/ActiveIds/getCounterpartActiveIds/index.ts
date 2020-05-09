@@ -1,7 +1,6 @@
 import type { ActivePitchIds, ActiveDegreeIds } from '../types'
+import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from '../activeIdsFromMatrixReducers'
 import type { IsActiveProps } from '../../types'
-
-import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './activeIdsFromMatrixReducers'
 
 
 export const getCounterpartDegreeIds = (props: IsActiveProps): ActiveDegreeIds => {
