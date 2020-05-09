@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - MAJOR: Add IsActiveComplex to the HarpStrata type
 - MINOR: Add remaining Pozitions to make all 12
+- MINOR: Add remaining Pitches to public API function make all 12
+
 ### Changed
 - MAJOR: Change getHarpStrata function signature to typed object
 - PATCH: Restructured internal architecture
