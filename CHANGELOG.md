@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [v5.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.0.0) - 2020-05-17
 ### Added
 - MAJOR: Add all the properties which the calling app would need to know how the harpstrata was generated
+- MAJOR: Improve the name of one of the HarpStrataProps properties
 
 ## [v4.0.1](https://github.com/js-jslog/harpstrata/releases/tag/v4.0.1) - 2020-05-13
 ### Fixed
