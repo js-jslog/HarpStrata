@@ -1,3 +1,4 @@
+import type { Pitch, PitchIds } from '../types'
 import { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } from '../constants'
 
 const pitchMap = new Map()
@@ -14,4 +15,6 @@ pitchMap.set(A.id, A)
 pitchMap.set(Bb.id, Bb)
 pitchMap.set(B.id, B)
 
-export { pitchMap }
+export const getActivePitchIds = (): PitchIds[] => Array.from(pitchMap.keys())
+export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
+

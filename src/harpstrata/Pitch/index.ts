@@ -1,9 +1,5 @@
-import { pitchMap } from './pitchMap'
-
-import type { PitchIds, Pitch } from './types'
-
-export const getActivePitchIds = (): PitchIds[] => Array.from(pitchMap.keys())
-export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
+export { getActivePitchIds } from './pitchMap'
+export { getPitch } from './pitchMap'
 
 export { getPitchMatrix } from './getPitchMatrix'
 

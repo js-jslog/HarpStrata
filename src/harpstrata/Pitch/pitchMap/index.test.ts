@@ -1,5 +1,6 @@
-import { PitchIds } from './types'
-import type { Pitch } from './types'
+import { PitchIds } from '../types'
+import type { Pitch } from '../types'
+
 import { getActivePitchIds, getPitch } from './index'
 
 
