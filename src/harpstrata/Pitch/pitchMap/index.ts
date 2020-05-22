@@ -17,4 +17,3 @@ pitchMap.set(B.id, B)
 
 export const getActivePitchIds = (): PitchIds[] => Array.from(pitchMap.keys())
 export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
-
