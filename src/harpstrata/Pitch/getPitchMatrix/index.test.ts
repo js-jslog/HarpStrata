@@ -1,9 +1,9 @@
 import { EXAMPLE_PITCH_MATRICES } from '../testResources'
+import { C, F } from '../constants'
 import { MAJOR_DIATONIC_APPARATUS } from '../../Apparatus'
 
 import { getPitchMatrix } from './index'
 
-import { C, F } from '../constants'
 
 test('getPitchMatrix function maps a simple 2d array of 0\'s to the input key pitch of C', () => {
   const expectedArray = [[ C, ], [ C, ]]
