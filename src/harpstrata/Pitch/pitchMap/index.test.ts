@@ -4,11 +4,14 @@ import type { Pitch } from '../types'
 import { getOrderedPitchIds, getPitch } from './index'
 
 
-test('getOrderedPitchIds function returns an array of the available pitches', () => {
-  const expectedIncludes = [ PitchIds.C, PitchIds.Db ]
+test('getOrderedPitchIds function returns an ordered array of the available pitches defaulting to starting at C', () => {
+  const expectedArray = [
+    PitchIds.C, PitchIds.Db, PitchIds.D, PitchIds.Eb, PitchIds.E, PitchIds.F,
+    PitchIds.Gb, PitchIds.G, PitchIds.Ab, PitchIds.A, PitchIds.Bb, PitchIds.B
+  ]
   const actualArray = getOrderedPitchIds()
 
-  expect(actualArray).toEqual(expect.arrayContaining(expectedIncludes))
+  expect(actualArray).toEqual(expectedArray)
 })
 
 test('getPitch function can return a first pozition', () => {
