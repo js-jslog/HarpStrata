@@ -1,5 +1,5 @@
 import { getActivePozitionIds } from '../Pozition'
-import { getActivePitchIds } from '../Pitch'
+import { getOrderedPitchIds } from '../Pitch'
 import { getActiveApparatusIds } from '../Apparatus'
 
 
@@ -7,7 +7,7 @@ export const getApparatusIds = getActiveApparatusIds
 
 export const getPozitionIds = getActivePozitionIds
 
-export const getPitchIds = getActivePitchIds
+export const getPitchIds = getOrderedPitchIds
 
 export { getHarpStrata } from './getHarpStrata'
 

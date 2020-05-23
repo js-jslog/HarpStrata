@@ -1,12 +1,12 @@
 import { PitchIds } from '../types'
 import type { Pitch } from '../types'
 
-import { getActivePitchIds, getPitch } from './index'
+import { getOrderedPitchIds, getPitch } from './index'
 
 
-test('getActivePitchIds function returns an array of the available pitches', () => {
+test('getOrderedPitchIds function returns an array of the available pitches', () => {
   const expectedIncludes = [ PitchIds.C, PitchIds.Db ]
-  const actualArray = getActivePitchIds()
+  const actualArray = getOrderedPitchIds()
 
   expect(actualArray).toEqual(expect.arrayContaining(expectedIncludes))
 })
