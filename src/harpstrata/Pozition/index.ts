@@ -1,4 +1,4 @@
-export { getActivePozitionIds, getPozition } from './pozitionMap'
+export { getOrderedPozitionIds, getPozition } from './pozitionMap'
 
 export { PozitionIds } from './types'
 export type { Pozition } from './types'

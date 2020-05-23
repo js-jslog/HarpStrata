@@ -1,13 +1,17 @@
 import { PozitionIds } from '../types'
 import type { Pozition } from '../types'
 
-import { getActivePozitionIds, getPozition } from './index'
+import { getOrderedPozitionIds, getPozition } from './index'
 
-test('getActivePozitionIds function returns an array of the available pozitions', () => {
-  const expectedIncludes = [ PozitionIds.First, PozitionIds.Second ]
-  const actualArray = getActivePozitionIds()
+const { First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth } = PozitionIds
 
-  expect(actualArray).toEqual(expect.arrayContaining(expectedIncludes))
+test('getOrderedPozitionIds function returns an ordered array of the pozitions defaulting to starting at First', () => {
+  const expectedArray = [
+    First, Eighth, Third, Tenth, Fifth, Twelfth, Seventh, Second, Ninth, Fourth, Eleventh, Sixth
+  ]
+  const actualArray = getOrderedPozitionIds()
+
+  expect(actualArray).toEqual(expectedArray)
 })
 
 test('getPozition function can return a first pozition', () => {
