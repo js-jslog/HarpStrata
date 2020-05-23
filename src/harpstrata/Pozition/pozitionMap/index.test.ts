@@ -27,6 +27,14 @@ test('getPozitionRootOffset returns 0 for first pozition id', () => {
   expect(getPozitionRootOffset(PozitionIds.First)).toBe(0)
 })
 
+test('getPozitionRootOffset returns 9 for fourth pozition id', () => {
+  expect(getPozitionRootOffset(PozitionIds.Fourth)).toBe(9)
+})
+
+test('getPozitionRootOffset returns 5 for twelfth pozition id', () => {
+  expect(getPozitionRootOffset(PozitionIds.Twelfth)).toBe(5)
+})
+
 test('getPozition function can return a first pozition', () => {
   const actualPozition = getPozition(FIRST.id)
 
