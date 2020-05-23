@@ -15,7 +15,7 @@ export const determinePozitionId = (props: DeterminePozitionIdProps): PozitionId
 
   const rootPitchIndex = harpKeyOrderedPitchIds.indexOf(rootPitchId)
 
-  const { [rootPitchIndex]: pozition } = getOrderedPozitionIds()
+  const { [rootPitchIndex]: pozitionId } = getOrderedPozitionIds()
 
-  return pozition
+  return pozitionId
 }
