@@ -1,6 +1,6 @@
 import type { PitchIds } from '../types'
 import { getOrderedPitchIds } from '../pitchMap'
-import { getPozition } from '../../Pozition'
+import { getOrderedPozitionIds } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 
 
@@ -11,8 +11,7 @@ type DetermineKeyPitchProps = {
 
 export const determineHarpKeyId = (props: DetermineKeyPitchProps): PitchIds => {
   const { rootPitchId, pozitionId } = props
-  const pozition = getPozition(pozitionId)
-  const { root: rootOffset } = pozition
+  const rootOffset = getOrderedPozitionIds().indexOf(pozitionId)
 
   const [ , ...ascendingPitchIds ] = getOrderedPitchIds(rootPitchId)
   const descendingPitchIdsFromRoot = [ rootPitchId, ...ascendingPitchIds.reverse() ]

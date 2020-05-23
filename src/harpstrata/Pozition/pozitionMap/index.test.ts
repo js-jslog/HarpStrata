@@ -1,5 +1,5 @@
 import { PozitionIds } from '../types'
-import type { Pozition } from '../types'
+import { FIRST } from '../constants'
 
 import { getOrderedPozitionIds, getPozition } from './index'
 
@@ -24,11 +24,7 @@ test('getOrderedPozitionIds function returns an ordered array of the pozitions f
 })
 
 test('getPozition function can return a first pozition', () => {
-  const FIRST_POZITION: Pozition = {
-    id: PozitionIds.First,
-    root: 0,
-  } as const
-  const actualPozition = getPozition(FIRST_POZITION.id)
+  const actualPozition = getPozition(FIRST.id)
 
-  expect(actualPozition).toStrictEqual(FIRST_POZITION)
+  expect(actualPozition).toStrictEqual(FIRST)
 })
