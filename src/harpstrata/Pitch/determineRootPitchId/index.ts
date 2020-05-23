@@ -1,5 +1,5 @@
 import type { PitchIds } from '../types'
-import { ORDERED_PITCHES } from '../constants'
+import { getOrderedPitchIds } from '../pitchMap'
 import { getPozition } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 
@@ -13,13 +13,9 @@ export const determineRootPitchId = (props: DetermineRootPitchProps): PitchIds =
   const pozition = getPozition(pozitionId)
   const { root: rootOffset } = pozition
 
-  const orderedPitchIds = ORDERED_PITCHES.map(pitch => pitch.id)
-  const pitchIndex = orderedPitchIds.indexOf(harpKeyId)
-  const arrayHead = [ ...orderedPitchIds.slice(pitchIndex) ]
-  const arrayTail = [ ...orderedPitchIds.slice(0, (pitchIndex)) ]
-  const alignedPitchIds = [ ...arrayHead, ...arrayTail ]
+  const ascPitchIdsInKey = getOrderedPitchIds(harpKeyId)
 
-  const { [rootOffset]: rootPitchId } = alignedPitchIds
+  const { [rootOffset]: rootPitchId } = ascPitchIdsInKey
 
   return rootPitchId
 }
