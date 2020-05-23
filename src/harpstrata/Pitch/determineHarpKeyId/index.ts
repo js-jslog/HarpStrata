@@ -3,12 +3,12 @@ import { ORDERED_PITCHES } from '../constants'
 import { getPozition } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 
-type GetKeyPitchProps = {
+type DetermineKeyPitchProps = {
   readonly rootPitchId: PitchIds;
   readonly pozitionId: PozitionIds;
 }
 
-export const getHarpKeyId = (props: GetKeyPitchProps): PitchIds => {
+export const determineHarpKeyId = (props: DetermineKeyPitchProps): PitchIds => {
   const { rootPitchId, pozitionId } = props
   const pozition = getPozition(pozitionId)
   const { root: rootOffset } = pozition
