@@ -27,4 +27,6 @@ export const getOrderedPozitionIds = (zeroth: PozitionIds = PozitionIds.First): 
   return [ ...head, ...tail ]
 }
 
+export const getPozitionRootOffset = (pozitionId: PozitionIds): number => getOrderedPozitionIds().indexOf(pozitionId)
+
 export const getPozition = (pozitionId: PozitionIds): Pozition => pozitionMap.get(pozitionId)

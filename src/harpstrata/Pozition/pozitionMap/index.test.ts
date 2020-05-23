@@ -1,7 +1,7 @@
 import { PozitionIds } from '../types'
 import { FIRST } from '../constants'
 
-import { getOrderedPozitionIds, getPozition } from './index'
+import { getOrderedPozitionIds, getPozitionRootOffset, getPozition } from './index'
 
 const { First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth } = PozitionIds
 
@@ -21,6 +21,10 @@ test('getOrderedPozitionIds function returns an ordered array of the pozitions f
   const actualArray = getOrderedPozitionIds(Seventh)
 
   expect(actualArray).toEqual(expectedArray)
+})
+
+test('getPozitionRootOffset returns 0 for first pozition id', () => {
+  expect(getPozitionRootOffset(PozitionIds.First)).toBe(0)
 })
 
 test('getPozition function can return a first pozition', () => {
