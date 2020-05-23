@@ -1,5 +1,6 @@
-import { PozitionIds } from './types'
-import type { Pozition } from './types'
+import { PozitionIds } from '../types'
+import type { Pozition } from '../types'
+
 import { getActivePozitionIds, getPozition } from './index'
 
 test('getActivePozitionIds function returns an array of the available pozitions', () => {
