@@ -1,4 +1,4 @@
-import { ORDERED_POZITIONS } from '../../Pozition'
+import { getOrderedPozitionIds } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 import { getOrderedPitchIds } from '../../Pitch'
 import type { PitchIds } from '../../Pitch'
@@ -15,7 +15,7 @@ export const determinePozitionId = (props: DeterminePozitionIdProps): PozitionId
 
   const rootPitchIndex = harpKeyOrderedPitchIds.indexOf(rootPitchId)
 
-  const { [rootPitchIndex]: pozition } = ORDERED_POZITIONS
+  const { [rootPitchIndex]: pozition } = getOrderedPozitionIds()
 
-  return pozition.id
+  return pozition
 }
