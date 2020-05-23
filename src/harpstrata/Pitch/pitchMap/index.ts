@@ -1,4 +1,5 @@
-import type { Pitch, PitchIds } from '../types'
+import type { Pitch } from '../types'
+import { PitchIds } from '../types'
 import { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } from '../constants'
 
 const pitchMap = new Map()
@@ -15,5 +16,15 @@ pitchMap.set(A.id, A)
 pitchMap.set(Bb.id, Bb)
 pitchMap.set(B.id, B)
 
-export const getOrderedPitchIds = (): PitchIds[] => Array.from(pitchMap.keys())
+export const getOrderedPitchIds = (zeroth: PitchIds = PitchIds.C): PitchIds[] => {
+  const orderedPitchIds = Array.from(pitchMap.keys())
+
+  const desiredZeroIndex = orderedPitchIds.indexOf(zeroth)
+
+  const head = [ ...orderedPitchIds.slice(desiredZeroIndex) ]
+  const tail = [ ...orderedPitchIds.slice(0, (desiredZeroIndex)) ]
+
+  return [ ...head, ...tail ]
+}
+
 export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
