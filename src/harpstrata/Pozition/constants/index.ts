@@ -60,3 +60,11 @@ export const TWELFTH: Pozition = {
   id: PozitionIds.Twelfth,
   root: 5,
 } as const
+
+export const ORDERED_POZITIONS = [ FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH, TENTH, ELEVENTH, TWELFTH ].sort((pozitionOne, pozitionOther) => {
+  const { root: pozitionOneRoot } = pozitionOne
+  const { root: pozitionOtherRoot } = pozitionOther
+  if (pozitionOneRoot > pozitionOtherRoot) return 1
+  if (pozitionOneRoot < pozitionOtherRoot) return -1
+  return 0
+})
