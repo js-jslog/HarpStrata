@@ -1,6 +1,6 @@
 import { ORDERED_POZITIONS } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
-import { ORDERED_PITCHES } from '../../Pitch'
+import { getOrderedPitchIds } from '../../Pitch'
 import type { PitchIds } from '../../Pitch'
 
 type DeterminePozitionIdProps = {
@@ -10,13 +10,10 @@ type DeterminePozitionIdProps = {
 
 export const determinePozitionId = (props: DeterminePozitionIdProps): PozitionIds => {
   const { rootPitchId, harpKeyId } = props
-  const orderedPitchIds = ORDERED_PITCHES.map(pitch => pitch.id)
-  const harpKeyIndex = orderedPitchIds.indexOf(harpKeyId)
-  const arrayHead = [ ...orderedPitchIds.slice(harpKeyIndex) ]
-  const arrayTail = [ ...orderedPitchIds.slice(0, (harpKeyIndex)) ]
-  const alignedPitchIds = [ ...arrayHead, ...arrayTail ]
 
-  const rootPitchIndex = alignedPitchIds.indexOf(rootPitchId)
+  const harpKeyOrderedPitchIds = getOrderedPitchIds(harpKeyId)
+
+  const rootPitchIndex = harpKeyOrderedPitchIds.indexOf(rootPitchId)
 
   const { [rootPitchIndex]: pozition } = ORDERED_POZITIONS
 
