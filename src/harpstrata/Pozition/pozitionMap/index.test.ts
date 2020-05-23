@@ -14,6 +14,15 @@ test('getOrderedPozitionIds function returns an ordered array of the pozitions d
   expect(actualArray).toEqual(expectedArray)
 })
 
+test('getOrderedPozitionIds function returns an ordered array of the pozitions from a given starting point', () => {
+  const expectedArray = [
+    Seventh, Second, Ninth, Fourth, Eleventh, Sixth, First, Eighth, Third, Tenth, Fifth, Twelfth
+  ]
+  const actualArray = getOrderedPozitionIds(Seventh)
+
+  expect(actualArray).toEqual(expectedArray)
+})
+
 test('getPozition function can return a first pozition', () => {
   const FIRST_POZITION: Pozition = {
     id: PozitionIds.First,

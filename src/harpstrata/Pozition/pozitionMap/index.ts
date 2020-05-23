@@ -1,4 +1,5 @@
-import type { PozitionIds, Pozition } from '../types'
+import { PozitionIds } from '../types'
+import type { Pozition } from '../types'
 import { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH, TENTH, ELEVENTH, TWELFTH } from '../constants'
 
 const pozitionMap = new Map()
@@ -15,5 +16,15 @@ pozitionMap.set(FOURTH.id, FOURTH)
 pozitionMap.set(ELEVENTH.id, ELEVENTH)
 pozitionMap.set(SIXTH.id, SIXTH)
 
-export const getOrderedPozitionIds = (): PozitionIds[] => Array.from(pozitionMap.keys())
+export const getOrderedPozitionIds = (zeroth: PozitionIds = PozitionIds.First): PozitionIds[] => {
+  const orderedPozitionIds = Array.from(pozitionMap.keys())
+
+  const desiredZeroIndex = orderedPozitionIds.indexOf(zeroth)
+
+  const head = [ ...orderedPozitionIds.slice(desiredZeroIndex) ]
+  const tail = [ ...orderedPozitionIds.slice(0, (desiredZeroIndex)) ]
+
+  return [ ...head, ...tail ]
+}
+
 export const getPozition = (pozitionId: PozitionIds): Pozition => pozitionMap.get(pozitionId)
