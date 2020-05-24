@@ -17,7 +17,7 @@ export type { Pozition } from './Pozition'
 export { PitchIds } from './Pitch'
 export type { Pitch } from './Pitch'
 
-export { deduceHarpKeyId, deduceRootPitchId, deducePozitionId } from './Covariant'
+export { getCovariants } from './Covariant'
 
 export { IsActiveIds } from './IsActive'
 export type {
