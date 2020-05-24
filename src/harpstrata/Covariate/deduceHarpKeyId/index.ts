@@ -1,15 +1,10 @@
+import { HarpKeyControlVars } from '../types'
 import { getPozitionRootOffset } from '../../Pozition'
-import type { PozitionIds } from '../../Pozition'
 import { getOrderedPitchIds } from '../../Pitch'
 import type { PitchIds } from '../../Pitch'
 
 
-export type DeduceKeyPitchProps = {
-  readonly rootPitchId: PitchIds;
-  readonly pozitionId: PozitionIds;
-}
-
-export const deduceHarpKeyId = (props: DeduceKeyPitchProps): PitchIds => {
+export const deduceHarpKeyId = (props: HarpKeyControlVars): PitchIds => {
   const { rootPitchId, pozitionId } = props
   const rootOffset = getPozitionRootOffset(pozitionId)
 

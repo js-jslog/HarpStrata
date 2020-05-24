@@ -1,23 +1,14 @@
-import { DeduceRootPitchProps } from '../deduceRootPitchId'
+import type { HarpKeyControlVars, RootPitchControlVars, PozitionControlVars } from '../types'
+import type { GenericControlVars, CovariateGroup } from '../types'
 import { deduceRootPitchId } from '../deduceRootPitchId'
-import { DeducePozitionIdProps } from '../deducePozitionId'
 import { deducePozitionId } from '../deducePozitionId'
-import { DeduceKeyPitchProps } from '../deduceHarpKeyId'
 import { deduceHarpKeyId } from '../deduceHarpKeyId'
-import { PozitionIds } from '../../Pozition'
-import { PitchIds } from '../../Pitch'
 
-type Covariates = {
-  readonly harpKeyId: PitchIds;
-  readonly rootPitchId: PitchIds;
-  readonly pozitionId: PozitionIds;
-}
-type ControlVariables = DeduceRootPitchProps | DeduceKeyPitchProps | DeducePozitionIdProps
 
-export const getCovariates = (controlVariables: ControlVariables): Covariates => {
-  const deduceKeyPitchProps = controlVariables as DeduceKeyPitchProps
-  const deduceRootPitchProps = controlVariables as DeduceRootPitchProps
-  const deducePozitionIdProps = controlVariables as DeducePozitionIdProps
+export const getCovariates = (controlVariables: GenericControlVars): CovariateGroup => {
+  const deduceKeyPitchProps = controlVariables as HarpKeyControlVars
+  const deduceRootPitchProps = controlVariables as RootPitchControlVars
+  const deducePozitionIdProps = controlVariables as PozitionControlVars
   if (deduceKeyPitchProps.rootPitchId && deduceKeyPitchProps.pozitionId) {
     const { rootPitchId, pozitionId } = deduceKeyPitchProps
     const harpKeyId = deduceHarpKeyId(deduceKeyPitchProps)

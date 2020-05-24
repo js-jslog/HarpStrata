@@ -1,14 +1,10 @@
+import { PozitionControlVars } from '../types'
 import { getOrderedPozitionIds } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 import { getOrderedPitchIds } from '../../Pitch'
-import type { PitchIds } from '../../Pitch'
 
-export type DeducePozitionIdProps = {
-  readonly rootPitchId: PitchIds;
-  readonly harpKeyId: PitchIds;
-}
 
-export const deducePozitionId = (props: DeducePozitionIdProps): PozitionIds => {
+export const deducePozitionId = (props: PozitionControlVars): PozitionIds => {
   const { rootPitchId, harpKeyId } = props
 
   const harpKeyOrderedPitchIds = getOrderedPitchIds(harpKeyId)
