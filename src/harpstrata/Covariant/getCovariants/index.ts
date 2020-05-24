@@ -6,22 +6,22 @@ import { deduceHarpKeyId } from '../deduceHarpKeyId'
 
 
 export const getCovariants = (controlVariables: GenericControlVars): CovariateGroup => {
-  const deduceKeyPitchProps = controlVariables as HarpKeyControlVars
-  const deduceRootPitchProps = controlVariables as RootPitchControlVars
-  const deducePozitionIdProps = controlVariables as PozitionControlVars
-  if (deduceKeyPitchProps.rootPitchId && deduceKeyPitchProps.pozitionId) {
-    const { rootPitchId, pozitionId } = deduceKeyPitchProps
-    const harpKeyId = deduceHarpKeyId(deduceKeyPitchProps)
+  const keyPitchControlVars = controlVariables as HarpKeyControlVars
+  const rootPitchControlVars = controlVariables as RootPitchControlVars
+  const pozitionControlVars = controlVariables as PozitionControlVars
+  if (keyPitchControlVars.rootPitchId && keyPitchControlVars.pozitionId) {
+    const { rootPitchId, pozitionId } = keyPitchControlVars
+    const harpKeyId = deduceHarpKeyId(keyPitchControlVars)
 
     return { harpKeyId, pozitionId, rootPitchId }
-  } else if (deducePozitionIdProps.rootPitchId && deducePozitionIdProps.harpKeyId) {
-    const { rootPitchId, harpKeyId } = deducePozitionIdProps
-    const pozitionId = deducePozitionId(deducePozitionIdProps)
+  } else if (pozitionControlVars.rootPitchId && pozitionControlVars.harpKeyId) {
+    const { rootPitchId, harpKeyId } = pozitionControlVars
+    const pozitionId = deducePozitionId(pozitionControlVars)
 
     return { harpKeyId, pozitionId, rootPitchId }
   } else {
-    const { harpKeyId, pozitionId } = deduceRootPitchProps
-    const rootPitchId = deduceRootPitchId(deduceRootPitchProps)
+    const { harpKeyId, pozitionId } = rootPitchControlVars
+    const rootPitchId = deduceRootPitchId(rootPitchControlVars)
 
     return { harpKeyId, pozitionId, rootPitchId }
   }
