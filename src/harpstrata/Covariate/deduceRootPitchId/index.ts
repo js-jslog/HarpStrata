@@ -3,7 +3,7 @@ import type { PozitionIds } from '../../Pozition'
 import type { PitchIds } from '../../Pitch'
 import { getOrderedPitchIds } from '../../Pitch'
 
-type DeduceRootPitchProps = {
+export type DeduceRootPitchProps = {
   readonly harpKeyId: PitchIds;
   readonly pozitionId: PozitionIds;
 }
