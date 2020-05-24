@@ -1,11 +1,11 @@
-import { getOrderedPozitionIds } from '../Pozition'
+import { getAscendingPozitionIds } from '../Pozition'
 import { getAscendingPitchIds } from '../Pitch'
 import { getActiveApparatusIds } from '../Apparatus'
 
 
 export const getApparatusIds = getActiveApparatusIds
 
-export const getPozitionIds = getOrderedPozitionIds
+export const getPozitionIds = getAscendingPozitionIds
 
 export const getPitchIds = getAscendingPitchIds
 

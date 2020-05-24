@@ -1,24 +1,24 @@
 import { PozitionIds } from '../types'
 import { FIRST } from '../constants'
 
-import { getOrderedPozitionIds, getPozitionRootOffset, getPozition } from './index'
+import { getAscendingPozitionIds, getPozitionRootOffset, getPozition } from './index'
 
 const { First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth } = PozitionIds
 
-test('getOrderedPozitionIds function returns an ordered array of the pozitions defaulting to starting at First', () => {
+test('getAscendingPozitionIds function returns an ordered array of the pozitions defaulting to starting at First', () => {
   const expectedArray = [
     First, Eighth, Third, Tenth, Fifth, Twelfth, Seventh, Second, Ninth, Fourth, Eleventh, Sixth
   ]
-  const actualArray = getOrderedPozitionIds()
+  const actualArray = getAscendingPozitionIds()
 
   expect(actualArray).toEqual(expectedArray)
 })
 
-test('getOrderedPozitionIds function returns an ordered array of the pozitions from a given starting point', () => {
+test('getAscendingPozitionIds function returns an ordered array of the pozitions from a given starting point', () => {
   const expectedArray = [
     Seventh, Second, Ninth, Fourth, Eleventh, Sixth, First, Eighth, Third, Tenth, Fifth, Twelfth
   ]
-  const actualArray = getOrderedPozitionIds(Seventh)
+  const actualArray = getAscendingPozitionIds(Seventh)
 
   expect(actualArray).toEqual(expectedArray)
 })

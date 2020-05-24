@@ -16,7 +16,7 @@ pozitionMap.set(FOURTH.id, FOURTH)
 pozitionMap.set(ELEVENTH.id, ELEVENTH)
 pozitionMap.set(SIXTH.id, SIXTH)
 
-export const getOrderedPozitionIds = (originId: PozitionIds = PozitionIds.First): ReadonlyArray<PozitionIds> => {
+export const getAscendingPozitionIds = (originId: PozitionIds = PozitionIds.First): ReadonlyArray<PozitionIds> => {
   const orderedPozitionIds = Array.from(pozitionMap.keys())
 
   const originIndex = orderedPozitionIds.indexOf(originId)
@@ -27,6 +27,6 @@ export const getOrderedPozitionIds = (originId: PozitionIds = PozitionIds.First)
   return [ ...head, ...tail ]
 }
 
-export const getPozitionRootOffset = (pozitionId: PozitionIds): number => getOrderedPozitionIds().indexOf(pozitionId)
+export const getPozitionRootOffset = (pozitionId: PozitionIds): number => getAscendingPozitionIds().indexOf(pozitionId)
 
 export const getPozition = (pozitionId: PozitionIds): Pozition => pozitionMap.get(pozitionId)

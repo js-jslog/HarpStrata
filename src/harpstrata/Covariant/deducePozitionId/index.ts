@@ -1,5 +1,5 @@
 import { PozitionControlVars } from '../types'
-import { getOrderedPozitionIds } from '../../Pozition'
+import { getAscendingPozitionIds } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 import { getAscendingPitchIds } from '../../Pitch'
 
@@ -11,7 +11,7 @@ export const deducePozitionId = (props: PozitionControlVars): PozitionIds => {
 
   const rootPitchIndex = harpKeyAscendingPitchIds.indexOf(rootPitchId)
 
-  const { [rootPitchIndex]: pozitionId } = getOrderedPozitionIds()
+  const { [rootPitchIndex]: pozitionId } = getAscendingPozitionIds()
 
   return pozitionId
 }
