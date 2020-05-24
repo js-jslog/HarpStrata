@@ -1,13 +1,10 @@
 import type { DegreeMatrix } from '../types'
-import { DegreeIds } from '../types'
-import { getDegree, getAscendingDegreeIds } from '../degreeMap'
+import { getDegree, getAscendingDegreeIds, getDescendingDegreeIds } from '../degreeMap'
 import type { HalfstepIndexMatrix, HalfstepIndex } from '../../Apparatus'
 
 
 export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: HalfstepIndex): DegreeMatrix => {
-  const [ , ...restOrderedDegreeIds ] = getAscendingDegreeIds()
-  const reversedRest = [ ...restOrderedDegreeIds ].reverse()
-  const { [root]: rootDegreeId } = [ DegreeIds.Root, ...reversedRest ]
+  const { [root]: rootDegreeId } = getDescendingDegreeIds()
   const shiftedOrderedDegreeIds = getAscendingDegreeIds(rootDegreeId)
 
   return halfstepIndexMatrix.map((halfstepIndexRow) => {
