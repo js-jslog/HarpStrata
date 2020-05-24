@@ -5,7 +5,7 @@ import { deducePozitionId } from '../deducePozitionId'
 import { deduceHarpKeyId } from '../deduceHarpKeyId'
 
 
-export const getCovariates = (controlVariables: GenericControlVars): CovariateGroup => {
+export const getCovariants = (controlVariables: GenericControlVars): CovariateGroup => {
   const deduceKeyPitchProps = controlVariables as HarpKeyControlVars
   const deduceRootPitchProps = controlVariables as RootPitchControlVars
   const deducePozitionIdProps = controlVariables as PozitionControlVars
