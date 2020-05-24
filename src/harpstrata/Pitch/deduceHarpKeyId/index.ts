@@ -4,12 +4,12 @@ import { getPozitionRootOffset } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
 
 
-type DetermineKeyPitchProps = {
+type DeduceKeyPitchProps = {
   readonly rootPitchId: PitchIds;
   readonly pozitionId: PozitionIds;
 }
 
-export const determineHarpKeyId = (props: DetermineKeyPitchProps): PitchIds => {
+export const deduceHarpKeyId = (props: DeduceKeyPitchProps): PitchIds => {
   const { rootPitchId, pozitionId } = props
   const rootOffset = getPozitionRootOffset(pozitionId)
 

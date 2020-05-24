@@ -2,8 +2,8 @@ export { getOrderedPitchIds } from './pitchMap'
 export { getPitch } from './pitchMap'
 
 export { getPitchMatrix } from './getPitchMatrix'
-export { determineHarpKeyId } from './determineHarpKeyId'
-export { determineRootPitchId } from './determineRootPitchId'
+export { deduceHarpKeyId } from './deduceHarpKeyId'
+export { deduceRootPitchId } from './deduceRootPitchId'
 
 export type { Pitch, PitchRow, PitchMatrix } from './types'
 export { PitchIds } from './types'

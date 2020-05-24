@@ -3,12 +3,12 @@ import type { PozitionIds } from '../../Pozition'
 import { getOrderedPitchIds } from '../../Pitch'
 import type { PitchIds } from '../../Pitch'
 
-type DeterminePozitionIdProps = {
+type DeducePozitionIdProps = {
   readonly rootPitchId: PitchIds;
   readonly harpKeyId: PitchIds;
 }
 
-export const determinePozitionId = (props: DeterminePozitionIdProps): PozitionIds => {
+export const deducePozitionId = (props: DeducePozitionIdProps): PozitionIds => {
   const { rootPitchId, harpKeyId } = props
 
   const harpKeyOrderedPitchIds = getOrderedPitchIds(harpKeyId)
