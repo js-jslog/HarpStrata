@@ -8,9 +8,9 @@ export const deduceRootPitchId = (props: RootPitchControlVars): PitchIds => {
   const { harpKeyId, pozitionId } = props
   const rootOffset = getPozitionRootOffset(pozitionId)
 
-  const ascendingPitchIdsInKey = getAscendingPitchIds(harpKeyId)
+  const ascendingPitchIds = getAscendingPitchIds(harpKeyId)
 
-  const { [rootOffset]: rootPitchId } = ascendingPitchIdsInKey
+  const { [rootOffset]: rootPitchId } = ascendingPitchIds
 
   return rootPitchId
 }
