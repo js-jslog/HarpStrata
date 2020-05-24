@@ -1,34 +1,34 @@
 import { PitchIds } from '../types'
 import { PozitionIds } from '../../Pozition'
 
-import { determineHarpKeyId } from './index'
+import { deduceHarpKeyId } from './index'
 
-test('determineHarpKeyId returns C for a C root in first pozition', () => {
+test('deduceHarpKeyId returns C for a C root in first pozition', () => {
   const { C: rootPitchId } = PitchIds
   const { First: pozitionId } = PozitionIds
 
   const { C: expectedHarpKeyId } = PitchIds
-  const actualHarpKeyId = determineHarpKeyId({rootPitchId, pozitionId})
+  const actualHarpKeyId = deduceHarpKeyId({rootPitchId, pozitionId})
 
   expect(actualHarpKeyId).toBe(expectedHarpKeyId)
 })
 
-test('determineHarpKeyId returns C for a G root in second pozition', () => {
+test('deduceHarpKeyId returns C for a G root in second pozition', () => {
   const { G: rootPitchId } = PitchIds
   const { Second: pozitionId } = PozitionIds
 
   const { C: expectedHarpKeyId } = PitchIds
-  const actualHarpKeyId = determineHarpKeyId({rootPitchId, pozitionId})
+  const actualHarpKeyId = deduceHarpKeyId({rootPitchId, pozitionId})
 
   expect(actualHarpKeyId).toBe(expectedHarpKeyId)
 })
 
-test('determineHarpKeyId returns D for an Eb root in eighth pozition', () => {
+test('deduceHarpKeyId returns D for an Eb root in eighth pozition', () => {
   const { Eb: rootPitchId } = PitchIds
   const { Eighth: pozitionId } = PozitionIds
 
   const { D: expectedHarpKeyId } = PitchIds
-  const actualHarpKeyId = determineHarpKeyId({rootPitchId, pozitionId})
+  const actualHarpKeyId = deduceHarpKeyId({rootPitchId, pozitionId})
 
   expect(actualHarpKeyId).toBe(expectedHarpKeyId)
 })
