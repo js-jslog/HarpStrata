@@ -27,4 +27,12 @@ export const getAscendingPitchIds = (zeroth: PitchIds = PitchIds.C): ReadonlyArr
   return [ ...head, ...tail ]
 }
 
+export const getDescendingPitchIds = (origin: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
+  const ascendingPitchIds = getAscendingPitchIds(origin)
+  const [ , ...ascendingWithoutOrigin ] = ascendingPitchIds
+  const descendingWithoutOrigin = [ ...ascendingWithoutOrigin ].reverse()
+
+  return [ origin, ...descendingWithoutOrigin ]
+}
+
 export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
