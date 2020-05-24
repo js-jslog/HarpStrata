@@ -5,10 +5,9 @@ import type { HalfstepIndexMatrix, HalfstepIndex } from '../../Apparatus'
 
 
 export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: HalfstepIndex): DegreeMatrix => {
-
   const [ , ...restOrderedDegreeIds ] = getOrderedDegreeIds()
-  const reversedRemainder = [ ...restOrderedDegreeIds ].reverse()
-  const { [root]: rootDegreeId } = [ DegreeIds.Root, ...reversedRemainder ]
+  const reversedRest = [ ...restOrderedDegreeIds ].reverse()
+  const { [root]: rootDegreeId } = [ DegreeIds.Root, ...reversedRest ]
   const shiftedOrderedDegreeIds = getOrderedDegreeIds(rootDegreeId)
 
   return halfstepIndexMatrix.map((halfstepIndexRow) => {
