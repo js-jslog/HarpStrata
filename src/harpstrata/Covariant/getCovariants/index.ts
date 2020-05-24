@@ -1,29 +1,34 @@
-import type { HarpKeyControlVars, RootPitchControlVars, PozitionControlVars } from '../types'
 import type { GenericControlVars, CovariateGroup } from '../types'
-import { isPozitionControlVars } from '../types'
+import { isHarpKeyControlVars, isRootPitchControlVars, isPozitionControlVars } from '../types'
 import { deduceRootPitchId } from '../deduceRootPitchId'
 import { deducePozitionId } from '../deducePozitionId'
 import { deduceHarpKeyId } from '../deduceHarpKeyId'
 
 
 export const getCovariants = (controlVariables: GenericControlVars): CovariateGroup => {
-  const keyPitchControlVars = controlVariables as HarpKeyControlVars
-  const rootPitchControlVars = controlVariables as RootPitchControlVars
-  const pozitionControlVars = controlVariables as PozitionControlVars
-  if (keyPitchControlVars.rootPitchId && keyPitchControlVars.pozitionId) {
-    const { rootPitchId, pozitionId } = keyPitchControlVars
-    const harpKeyId = deduceHarpKeyId(keyPitchControlVars)
+  if (isHarpKeyControlVars(controlVariables)) {
+    const { rootPitchId, pozitionId } = controlVariables
+    const harpKeyId = deduceHarpKeyId(controlVariables)
 
     return { harpKeyId, pozitionId, rootPitchId }
   } else if (isPozitionControlVars(controlVariables)) {
-    const { rootPitchId, harpKeyId } = pozitionControlVars
-    const pozitionId = deducePozitionId(pozitionControlVars)
+    const { rootPitchId, harpKeyId } = controlVariables
+    const pozitionId = deducePozitionId(controlVariables)
 
     return { harpKeyId, pozitionId, rootPitchId }
-  } else {
-    const { harpKeyId, pozitionId } = rootPitchControlVars
-    const rootPitchId = deduceRootPitchId(rootPitchControlVars)
+  } else if (isRootPitchControlVars(controlVariables)) {
+    const { harpKeyId, pozitionId } = controlVariables
+    const rootPitchId = deduceRootPitchId(controlVariables)
 
     return { harpKeyId, pozitionId, rootPitchId }
   }
+
+  const errorMessage = `
+    Input args did not meet covariant control group expectations.
+
+    Input: ${JSON.stringify(controlVariables)}
+
+    Two of the CovariateGroup properties need to be defined.
+  `
+  throw new Error(errorMessage)
 }
