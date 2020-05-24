@@ -4,7 +4,7 @@ import { getOrderedPitchIds } from '../../Pitch'
 import type { PitchIds } from '../../Pitch'
 
 
-type DeduceKeyPitchProps = {
+export type DeduceKeyPitchProps = {
   readonly rootPitchId: PitchIds;
   readonly pozitionId: PozitionIds;
 }
