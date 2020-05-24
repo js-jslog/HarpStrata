@@ -24,7 +24,7 @@ export const getCovariants = (controlVariables: GenericControlVars): CovariantGr
   }
 
   const errorMessage = `
-    Input args did not meet covariant control group expectations.
+    Input args did not meet control variable expectations.
 
     Input: ${JSON.stringify(controlVariables)}
 
