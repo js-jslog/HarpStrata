@@ -16,7 +16,7 @@ degreeMap.set(SIXTH.id, SIXTH)
 degreeMap.set(FLAT7.id, FLAT7)
 degreeMap.set(SEVENTH.id, SEVENTH)
 
-export const getOrderedDegreeIds = (zeroth: DegreeIds = DegreeIds.Root): ReadonlyArray<DegreeIds> => {
+export const getAscendingDegreeIds = (zeroth: DegreeIds = DegreeIds.Root): ReadonlyArray<DegreeIds> => {
   const orderedDegreeIds = Array.from(degreeMap.keys())
 
   const desiredZeroIndex = orderedDegreeIds.indexOf(zeroth)
@@ -25,6 +25,14 @@ export const getOrderedDegreeIds = (zeroth: DegreeIds = DegreeIds.Root): Readonl
   const tail = [ ...orderedDegreeIds.slice(0, (desiredZeroIndex)) ]
 
   return [ ...head, ...tail ]
+}
+
+export const getDescendingDegreeIds = (origin: DegreeIds = DegreeIds.Root): ReadonlyArray<DegreeIds> => {
+  const ascendingDegreeIds = getAscendingDegreeIds(origin)
+  const [ , ...ascendingWithoutOrigin ] = ascendingDegreeIds
+  const descendingWithoutOrigin = [ ...ascendingWithoutOrigin ].reverse()
+
+  return [ origin, ...descendingWithoutOrigin ]
 }
 
 export const getDegree = (degreeId: DegreeIds): Degree => degreeMap.get(degreeId)
