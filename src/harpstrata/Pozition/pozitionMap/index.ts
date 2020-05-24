@@ -16,7 +16,7 @@ pozitionMap.set(FOURTH.id, FOURTH)
 pozitionMap.set(ELEVENTH.id, ELEVENTH)
 pozitionMap.set(SIXTH.id, SIXTH)
 
-export const getOrderedPozitionIds = (zeroth: PozitionIds = PozitionIds.First): PozitionIds[] => {
+export const getOrderedPozitionIds = (zeroth: PozitionIds = PozitionIds.First): ReadonlyArray<PozitionIds> => {
   const orderedPozitionIds = Array.from(pozitionMap.keys())
 
   const desiredZeroIndex = orderedPozitionIds.indexOf(zeroth)
