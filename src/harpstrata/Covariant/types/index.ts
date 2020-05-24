@@ -17,6 +17,12 @@ export type PozitionControlVars = {
 }
 
 export type GenericControlVars = HarpKeyControlVars | RootPitchControlVars | PozitionControlVars
+export const isPozitionControlVars = (props: GenericControlVars): props is PozitionControlVars => {
+  const predicateOne = (props as PozitionControlVars).rootPitchId !== undefined
+  const predicateTwo = (props as PozitionControlVars).harpKeyId !== undefined
+
+  return predicateOne && predicateTwo
+}
 
 export type CovariateGroup = {
   readonly harpKeyId: PitchIds;
