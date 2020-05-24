@@ -3,7 +3,7 @@ import { getPozitionRootOffset } from '../../Pozition'
 import { getPitchMatrix, getPitch } from '../../Pitch'
 import { getIsActiveComplex } from '../../IsActive'
 import { getDegreeMatrix } from '../../Degree'
-import { deduceRootPitchId } from '../../Covariate'
+import { deduceRootPitchId } from '../../Covariant'
 import { getApparatus } from '../../Apparatus'
 
 export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
