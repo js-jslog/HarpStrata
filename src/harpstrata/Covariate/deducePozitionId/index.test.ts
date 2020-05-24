@@ -1,4 +1,4 @@
-import { PozitionIds } from '../types'
+import { PozitionIds } from '../../Pozition'
 import { PitchIds } from '../../Pitch'
 
 import { deducePozitionId } from './index'

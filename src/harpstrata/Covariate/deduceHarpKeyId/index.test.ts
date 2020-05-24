@@ -1,5 +1,5 @@
-import { PitchIds } from '../types'
 import { PozitionIds } from '../../Pozition'
+import { PitchIds } from '../../Pitch'
 
 import { deduceHarpKeyId } from './index'
 

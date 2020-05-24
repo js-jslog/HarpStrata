@@ -11,11 +11,13 @@ export type {
 export { DegreeIds } from './Degree'
 export type { Degree, DegreeRow, DegreeMatrix } from './Degree'
 
-export { PozitionIds, deducePozitionId } from './Pozition'
+export { PozitionIds } from './Pozition'
 export type { Pozition } from './Pozition'
 
-export { PitchIds, deduceHarpKeyId, deduceRootPitchId } from './Pitch'
+export { PitchIds } from './Pitch'
 export type { Pitch } from './Pitch'
+
+export { deduceHarpKeyId, deduceRootPitchId, deducePozitionId } from './Covariate'
 
 export { IsActiveIds } from './IsActive'
 export type {

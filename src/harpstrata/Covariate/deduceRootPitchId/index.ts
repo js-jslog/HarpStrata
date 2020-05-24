@@ -1,7 +1,7 @@
-import type { PitchIds } from '../types'
-import { getOrderedPitchIds } from '../pitchMap'
 import { getPozitionRootOffset } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
+import type { PitchIds } from '../../Pitch'
+import { getOrderedPitchIds } from '../../Pitch'
 
 type DeduceRootPitchProps = {
   readonly harpKeyId: PitchIds;

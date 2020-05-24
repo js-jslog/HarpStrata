@@ -1,8 +1,9 @@
 import type { HarpStrataProps, HarpStrata } from '../types'
 import { getPozitionRootOffset } from '../../Pozition'
-import { getPitchMatrix, getPitch, deduceRootPitchId } from '../../Pitch'
+import { getPitchMatrix, getPitch } from '../../Pitch'
 import { getIsActiveComplex } from '../../IsActive'
 import { getDegreeMatrix } from '../../Degree'
+import { deduceRootPitchId } from '../../Covariate'
 import { getApparatus } from '../../Apparatus'
 
 export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
