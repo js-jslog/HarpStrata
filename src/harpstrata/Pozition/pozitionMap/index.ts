@@ -16,13 +16,13 @@ pozitionMap.set(FOURTH.id, FOURTH)
 pozitionMap.set(ELEVENTH.id, ELEVENTH)
 pozitionMap.set(SIXTH.id, SIXTH)
 
-export const getOrderedPozitionIds = (zeroth: PozitionIds = PozitionIds.First): ReadonlyArray<PozitionIds> => {
+export const getOrderedPozitionIds = (originId: PozitionIds = PozitionIds.First): ReadonlyArray<PozitionIds> => {
   const orderedPozitionIds = Array.from(pozitionMap.keys())
 
-  const desiredZeroIndex = orderedPozitionIds.indexOf(zeroth)
+  const originIndex = orderedPozitionIds.indexOf(originId)
 
-  const head = [ ...orderedPozitionIds.slice(desiredZeroIndex) ]
-  const tail = [ ...orderedPozitionIds.slice(0, (desiredZeroIndex)) ]
+  const head = [ ...orderedPozitionIds.slice(originIndex) ]
+  const tail = [ ...orderedPozitionIds.slice(0, (originIndex)) ]
 
   return [ ...head, ...tail ]
 }

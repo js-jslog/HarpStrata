@@ -16,23 +16,23 @@ pitchMap.set(A.id, A)
 pitchMap.set(Bb.id, Bb)
 pitchMap.set(B.id, B)
 
-export const getAscendingPitchIds = (zeroth: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
+export const getAscendingPitchIds = (originId: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
   const orderedPitchIds = Array.from(pitchMap.keys())
 
-  const desiredZeroIndex = orderedPitchIds.indexOf(zeroth)
+  const originIndex = orderedPitchIds.indexOf(originId)
 
-  const head = [ ...orderedPitchIds.slice(desiredZeroIndex) ]
-  const tail = [ ...orderedPitchIds.slice(0, (desiredZeroIndex)) ]
+  const head = [ ...orderedPitchIds.slice(originIndex) ]
+  const tail = [ ...orderedPitchIds.slice(0, (originIndex)) ]
 
   return [ ...head, ...tail ]
 }
 
-export const getDescendingPitchIds = (origin: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
-  const ascendingPitchIds = getAscendingPitchIds(origin)
+export const getDescendingPitchIds = (originId: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
+  const ascendingPitchIds = getAscendingPitchIds(originId)
   const [ , ...ascendingWithoutOrigin ] = ascendingPitchIds
   const descendingWithoutOrigin = [ ...ascendingWithoutOrigin ].reverse()
 
-  return [ origin, ...descendingWithoutOrigin ]
+  return [ originId, ...descendingWithoutOrigin ]
 }
 
 export const getPitch = (pitchId: PitchIds): Pitch => pitchMap.get(pitchId)
