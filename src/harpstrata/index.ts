@@ -11,10 +11,10 @@ export type {
 export { DegreeIds } from './Degree'
 export type { Degree, DegreeRow, DegreeMatrix } from './Degree'
 
-export { PozitionIds } from './Pozition'
+export { PozitionIds, determinePozitionId } from './Pozition'
 export type { Pozition } from './Pozition'
 
-export { PitchIds } from './Pitch'
+export { PitchIds, determineHarpKeyId, determineRootPitchId } from './Pitch'
 export type { Pitch } from './Pitch'
 
 export { IsActiveIds } from './IsActive'
