@@ -36,7 +36,7 @@ export const isPozitionControlVars = (props: GenericControlVars): props is Pozit
   return predicateOne && predicateTwo
 }
 
-export type CovariateGroup = {
+export type CovariantGroup = {
   readonly harpKeyId: PitchIds;
   readonly rootPitchId: PitchIds;
   readonly pozitionId: PozitionIds;
