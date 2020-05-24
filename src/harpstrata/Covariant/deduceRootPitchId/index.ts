@@ -1,16 +1,16 @@
 import { RootPitchControlVars } from '../types'
 import { getPozitionRootOffset } from '../../Pozition'
 import type { PitchIds } from '../../Pitch'
-import { getOrderedPitchIds } from '../../Pitch'
+import { getAscendingPitchIds } from '../../Pitch'
 
 
 export const deduceRootPitchId = (props: RootPitchControlVars): PitchIds => {
   const { harpKeyId, pozitionId } = props
   const rootOffset = getPozitionRootOffset(pozitionId)
 
-  const ascPitchIdsInKey = getOrderedPitchIds(harpKeyId)
+  const ascendingPitchIdsInKey = getAscendingPitchIds(harpKeyId)
 
-  const { [rootOffset]: rootPitchId } = ascPitchIdsInKey
+  const { [rootOffset]: rootPitchId } = ascendingPitchIdsInKey
 
   return rootPitchId
 }

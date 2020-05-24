@@ -16,7 +16,7 @@ pitchMap.set(A.id, A)
 pitchMap.set(Bb.id, Bb)
 pitchMap.set(B.id, B)
 
-export const getOrderedPitchIds = (zeroth: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
+export const getAscendingPitchIds = (zeroth: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
   const orderedPitchIds = Array.from(pitchMap.keys())
 
   const desiredZeroIndex = orderedPitchIds.indexOf(zeroth)

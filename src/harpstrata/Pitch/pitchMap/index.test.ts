@@ -1,25 +1,25 @@
 import { PitchIds } from '../types'
 import type { Pitch } from '../types'
 
-import { getOrderedPitchIds, getPitch } from './index'
+import { getAscendingPitchIds, getPitch } from './index'
 
 
-test('getOrderedPitchIds function returns an ordered array of the available pitches defaulting to starting at C', () => {
+test('getAscendingPitchIds function returns an ordered array of the available pitches defaulting to starting at C', () => {
   const expectedArray = [
     PitchIds.C, PitchIds.Db, PitchIds.D, PitchIds.Eb, PitchIds.E, PitchIds.F,
     PitchIds.Gb, PitchIds.G, PitchIds.Ab, PitchIds.A, PitchIds.Bb, PitchIds.B
   ]
-  const actualArray = getOrderedPitchIds()
+  const actualArray = getAscendingPitchIds()
 
   expect(actualArray).toEqual(expectedArray)
 })
 
-test('getOrderedPitchIds function returns an ordered array of the available pitches starting from an input value', () => {
+test('getAscendingPitchIds function returns an ordered array of the available pitches starting from an input value', () => {
   const expectedArray = [
     PitchIds.Gb, PitchIds.G, PitchIds.Ab, PitchIds.A, PitchIds.Bb, PitchIds.B,
     PitchIds.C, PitchIds.Db, PitchIds.D, PitchIds.Eb, PitchIds.E, PitchIds.F
   ]
-  const actualArray = getOrderedPitchIds(PitchIds.Gb)
+  const actualArray = getAscendingPitchIds(PitchIds.Gb)
 
   expect(actualArray).toEqual(expectedArray)
 })

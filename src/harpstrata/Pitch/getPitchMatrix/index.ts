@@ -1,10 +1,10 @@
 import type { PitchIds, PitchMatrix } from '../types'
-import { getOrderedPitchIds, getPitch } from '../pitchMap'
+import { getAscendingPitchIds, getPitch } from '../pitchMap'
 import type { HalfstepIndexMatrix } from '../../Apparatus'
 
 export const getPitchMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, keyPitchId: PitchIds): PitchMatrix => {
 
-  const ascPitchIdsInKey = getOrderedPitchIds(keyPitchId)
+  const ascPitchIdsInKey = getAscendingPitchIds(keyPitchId)
 
   return halfstepIndexMatrix.map((halfstepIndexRow) => {
     return halfstepIndexRow.map((halfstepIndex) => {

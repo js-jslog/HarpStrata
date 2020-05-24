@@ -1,4 +1,4 @@
-export { getOrderedPitchIds } from './pitchMap'
+export { getAscendingPitchIds } from './pitchMap'
 export { getPitch } from './pitchMap'
 
 export { getPitchMatrix } from './getPitchMatrix'
