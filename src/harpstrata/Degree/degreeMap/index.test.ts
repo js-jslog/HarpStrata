@@ -6,7 +6,7 @@ import { getOrderedDegreeIds, getDegree } from './index'
 const { Root, Flat2, Second, Flat3, Third, Fourth, Flat5, Fifth, Flat6, Sixth, Flat7, Seventh } = DegreeIds
 
 
-test('getOrderedDegreeIds function returns an ordered array of the available pitches defaulting to starting at C', () => {
+test('getOrderedDegreeIds function returns an ordered array of the available degreeIds defaulting to starting at root', () => {
   const expectedArray = [
     Root, Flat2, Second, Flat3, Third, Fourth,
     Flat5, Fifth, Flat6, Sixth, Flat7, Seventh
@@ -16,7 +16,7 @@ test('getOrderedDegreeIds function returns an ordered array of the available pit
   expect(actualArray).toEqual(expectedArray)
 })
 
-test('getOrderedDegreeIds function returns an ordered array of the available pitches starting from an input value', () => {
+test('getOrderedDegreeIds function returns an ordered array of the available degreeIds starting from an input value', () => {
   const expectedArray = [
     Flat5, Fifth, Flat6, Sixth, Flat7, Seventh,
     Root, Flat2, Second, Flat3, Third, Fourth
