@@ -15,8 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.1.0...HEAD) - yyyy-mm-dd
 ## [v6.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.1.0)
 ### Added
-- MINOR: Add control deduction functions
-- MINOR: Add ability to specify starting value on pitch & pozition id list getters
+- MINOR: Add covariant deduction functions
+- MINOR: Add ability to specify origin value on pitch & pozition id list getters
 ## [v5.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.0.0) - 2020-05-17
 ### Added
 - MAJOR: Add all the properties which the calling app would need to know how the harpstrata was generated
