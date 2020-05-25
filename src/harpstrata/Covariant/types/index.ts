@@ -16,20 +16,20 @@ export type PozitionControlVars = {
   readonly harpKeyId: PitchIds;
 }
 
-export type GenericControlVars = HarpKeyControlVars | RootPitchControlVars | PozitionControlVars
-export const isHarpKeyControlVars = (props: GenericControlVars): props is HarpKeyControlVars => {
+export type CovariantControlVars = HarpKeyControlVars | RootPitchControlVars | PozitionControlVars
+export const isHarpKeyControlVars = (props: CovariantControlVars): props is HarpKeyControlVars => {
   const predicateOne = (props as HarpKeyControlVars).rootPitchId !== undefined
   const predicateTwo = (props as HarpKeyControlVars).pozitionId !== undefined
 
   return predicateOne && predicateTwo
 }
-export const isRootPitchControlVars = (props: GenericControlVars): props is RootPitchControlVars => {
+export const isRootPitchControlVars = (props: CovariantControlVars): props is RootPitchControlVars => {
   const predicateOne = (props as RootPitchControlVars).harpKeyId !== undefined
   const predicateTwo = (props as RootPitchControlVars).pozitionId !== undefined
 
   return predicateOne && predicateTwo
 }
-export const isPozitionControlVars = (props: GenericControlVars): props is PozitionControlVars => {
+export const isPozitionControlVars = (props: CovariantControlVars): props is PozitionControlVars => {
   const predicateOne = (props as PozitionControlVars).rootPitchId !== undefined
   const predicateTwo = (props as PozitionControlVars).harpKeyId !== undefined
 
