@@ -17,12 +17,12 @@ pitchMap.set(Bb.id, Bb)
 pitchMap.set(B.id, B)
 
 export const getAscendingPitchIds = (originId: PitchIds = PitchIds.C): ReadonlyArray<PitchIds> => {
-  const orderedPitchIds = Array.from(pitchMap.keys())
+  const ascendingPitchIds = Array.from(pitchMap.keys())
 
-  const originIndex = orderedPitchIds.indexOf(originId)
+  const originIndex = ascendingPitchIds.indexOf(originId)
 
-  const head = [ ...orderedPitchIds.slice(originIndex) ]
-  const tail = [ ...orderedPitchIds.slice(0, (originIndex)) ]
+  const head = [ ...ascendingPitchIds.slice(originIndex) ]
+  const tail = [ ...ascendingPitchIds.slice(0, (originIndex)) ]
 
   return [ ...head, ...tail ]
 }

@@ -17,12 +17,12 @@ pozitionMap.set(ELEVENTH.id, ELEVENTH)
 pozitionMap.set(SIXTH.id, SIXTH)
 
 export const getAscendingPozitionIds = (originId: PozitionIds = PozitionIds.First): ReadonlyArray<PozitionIds> => {
-  const orderedPozitionIds = Array.from(pozitionMap.keys())
+  const ascendingPozitionIds = Array.from(pozitionMap.keys())
 
-  const originIndex = orderedPozitionIds.indexOf(originId)
+  const originIndex = ascendingPozitionIds.indexOf(originId)
 
-  const head = [ ...orderedPozitionIds.slice(originIndex) ]
-  const tail = [ ...orderedPozitionIds.slice(0, (originIndex)) ]
+  const head = [ ...ascendingPozitionIds.slice(originIndex) ]
+  const tail = [ ...ascendingPozitionIds.slice(0, (originIndex)) ]
 
   return [ ...head, ...tail ]
 }

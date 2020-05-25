@@ -17,12 +17,12 @@ degreeMap.set(FLAT7.id, FLAT7)
 degreeMap.set(SEVENTH.id, SEVENTH)
 
 export const getAscendingDegreeIds = (originId: DegreeIds = DegreeIds.Root): ReadonlyArray<DegreeIds> => {
-  const orderedDegreeIds = Array.from(degreeMap.keys())
+  const ascendingDegreeIds = Array.from(degreeMap.keys())
 
-  const originIndex = orderedDegreeIds.indexOf(originId)
+  const originIndex = ascendingDegreeIds.indexOf(originId)
 
-  const head = [ ...orderedDegreeIds.slice(originIndex) ]
-  const tail = [ ...orderedDegreeIds.slice(0, (originIndex)) ]
+  const head = [ ...ascendingDegreeIds.slice(originIndex) ]
+  const tail = [ ...ascendingDegreeIds.slice(0, (originIndex)) ]
 
   return [ ...head, ...tail ]
 }
