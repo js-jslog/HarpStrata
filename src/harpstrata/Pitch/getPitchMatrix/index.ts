@@ -4,12 +4,12 @@ import type { HalfstepIndexMatrix } from '../../Apparatus'
 
 export const getPitchMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, keyPitchId: PitchIds): PitchMatrix => {
 
-  const ascPitchIdsInKey = getAscendingPitchIds(keyPitchId)
+  const ascendingPitchIdsInKey = getAscendingPitchIds(keyPitchId)
 
   return halfstepIndexMatrix.map((halfstepIndexRow) => {
     return halfstepIndexRow.map((halfstepIndex) => {
       if (halfstepIndex === undefined) return undefined
-      return getPitch(ascPitchIdsInKey[halfstepIndex % 12])
+      return getPitch(ascendingPitchIdsInKey[halfstepIndex % 12])
     })
   })
 }
