@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - MINOR: Add covariant deduction functions
 - MINOR: Add ability to specify origin value on pitch & pozition id list getters
+- PATCH: Pitch, Pozition and Degree id ordered list generation (for internal use)
+
+### Removed
+- PATCH: ORDERED_XXX constants. Replaced by the ordered list generation described above (internal use only)
 
 ## [v5.0.0](https://github.com/js-jslog/harpstrata/releases/tag/v5.0.0) - 2020-05-17
 ### Added
