@@ -62,4 +62,3 @@ Returns the complete set of covariant variables given any combination of 2 input
 
 ### getHarpStrata(HarpStrataProps) => HarpStrata
 Requires an `ApparatusIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix`, `PitchMatrix` and `IsActiveComplex` components of the returned `HarpStrata`.
-
