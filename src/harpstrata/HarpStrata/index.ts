@@ -1,5 +1,5 @@
 import { getAscendingPozitionIds } from '../Pozition'
-import { getAscendingPitchIds } from '../Pitch'
+import { getAscendingPitchIds } from '../OrderedNote'
 import { getActiveApparatusIds } from '../Apparatus'
 
 
