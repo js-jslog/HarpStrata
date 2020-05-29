@@ -1,7 +1,19 @@
+import { PitchIds } from '../types'
 import type { PitchMatrix } from '../types'
-import {
-  C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
-} from '../constants'
+import { getPitch } from '../pitchMap'
+
+const C = getPitch(PitchIds.C)
+const Db = getPitch(PitchIds.Db)
+const D = getPitch(PitchIds.D)
+const Eb = getPitch(PitchIds.Eb)
+const E = getPitch(PitchIds.E)
+const F = getPitch(PitchIds.F)
+const Gb = getPitch(PitchIds.Gb)
+const G = getPitch(PitchIds.G)
+const Ab = getPitch(PitchIds.Ab)
+const A = getPitch(PitchIds.A)
+const Bb = getPitch(PitchIds.Bb)
+const B = getPitch(PitchIds.B)
 
 const MAJOR_DIATONIC_C_HARMONICA: PitchMatrix = [
   [ undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Bb        ],

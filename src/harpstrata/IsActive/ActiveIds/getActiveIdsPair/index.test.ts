@@ -1,11 +1,15 @@
 import { ActiveIds, ActivePitchIds, ActiveDegreeIds } from '../types'
 import type { IsActiveProps } from '../../types'
-import { PitchIds, C, D, E, F } from '../../../Pitch'
+import { PitchIds, getPitch } from '../../../Pitch'
 import { EXAMPLE_STRATA } from '../../../HarpStrata'
 import { DegreeIds, ROOT, SECOND, THIRD, FOURTH } from '../../../Degree'
 
 import { getActiveIdsPair } from './index'
 
+const C = getPitch(PitchIds.C)
+const D = getPitch(PitchIds.D)
+const E = getPitch(PitchIds.E)
+const F = getPitch(PitchIds.F)
 
 const basicDegreeMatrix = [
   [ ROOT , SECOND ],

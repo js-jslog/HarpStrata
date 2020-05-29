@@ -1,10 +1,15 @@
-import { PitchIds, C, D, E, F } from '../../../Pitch'
+import { PitchIds, getPitch } from '../../../Pitch'
 import type { PitchRow } from '../../../Pitch'
 import { DegreeIds, ROOT, SECOND, THIRD, FOURTH } from '../../../Degree'
 import type { DegreeRow } from '../../../Degree'
 
 import type { RowAccumulator } from './index'
 import { activeIdsFromPitchRow, activeIdsFromDegreeRow } from './index'
+
+const C = getPitch(PitchIds.C)
+const D = getPitch(PitchIds.D)
+const E = getPitch(PitchIds.E)
+const F = getPitch(PitchIds.F)
 
 const degreeRow: DegreeRow = [ ROOT, SECOND, THIRD, FOURTH ]
 const pitchRow: PitchRow = [ C, D, E, F ]

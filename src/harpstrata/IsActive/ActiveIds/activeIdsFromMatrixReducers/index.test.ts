@@ -1,10 +1,18 @@
-import { PitchIds, C, D, E, F, G, A, B } from '../../../Pitch'
+import { PitchIds, getPitch } from '../../../Pitch'
 import type { PitchMatrix } from '../../../Pitch'
 import { DegreeIds, ROOT, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH } from '../../../Degree'
 import type { DegreeMatrix } from '../../../Degree'
 
 import type { MatrixAccumulator } from './index'
 import { activeIdsFromPitchMatrix, activeIdsFromDegreeMatrix } from './index'
+
+const C = getPitch(PitchIds.C)
+const D = getPitch(PitchIds.D)
+const E = getPitch(PitchIds.E)
+const F = getPitch(PitchIds.F)
+const G = getPitch(PitchIds.G)
+const A = getPitch(PitchIds.A)
+const B = getPitch(PitchIds.B)
 
 const degreeMatrix: DegreeMatrix = [
   [ ROOT , SECOND, THIRD  , FOURTH ],
