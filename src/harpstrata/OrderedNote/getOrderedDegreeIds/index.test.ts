@@ -1,4 +1,4 @@
-import { DegreeIds } from '../Degree'
+import { DegreeIds } from '../../Degree'
 
 import { getAscendingDegreeIds, getDescendingDegreeIds } from './index'
 
