@@ -1,5 +1,5 @@
 import type { PitchIds, PitchMatrix } from '../types'
-import { getPitch } from '../Pitch'
+import { getPitch } from '../getPitch'
 import { getAscendingPitchIds } from '../../OrderedIds'
 import type { HalfstepIndexMatrix } from '../../Apparatus'
 
