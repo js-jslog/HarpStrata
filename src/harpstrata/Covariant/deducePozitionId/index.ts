@@ -1,7 +1,7 @@
 import { PozitionControlVars } from '../types'
-import { getAscendingPozitionIds } from '../../Pozition'
 import type { PozitionIds } from '../../Pozition'
-import { getAscendingPitchIds } from '../../OrderedNote'
+import { getAscendingPozitionIds } from '../../OrderedIds'
+import { getAscendingPitchIds } from '../../OrderedIds'
 
 
 export const deducePozitionId = (props: PozitionControlVars): PozitionIds => {
