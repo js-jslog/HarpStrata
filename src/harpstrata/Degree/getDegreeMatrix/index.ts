@@ -1,5 +1,6 @@
 import type { DegreeMatrix } from '../types'
-import { getDegree, getAscendingDegreeIds, getDescendingDegreeIds } from '../Degree'
+import { getDegree } from '../Degree'
+import { getAscendingDegreeIds, getDescendingDegreeIds } from '../../OrderedNote'
 import type { HalfstepIndexMatrix, HalfstepIndex } from '../../Apparatus'
 
 
