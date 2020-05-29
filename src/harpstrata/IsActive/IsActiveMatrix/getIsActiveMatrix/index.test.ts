@@ -2,18 +2,23 @@ import { IsActiveIds } from '../types'
 import type { IsActiveProps } from '../../types'
 import { PitchIds, getPitch } from '../../../Pitch'
 import { EXAMPLE_STRATA } from '../../../HarpStrata'
-import { ROOT, SECOND, THIRD, FOURTH, DegreeIds } from '../../../Degree'
+import { DegreeIds, getDegree } from '../../../Degree'
 
 const C = getPitch(PitchIds.C)
 const D = getPitch(PitchIds.D)
 const E = getPitch(PitchIds.E)
 const F = getPitch(PitchIds.F)
 
+const root = getDegree(DegreeIds.Root)
+const second = getDegree(DegreeIds.Second)
+const third = getDegree(DegreeIds.Third)
+const fourth = getDegree(DegreeIds.Fourth)
+
 import { getIsActiveMatrix } from './index'
 
 const degreeMatrix = [
-  [ ROOT , SECOND ],
-  [ THIRD, FOURTH ],
+  [ root , second ],
+  [ third, fourth ],
 ]
 const pitchMatrix = [
   [ C, D ],
@@ -57,8 +62,8 @@ test('getIsActiveMatrix returns the IsActiveMatrix when given ActivePitchIds', (
 
 test('getIsActiveMatrix returns the IsActiveMatrix including undefined when given ActivePitchIds', () => {
   const degreeMatrix = [
-    [ undefined, SECOND ],
-    [ THIRD    , FOURTH ],
+    [ undefined, second ],
+    [ third    , fourth ],
   ]
   const pitchMatrix = [
     [ undefined, D ],
