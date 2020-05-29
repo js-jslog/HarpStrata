@@ -4,10 +4,10 @@ import { DegreeIds, getDegree } from '../../../Degree'
 
 import { getCounterpartDegreeIds, getCounterpartPitchIds } from './index'
 
-const C = getPitch(PitchIds.C)
-const D = getPitch(PitchIds.D)
-const E = getPitch(PitchIds.E)
-const F = getPitch(PitchIds.F)
+const c = getPitch(PitchIds.C)
+const d = getPitch(PitchIds.D)
+const e = getPitch(PitchIds.E)
+const f = getPitch(PitchIds.F)
 
 const root = getDegree(DegreeIds.Root)
 const second = getDegree(DegreeIds.Second)
@@ -19,8 +19,8 @@ const degreeMatrix = [
   [ third, fourth ],
 ]
 const pitchMatrix = [
-  [ C, D ],
-  [ E, F ],
+  [ c, d ],
+  [ e, f ],
 ]
 const baseIsActiveProps: IsActiveProps = {
   degreeMatrix, pitchMatrix, activeIds: []
