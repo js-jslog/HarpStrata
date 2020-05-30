@@ -1,7 +1,9 @@
 import { Orderables } from '../types'
+import type { OrderedDegreeIdsProps } from '../types'
 import { PozitionIds } from '../../Pozition'
 import { PitchIds } from '../../Pitch'
 import { DegreeIds } from '../../Degree'
+
 
 import { getAscendingIds } from './index'
 
@@ -10,7 +12,7 @@ test('getAscendingIds function returns an ordered array of the available degreeI
     DegreeIds.Root, DegreeIds.Flat2, DegreeIds.Second, DegreeIds.Flat3, DegreeIds.Third, DegreeIds.Fourth,
     DegreeIds.Flat5, DegreeIds.Fifth, DegreeIds.Flat6, DegreeIds.Sixth, DegreeIds.Flat7, DegreeIds.Seventh
   ]
-  const orderedDegreeIdsProps = {
+  const orderedDegreeIdsProps: OrderedDegreeIdsProps = {
     type: Orderables.Degree,
   }
   const actualArray = getAscendingIds(orderedDegreeIdsProps)
@@ -23,7 +25,7 @@ test('getAscendingIds function returns an ordered array of the available degreeI
     DegreeIds.Flat5, DegreeIds.Fifth, DegreeIds.Flat6, DegreeIds.Sixth, DegreeIds.Flat7, DegreeIds.Seventh,
     DegreeIds.Root, DegreeIds.Flat2, DegreeIds.Second, DegreeIds.Flat3, DegreeIds.Third, DegreeIds.Fourth,
   ]
-  const orderedDegreeIdsProps = {
+  const orderedDegreeIdsProps: OrderedDegreeIdsProps = {
     type: Orderables.Degree,
     origin: DegreeIds.Flat5,
   }
