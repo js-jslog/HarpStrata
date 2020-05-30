@@ -18,6 +18,20 @@ test('getAscendingIds function returns an ordered array of the available degreeI
   expect(actualArray).toEqual(expectedArray)
 })
 
+test('getAscendingIds function returns an ordered array of the available degreeIds starting at a parameterised origin', () => {
+  const expectedArray = [
+    DegreeIds.Flat5, DegreeIds.Fifth, DegreeIds.Flat6, DegreeIds.Sixth, DegreeIds.Flat7, DegreeIds.Seventh,
+    DegreeIds.Root, DegreeIds.Flat2, DegreeIds.Second, DegreeIds.Flat3, DegreeIds.Third, DegreeIds.Fourth,
+  ]
+  const orderedDegreeIdsProps = {
+    type: Orderables.Degree,
+    origin: DegreeIds.Flat5,
+  }
+  const actualArray = getAscendingIds(orderedDegreeIdsProps)
+
+  expect(actualArray).toEqual(expectedArray)
+})
+
 test('getAscendingIds function returns an ordered array of the available pitches defaulting to starting at C', () => {
   const expectedArray = [
     PitchIds.C, PitchIds.Db, PitchIds.D, PitchIds.Eb, PitchIds.E, PitchIds.F,

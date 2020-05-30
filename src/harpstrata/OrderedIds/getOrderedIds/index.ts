@@ -8,9 +8,9 @@ import { PitchIds } from '../../Pitch'
 import { DegreeIds } from '../../Degree'
 
 export const getAscendingIds = (props: OrderedIdsProps): ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds> | ReadonlyArray<PozitionIds> => {
-  const { type } = props
+  const { type, origin } = props
   if ( type === Orderables.Degree ) {
-    return getAscendingDegreeIds()
+    return getAscendingDegreeIds(origin as DegreeIds)
   } else if ( type === Orderables.Pitch ) {
     return getAscendingPitchIds()
   } else if ( type === Orderables.Pozition ) {
