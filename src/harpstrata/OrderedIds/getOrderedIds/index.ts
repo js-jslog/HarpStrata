@@ -1,5 +1,5 @@
-import { Orderables } from '../types'
 import type { OrderedIdsProps } from '../types'
+import { isForDegrees, isForPitches, isForPozitions } from '../typeguards'
 import { getAscendingPozitionIds } from '../getOrderedPozitionIds'
 import { getAscendingPitchIds } from '../getOrderedPitchIds'
 import { getAscendingDegreeIds } from '../getOrderedDegreeIds'
@@ -8,13 +8,15 @@ import { PitchIds } from '../../Pitch'
 import { DegreeIds } from '../../Degree'
 
 export const getAscendingIds = (props: OrderedIdsProps): ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds> | ReadonlyArray<PozitionIds> => {
-  const { type, origin } = props
-  if ( type === Orderables.Degree ) {
-    return getAscendingDegreeIds(origin as DegreeIds)
-  } else if ( type === Orderables.Pitch ) {
-    return getAscendingPitchIds()
-  } else if ( type === Orderables.Pozition ) {
-    return getAscendingPozitionIds()
+  if ( isForDegrees(props) ) {
+    const {origin} = props
+    return getAscendingDegreeIds(origin)
+  } else if ( isForPitches(props) ) {
+    const {origin} = props
+    return getAscendingPitchIds(origin)
+  } else if ( isForPozitions(props) ) {
+    const {origin} = props
+    return getAscendingPozitionIds(origin)
   }
 
   const errorMessage = `

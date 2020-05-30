@@ -1,5 +1,5 @@
 import { Orderables } from '../types'
-import type { OrderedDegreeIdsProps } from '../types'
+import type { OrderedDegreeIdsProps, OrderedPitchIdsProps, OrderedPozitionIdsProps } from '../types'
 import { PozitionIds } from '../../Pozition'
 import { PitchIds } from '../../Pitch'
 import { DegreeIds } from '../../Degree'
@@ -34,13 +34,27 @@ test('getAscendingIds function returns an ordered array of the available degreeI
   expect(actualArray).toEqual(expectedArray)
 })
 
-test('getAscendingIds function returns an ordered array of the available pitches defaulting to starting at C', () => {
+test('getAscendingIds function returns an ordered array of the available pitchesIds defaulting to starting at C', () => {
   const expectedArray = [
     PitchIds.C, PitchIds.Db, PitchIds.D, PitchIds.Eb, PitchIds.E, PitchIds.F,
     PitchIds.Gb, PitchIds.G, PitchIds.Ab, PitchIds.A, PitchIds.Bb, PitchIds.B
   ]
   const orderedPitchIdsProps = {
     type: Orderables.Pitch,
+  }
+  const actualArray = getAscendingIds(orderedPitchIdsProps)
+
+  expect(actualArray).toEqual(expectedArray)
+})
+
+test('getAscendingIds function returns an ordered array of the available pitchIds starting at the parameterised origin', () => {
+  const expectedArray = [
+    PitchIds.Gb, PitchIds.G, PitchIds.Ab, PitchIds.A, PitchIds.Bb, PitchIds.B,
+    PitchIds.C, PitchIds.Db, PitchIds.D, PitchIds.Eb, PitchIds.E, PitchIds.F,
+  ]
+  const orderedPitchIdsProps: OrderedPitchIdsProps = {
+    type: Orderables.Pitch,
+    origin: PitchIds.Gb,
   }
   const actualArray = getAscendingIds(orderedPitchIdsProps)
 
@@ -55,6 +69,21 @@ test('getAscendingIds function returns an ordered array of the pozitions default
   ]
   const orderedPozitionIdsProps = {
     type: Orderables.Pozition,
+  }
+  const actualArray = getAscendingIds(orderedPozitionIdsProps)
+
+  expect(actualArray).toEqual(expectedArray)
+})
+
+test('getAscendingIds function returns an ordered array of the pozitionIds starting at the parameterised origin', () => {
+  const expectedArray = [
+    PozitionIds.Fifth, PozitionIds.Twelfth, PozitionIds.Seventh, PozitionIds.Second,
+    PozitionIds.Ninth, PozitionIds.Fourth, PozitionIds.Eleventh, PozitionIds.Sixth,
+    PozitionIds.First, PozitionIds.Eighth, PozitionIds.Third, PozitionIds.Tenth,
+  ]
+  const orderedPozitionIdsProps: OrderedPozitionIdsProps = {
+    type: Orderables.Pozition,
+    origin: PozitionIds.Fifth,
   }
   const actualArray = getAscendingIds(orderedPozitionIdsProps)
 
