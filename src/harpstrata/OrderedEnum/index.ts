@@ -1,6 +1,6 @@
 import { reverseFromOrigin } from './reverseFromOrigin'
 
-export const getOrderedEnum = <T>(enumerator: Record<string, T>, origin: T = Object.values(enumerator)[0]): ReadonlyArray<T> => {
+export const getAscendingEnumValues = <T>(enumerator: Record<string, T>, origin: T = Object.values(enumerator)[0]): ReadonlyArray<T> => {
   const ascendingValues = Object.values(enumerator)
   const originIndex = ascendingValues.indexOf(origin)
 
@@ -10,6 +10,6 @@ export const getOrderedEnum = <T>(enumerator: Record<string, T>, origin: T = Obj
   return [ ...head, ...tail ]
 }
 
-export const getDescendingEnum = <T>(enumerator: Record<string, T>, origin?: T): ReadonlyArray<T> => {
-  return reverseFromOrigin(getOrderedEnum(enumerator, origin)) 
+export const getDescendingEnumValues = <T>(enumerator: Record<string, T>, origin?: T): ReadonlyArray<T> => {
+  return reverseFromOrigin(getAscendingEnumValues(enumerator, origin)) 
 }
