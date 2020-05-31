@@ -1,6 +1,6 @@
 import { HarpKeyControlVars } from '../types'
+import { getPozitionRootOffset } from '../../Pozition'
 import type { PitchIds } from '../../Pitch'
-import { getPozitionRootOffset } from '../../OrderedIds'
 import { getDescendingPitchIds } from '../../OrderedIds'
 
 

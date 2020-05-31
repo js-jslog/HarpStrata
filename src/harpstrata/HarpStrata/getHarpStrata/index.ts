@@ -1,6 +1,6 @@
 import type { HarpStrataProps, HarpStrata } from '../types'
+import { getPozitionRootOffset } from '../../Pozition'
 import { getPitchMatrix, getPitch } from '../../Pitch'
-import { getPozitionRootOffset } from '../../OrderedIds'
 import { getIsActiveComplex } from '../../IsActive'
 import { getDegreeMatrix } from '../../Degree'
 import { getCovariants } from '../../Covariant'
