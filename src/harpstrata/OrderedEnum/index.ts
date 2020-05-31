@@ -10,6 +10,6 @@ export const getOrderedEnum = <T>(enumerator: Record<string, T>, origin: T = Obj
   return [ ...head, ...tail ]
 }
 
-export const getDescendingEnum = <T>(enumerator: Record<string, T>, origin: T): ReadonlyArray<T> => {
+export const getDescendingEnum = <T>(enumerator: Record<string, T>, origin?: T): ReadonlyArray<T> => {
   return reverseFromOrigin(getOrderedEnum(enumerator, origin)) 
 }
