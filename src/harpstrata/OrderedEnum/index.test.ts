@@ -1,3 +1,4 @@
+import { PozitionIds } from '../Pozition'
 import { PitchIds } from '../Pitch'
 import { DegreeIds } from '../Degree'
 
@@ -14,12 +15,16 @@ const {
   Gb, G, Ab, A, Bb, B
 } = PitchIds
 
-test('returns the values from the DegreeIds enum defaulting to Root', () => {
+test('returns the values from the PozitionIds enum defaulting to First', () => {
+  const {
+    First, Eighth, Third, Tenth, Fifth, Twelfth,
+    Seventh, Second, Ninth, Fourth, Eleventh, Sixth,
+  } = PozitionIds
   const expectedArray = [
-    Root, Flat2, Second, Flat3, Third, Fourth,
-    Flat5, Fifth, Flat6, Sixth, Flat7, Seventh,
+    First, Eighth, Third, Tenth, Fifth, Twelfth,
+    Seventh, Second, Ninth, Fourth, Eleventh, Sixth,
   ]
-  expect(getOrderedEnum(DegreeIds)).toStrictEqual(expectedArray)
+  expect(getOrderedEnum(PozitionIds)).toStrictEqual(expectedArray)
 })
 
 test('returns the values from the DegreeIds enum from the parameterised origin', () => {
