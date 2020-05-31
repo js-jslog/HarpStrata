@@ -6,6 +6,7 @@ import { DegreeIds } from '../../Degree'
 
 
 import { getAscendingIds } from './index'
+import { getDescendingIds } from './index'
 
 test('getAscendingIds function returns an ordered array of the available degreeIds defaulting to starting at root', () => {
   const expectedArray = [
@@ -30,6 +31,33 @@ test('getAscendingIds function returns an ordered array of the available degreeI
     origin: DegreeIds.Flat5,
   }
   const actualArray = getAscendingIds(orderedDegreeIdsProps)
+
+  expect(actualArray).toEqual(expectedArray)
+})
+
+test('getDescendingIds function returns an ordered array of the available degreeIds defaulting to starting at root', () => {
+  const expectedArray = [
+    DegreeIds.Root, DegreeIds.Seventh, DegreeIds.Flat7, DegreeIds.Sixth, DegreeIds.Flat6, DegreeIds.Fifth,
+    DegreeIds.Flat5, DegreeIds.Fourth, DegreeIds.Third, DegreeIds.Flat3, DegreeIds.Second, DegreeIds.Flat2
+  ]
+  const orderedDegreeIdsProps: OrderedDegreeIdsProps = {
+    type: Orderables.Degree,
+  }
+  const actualArray = getDescendingIds(orderedDegreeIdsProps)
+
+  expect(actualArray).toEqual(expectedArray)
+})
+
+test('getDescendingDegreeIds function returns an ordered array of the available degreeIds starting from an input value', () => {
+  const expectedArray = [
+    DegreeIds.Flat5, DegreeIds.Fourth, DegreeIds.Third, DegreeIds.Flat3, DegreeIds.Second, DegreeIds.Flat2,
+    DegreeIds.Root, DegreeIds.Seventh, DegreeIds.Flat7, DegreeIds.Sixth, DegreeIds.Flat6, DegreeIds.Fifth
+  ]
+  const orderedDegreeIdsProps: OrderedDegreeIdsProps = {
+    type: Orderables.Degree,
+    origin: DegreeIds.Flat5,
+  }
+  const actualArray = getDescendingIds(orderedDegreeIdsProps)
 
   expect(actualArray).toEqual(expectedArray)
 })
