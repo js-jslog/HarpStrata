@@ -31,6 +31,7 @@ export const getAscendingIds = (props: OrderedIdsProps): ReadonlyArray<DegreeIds
 }
 
 export const getDescendingIds = (props: OrderedIdsProps): ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds> | ReadonlyArray<PozitionIds> => {
+  // TODO: Improve misleading type casting. This should be generic to the 3 possible input types.
   const ascendingIds = getAscendingIds(props) as ReadonlyArray<DegreeIds>
   return reverseFromOrigin(ascendingIds)
 }
