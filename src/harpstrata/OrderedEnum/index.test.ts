@@ -1,7 +1,7 @@
 import { PitchIds } from '../Pitch'
 import { DegreeIds } from '../Degree'
 
-import { getOrderedEnum } from './index'
+import { getOrderedEnum, getDescendingEnum } from './index'
 
 const {
   Root, Flat2, Second, Flat3,
@@ -28,6 +28,14 @@ test('returns the values from the DegreeIds enum from the parameterised origin',
     Root, Flat2, Second, Flat3, Third, Fourth
   ]
   expect(getOrderedEnum(DegreeIds, Flat5)).toStrictEqual(expectedArray)
+})
+
+test('returns the descending DegreeIds enum from the parameterised origin', () => {
+  const expectedArray = [
+    Flat5, Fourth, Third, Flat3, Second, Flat2,
+    Root, Seventh, Flat7, Sixth, Flat6, Fifth,
+  ]
+  expect(getDescendingEnum(DegreeIds, Flat5)).toStrictEqual(expectedArray)
 })
 
 test('returns the values from the PitchIds enum', () => {
