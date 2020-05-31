@@ -31,23 +31,6 @@ export const getAscendingIds = (props: OrderedIdsProps): ReadonlyArray<DegreeIds
 }
 
 export const getDescendingIds = (props: OrderedIdsProps): ReadonlyArray<DegreeIds> | ReadonlyArray<PitchIds> | ReadonlyArray<PozitionIds> => {
-  if ( isForDegrees(props) ) {
-    const {origin} = props
-    return reverseFromOrigin(getAscendingDegreeIds(origin))
-  } else if ( isForPitches(props) ) {
-    const {origin} = props
-    return reverseFromOrigin(getAscendingPitchIds(origin))
-  } else if ( isForPozitions(props) ) {
-    const {origin} = props
-    return reverseFromOrigin(getAscendingPozitionIds(origin))
-  }
-
-  const errorMessage = `
-    Input args did not meet expectations.
-
-    Most likely the 'type' property is not set to one of the legitimate Orderables type.
-
-    Input: ${JSON.stringify(props)}
-  `
-  throw new Error(errorMessage)
+  const ascendingIds = getAscendingIds(props) as ReadonlyArray<DegreeIds>
+  return reverseFromOrigin(ascendingIds)
 }
