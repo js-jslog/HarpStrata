@@ -1,3 +1,5 @@
+import { DegreeIds } from '../Degree'
+
 import { reverseFromOrigin } from './reverseFromOrigin'
 
 export const getAscendingEnumValues = <T>(enumerator: Record<string, T>, origin: T = Object.values(enumerator)[0]): ReadonlyArray<T> => {
@@ -12,4 +14,8 @@ export const getAscendingEnumValues = <T>(enumerator: Record<string, T>, origin:
 
 export const getDescendingEnumValues = <T>(enumerator: Record<string, T>, origin?: T): ReadonlyArray<T> => {
   return reverseFromOrigin(getAscendingEnumValues(enumerator, origin)) 
+}
+
+export const getAscendingDegreeIds = (origin: DegreeIds): ReadonlyArray<DegreeIds> => {
+  return getAscendingEnumValues(DegreeIds, origin)
 }
