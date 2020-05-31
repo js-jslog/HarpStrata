@@ -31,6 +31,6 @@ test('returns the values from the DegreeIds enum from the parameterised origin',
 
 test('returns the descending DegreeIds enum from the parameterised origin', () => {
   const { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } = PitchIds
-  const expectedArray = [ A, Bb, B, C, Db, D, Eb, E, F, Gb, G, Ab ]
+  const expectedArray = [ A, Ab, G, Gb, F, E, Eb, D, Db, C, B, Bb ]
   expect(getDescendingEnum(PitchIds)).toStrictEqual(expectedArray)
 })
