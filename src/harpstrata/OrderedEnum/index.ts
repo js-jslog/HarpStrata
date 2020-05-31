@@ -1,5 +1,3 @@
-import { DegreeIds } from '../Degree'
-
-export const getOrderedEnum = (enumerator: Record<string, DegreeIds>): ReadonlyArray<DegreeIds> => {
+export const getOrderedEnum = <T>(enumerator: Record<string, T>): ReadonlyArray<T> => {
   return Object.values(enumerator)
 }
