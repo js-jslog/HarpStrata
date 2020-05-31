@@ -1,12 +1,19 @@
 import type { DegreeMatrix } from '../types'
 import { getDegree } from '../getDegree'
-import { getAscendingDegreeIds, getDescendingDegreeIds } from '../../OrderedIds'
+import { Orderables, getAscendingIds, getDescendingIds } from '../../OrderedIds'
+import type { OrderedDegreeIdsProps } from '../../OrderedIds'
+import type { DegreeIds } from '../../Degree'
 import type { HalfstepIndexMatrix, HalfstepIndex } from '../../Apparatus'
 
 
 export const getDegreeMatrix = (halfstepIndexMatrix: HalfstepIndexMatrix, root: HalfstepIndex): DegreeMatrix => {
-  const { [root]: rootDegreeId } = getDescendingDegreeIds()
-  const ascendingDegreeIdsFromHarpRoot = getAscendingDegreeIds(rootDegreeId)
+  const orderedDegreeIdsProps: OrderedDegreeIdsProps = { type: Orderables.Degree }
+  const { [root]: rootDegreeId } = getDescendingIds(orderedDegreeIdsProps) as ReadonlyArray<DegreeIds>
+  const orderedDegreeIdsPropsFromOrigin: OrderedDegreeIdsProps = {
+    ...orderedDegreeIdsProps,
+    origin: rootDegreeId,
+  }
+  const ascendingDegreeIdsFromHarpRoot = getAscendingIds(orderedDegreeIdsPropsFromOrigin) as ReadonlyArray<DegreeIds>
 
   return halfstepIndexMatrix.map((halfstepIndexRow) => {
     return halfstepIndexRow.map((halfstepIndex) => {

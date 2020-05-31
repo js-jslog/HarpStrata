@@ -10,11 +10,3 @@ export const getAscendingDegreeIds = (originId: DegreeIds = DegreeIds.Root): Rea
 
   return [ ...head, ...tail ]
 }
-
-export const getDescendingDegreeIds = (originId: DegreeIds = DegreeIds.Root): ReadonlyArray<DegreeIds> => {
-  const ascendingDegreeIds = getAscendingDegreeIds(originId)
-  const [ , ...ascendingWithoutOrigin ] = ascendingDegreeIds
-  const descendingWithoutOrigin = [ ...ascendingWithoutOrigin ].reverse()
-
-  return [ originId, ...descendingWithoutOrigin ]
-}
