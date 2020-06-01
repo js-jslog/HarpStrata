@@ -9,7 +9,7 @@ const fourth = getDegree(DegreeIds.Fourth)
 
 const MAJOR_DIATONIC_APPARATUS = getApparatus(ApparatusIds.MajorDiatonic)
 
-test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees (6) when halfsetp offset is 7', () => {
+test('getDegreeMatrix function maps a simple 2d array of 0\'s to 4th degrees when the starting DegreeId is Fourth', () => {
   const expectedArray = [[ fourth, ], [ fourth, ]]
   const actualArray = getDegreeMatrix([[ 0, ], [ 0, ]], DegreeIds.Fourth)
 
