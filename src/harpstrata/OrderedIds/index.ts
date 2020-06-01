@@ -27,3 +27,5 @@ export const getAscendingDegreeIds = (origin?: DegreeIds): ReadonlyArray<DegreeI
 export const getDescendingDegreeIds = (origin?: DegreeIds): ReadonlyArray<DegreeIds> => {
   return getDescendingEnumValues(DegreeIds, origin)
 }
+
+export { getAscendingEnumValues, getDescendingEnumValues } from './OrderedEnumValues'
