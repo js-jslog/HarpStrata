@@ -12,7 +12,7 @@ test('getCovariantSet returns the root pitch along with the input controller mem
   const expectedCovariantSet = { harpKeyId, pozitionId, rootPitchId: PitchIds.A }
   const actualCovariantSet = getCovariantSet(rootPitchControllers)
 
-  expect(actualCovariantSet).toEqual(expectedCovariantSet)
+  expect(actualCovariantSet).toStrictEqual(expectedCovariantSet)
 })
 
 test('getCovariantSet returns the harp key along with the input controller members of the set', () => {
@@ -23,7 +23,7 @@ test('getCovariantSet returns the harp key along with the input controller membe
   const expectedCovariantSet = { rootPitchId, pozitionId, harpKeyId: PitchIds.D }
   const actualCovariantSet = getCovariantSet(harpKeyControllers)
 
-  expect(actualCovariantSet).toEqual(expectedCovariantSet)
+  expect(actualCovariantSet).toStrictEqual(expectedCovariantSet)
 })
 
 test('getCovariantSet returns the pozition along with the input controller members of the set', () => {
@@ -34,5 +34,5 @@ test('getCovariantSet returns the pozition along with the input controller membe
   const expectedCovariantSet = { rootPitchId, harpKeyId, pozitionId: PozitionIds.Twelfth }
   const actualCovariantSet = getCovariantSet(pozitionIdControllers)
 
-  expect(actualCovariantSet).toEqual(expectedCovariantSet)
+  expect(actualCovariantSet).toStrictEqual(expectedCovariantSet)
 })
