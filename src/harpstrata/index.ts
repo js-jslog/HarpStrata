@@ -22,9 +22,9 @@ export { isPitchId } from './Pitch'
 export { getCovariantSet } from './Covariant'
 export type {
   CovariantSet, CovariantControllers,
-  HarpKeyControllers, RootPitchControllers, PozitionControllers,
-  areHarpKeyControllers, arePozitionControllers, areRootPitchControllers
+  HarpKeyControllers, RootPitchControllers, PozitionControllers
 } from './Covariant'
+export { areHarpKeyControllers, arePozitionControllers, areRootPitchControllers } from './Covariant'
 
 export { IsActiveIds } from './IsActive'
 export type {
