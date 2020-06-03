@@ -5,7 +5,7 @@ import { deducePozitionId } from '../deducePozitionId'
 import { deduceHarpKeyId } from '../deduceHarpKeyId'
 
 
-export const getCovariants = (controlVariables: CovariantControlVars): CovariantSet => {
+export const getCovariantSet = (controlVariables: CovariantControlVars): CovariantSet => {
   if (isHarpKeyControlVars(controlVariables)) {
     const { rootPitchId, pozitionId } = controlVariables
     const harpKeyId = deduceHarpKeyId(controlVariables)

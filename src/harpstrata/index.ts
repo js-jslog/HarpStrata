@@ -19,7 +19,7 @@ export { PitchIds } from './Pitch'
 export type { Pitch } from './Pitch'
 export { isPitchId } from './Pitch'
 
-export { getCovariants } from './Covariant'
+export { getCovariantSet } from './Covariant'
 export type {
   CovariantSet, CovariantControlVars,
   HarpKeyControlVars, RootPitchControlVars, PozitionControlVars,
