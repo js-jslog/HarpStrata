@@ -21,7 +21,7 @@ export { isPitchId } from './Pitch'
 
 export { getCovariants } from './Covariant'
 export type {
-  CovariantsGroup, CovariantControlVars,
+  CovariantSet, CovariantControlVars,
   HarpKeyControlVars, RootPitchControlVars, PozitionControlVars,
   isHarpKeyControlVars, isPozitionControlVars, isRootPitchControlVars
 } from './Covariant'

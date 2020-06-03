@@ -1,7 +1,7 @@
 import type { PozitionIds } from '../../Pozition'
 import type { PitchIds } from '../../Pitch'
 
-export type CovariantsGroup = {
+export type CovariantSet = {
   readonly harpKeyId: PitchIds;
   readonly pozitionId: PozitionIds;
   readonly rootPitchId: PitchIds;
