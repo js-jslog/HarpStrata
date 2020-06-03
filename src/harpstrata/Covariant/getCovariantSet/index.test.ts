@@ -4,35 +4,35 @@ import { PitchIds } from '../../Pitch'
 
 import { getCovariantSet } from './index'
 
-test('getCovariantSet returns the root pitch along with input harp key and pozition id control variables', () => {
+test('getCovariantSet returns the root pitch along with the input controller members of the set', () => {
   const { C: harpKeyId } = PitchIds
   const { Fourth: pozitionId } = PozitionIds
   const rootPitchControlProps: RootPitchControllers = { harpKeyId, pozitionId }
 
-  const expectedCovariants = { harpKeyId, pozitionId, rootPitchId: PitchIds.A }
-  const actualCovariants = getCovariantSet(rootPitchControlProps)
+  const expectedCovariantSet = { harpKeyId, pozitionId, rootPitchId: PitchIds.A }
+  const actualCovariantSet = getCovariantSet(rootPitchControlProps)
 
-  expect(actualCovariants).toEqual(expectedCovariants)
+  expect(actualCovariantSet).toEqual(expectedCovariantSet)
 })
 
-test('getCovariantSet returns the harp key along with input root pitch and pozition id control variables', () => {
+test('getCovariantSet returns the harp key along with the input controller members of the set', () => {
   const { Bb: rootPitchId } = PitchIds
   const { Ninth: pozitionId } = PozitionIds
   const harpKeyControlProps: HarpKeyControllers = { rootPitchId, pozitionId }
 
-  const expectedCovariants = { rootPitchId, pozitionId, harpKeyId: PitchIds.D }
-  const actualCovariants = getCovariantSet(harpKeyControlProps)
+  const expectedCovariantSet = { rootPitchId, pozitionId, harpKeyId: PitchIds.D }
+  const actualCovariantSet = getCovariantSet(harpKeyControlProps)
 
-  expect(actualCovariants).toEqual(expectedCovariants)
+  expect(actualCovariantSet).toEqual(expectedCovariantSet)
 })
 
-test('getCovariantSet returns the pozition along with input root pitch and harp key id control variables', () => {
+test('getCovariantSet returns the pozition along with the input controller members of the set', () => {
   const { F: rootPitchId } = PitchIds
   const { C: harpKeyId } = PitchIds
   const pozitionIdControlProps: PozitionControllers = { rootPitchId, harpKeyId }
 
-  const expectedCovariants = { rootPitchId, harpKeyId, pozitionId: PozitionIds.Twelfth }
-  const actualCovariants = getCovariantSet(pozitionIdControlProps)
+  const expectedCovariantSet = { rootPitchId, harpKeyId, pozitionId: PozitionIds.Twelfth }
+  const actualCovariantSet = getCovariantSet(pozitionIdControlProps)
 
-  expect(actualCovariants).toEqual(expectedCovariants)
+  expect(actualCovariantSet).toEqual(expectedCovariantSet)
 })
