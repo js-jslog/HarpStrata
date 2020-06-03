@@ -58,7 +58,7 @@ Returns an array of id's of the complete list of `PitchIds` which exist in an oc
 Returns an array of id's of the complete list of `PozitionIds` which can be taken on a harp. The id from which can be fed in to the `getHarpStrata` next. A `PozitionIds` parameter can optionally be provided to indicate what the origin id of the list should be.
 
 ### getCovariantSet(CovariantControllers) => CovariantSet
-Returns the complete set of covariant members given any 2 of the set. The covariant members are harp key, root pitch and pozition. Given any two of these the third can be deduced.
+Returns the complete set of covariant members given any 2 of the set. The covariant members are harp key, pozition & root pitch. Given any two of these the third can be deduced.
 
 ### getHarpStrata(HarpStrataProps) => HarpStrata
 Requires an `ApparatusIds` id object as well as a `PozitionIds`, `PitchIds` and `ActiveIds` object from which to deduce the `DegreeMatrix`, `PitchMatrix` and `IsActiveComplex` components of the returned `HarpStrata`.
