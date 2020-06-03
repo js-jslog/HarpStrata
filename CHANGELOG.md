@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - MAJOR: The names of many of the types and functions within the Covariant module
 
+### Fixed
+- PATCH: Fix Covariant module typeguard exports to be functions rather than types
+
 ## [v5.2.0](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - 2020-06-01
 ### Added
 - MINOR: Add CovariantControlVars subtype typeguards to public api
