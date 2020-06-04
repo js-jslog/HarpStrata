@@ -1,7 +1,8 @@
 # Changelog
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to ~~[Semantic Versioning](https://semver.org/spec/v2.0.0.html).~~
+[Compatible Versioning](https://gitlab.com/staltz/comver).
 
 ### Format
 - Added: for new features.
@@ -14,7 +15,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - yyyy-mm-dd
 ### Changed
-- PATCH: Recover root offset values from Pozition instances rather than from enum order
+- MINOR: Recover root offset values from Pozition instances rather than from enum order
+- MAJOR: The names of many of the types and functions within the Covariant module
+- MINOR: Update README.md with name changes in Covariants module
+
+### Fixed
+- MINOR: Fix Covariant module typeguard exports to be functions rather than types
+- MINOR: Changed from Semantic Versioning to Compatible Versioning
+
+### Fixed
+- MAJOR: Superfluous `undefined` type union removed from HarpStrata type on public API
 
 ## [v5.2.0](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - 2020-06-01
 ### Added
