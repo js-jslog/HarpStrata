@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - yyyy-mm-dd
+### Changed
+- PATCH: Recover root offset values from Pozition instances rather than from enum order
+
 ## [v5.2.0](https://github.com/js-jslog/harpstrata/compare/v5.2.0...HEAD) - 2020-06-01
 ### Added
 - MINOR: Add CovariantControlVars subtype typeguards to public api
