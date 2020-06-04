@@ -1,6 +1,7 @@
 import type { HarpStrataProps, HarpStrata } from '../types'
 import { getPozitionRootOffset } from '../../Pozition'
 import { getPitchMatrix, getPitch } from '../../Pitch'
+import { getDescendingDegreeIds } from '../../OrderedIds'
 import { getIsActiveComplex } from '../../IsActive'
 import { getDegreeMatrix } from '../../Degree'
 import { getCovariants } from '../../Covariant'
@@ -10,13 +11,13 @@ export const getHarpStrata = (props: HarpStrataProps): HarpStrata => {
   const { apparatusId, pozitionId, harpKeyId, activeIds } = props
 
   const apparatus = getApparatus(apparatusId)
-  const pozitionRoot = getPozitionRootOffset(pozitionId)
+  const { [getPozitionRootOffset(pozitionId)]: rootDegreeId } = getDescendingDegreeIds()
   const pitch = getPitch(harpKeyId)
 
   const { halfstepIndexMatrix } = apparatus
   const { id: pitchId } = pitch
 
-  const degreeMatrix = getDegreeMatrix(halfstepIndexMatrix, pozitionRoot)
+  const degreeMatrix = getDegreeMatrix(halfstepIndexMatrix, rootDegreeId)
   const pitchMatrix = getPitchMatrix(halfstepIndexMatrix, pitchId)
   const isActiveComplex = getIsActiveComplex({degreeMatrix, pitchMatrix, activeIds: activeIds })
 
