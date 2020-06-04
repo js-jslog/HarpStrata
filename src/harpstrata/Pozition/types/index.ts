@@ -1,4 +1,4 @@
-export enum PozitionIds {
+export enum PozitionIdsa {
   First = 'FIRST',
   Eighth = 'EIGHTH',
   Third = 'THIRD',
@@ -16,3 +16,6 @@ export enum PozitionIds {
 export type Pozition = {
   readonly id: PozitionIds;
 }
+
+export type PozitionIds = PozitionIdsa
+export const PozitionIds = { ...PozitionIdsa }
