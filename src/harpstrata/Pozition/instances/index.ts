@@ -1,7 +1,4 @@
 import { PozitionIds } from '../types'
-import type { Pozition } from '../types'
-
-export const instanceMap = new Map<PozitionIds, Pozition>()
 
 type First = {
   readonly id: PozitionIds.First;
@@ -66,19 +63,6 @@ const FOURTH: Fourth = { id: PozitionIds.Fourth,   rootOffset: 9 }
 const ELEVENTH: Eleventh = { id: PozitionIds.Eleventh, rootOffset: 10 }
 const SIXTH: Sixth = { id: PozitionIds.Sixth,    rootOffset: 11 }
 
-
-instanceMap.set(PozitionIds.First,    FIRST)
-instanceMap.set(PozitionIds.Second,   SECOND)
-instanceMap.set(PozitionIds.Third,    THIRD)
-instanceMap.set(PozitionIds.Fourth,   FOURTH)
-instanceMap.set(PozitionIds.Fifth,    FIFTH)
-instanceMap.set(PozitionIds.Sixth,    SIXTH)
-instanceMap.set(PozitionIds.Seventh,  SEVENTH)
-instanceMap.set(PozitionIds.Eighth,   EIGHTH)
-instanceMap.set(PozitionIds.Ninth,    NINTH)
-instanceMap.set(PozitionIds.Tenth,    TENTH)
-instanceMap.set(PozitionIds.Eleventh, ELEVENTH)
-instanceMap.set(PozitionIds.Twelfth,  TWELFTH)
 
 export const POZITION_INSTANCES = {
   [PozitionIds.First]: FIRST,

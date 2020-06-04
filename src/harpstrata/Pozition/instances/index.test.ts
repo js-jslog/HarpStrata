@@ -1,35 +1,36 @@
 import { PozitionIds } from '../types'
 
-import { instanceMap } from './index'
-
-test('Pozition instanceMap has exactly 12 mappings', () => {
-  expect(instanceMap.size).toBe(12)
+import { POZITION_INSTANCES } from './index'
+test('POZITION_INSTANCES has exactly 12 entries', () => {
+  expect(Object.keys(POZITION_INSTANCES).length).toBe(12)
 })
 
-test('Pozition instanceMap has a mapping for each of the PozitionIds', () => {
-  expect(instanceMap.get(PozitionIds.First)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Second)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Third)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Fourth)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Fifth)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Sixth)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Seventh)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Eighth)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Ninth)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Tenth)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Eleventh)).toBeTruthy()
-  expect(instanceMap.get(PozitionIds.Twelfth)).toBeTruthy()
+
+test('POZITION_INSTANCES has a mapping for each of the PozitionIds', () => {
+  expect(POZITION_INSTANCES[PozitionIds.First]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Second]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Third]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Fourth]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Fifth]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Sixth]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Seventh]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Eighth]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Ninth]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Tenth]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Eleventh]).toBeTruthy()
+  expect(POZITION_INSTANCES[PozitionIds.Twelfth]).toBeTruthy()
 })
 
 test('Each of the Pozition objects id is mapped from and identical key, thus also guaranteeing unique ids in the instances', () => {
-  instanceMap.forEach((instance, key) => {
+  Object.keys(POZITION_INSTANCES).forEach((key) => {
+    const { [key as PozitionIds]: instance } = POZITION_INSTANCES
     expect(instance.id).toBe(key)
   })
 })
 
 test('Each of the rootOffsets is only seen in a single mapped instance', () => {
   const offsetSeen = new Array(12).fill(false)
-  instanceMap.forEach((instance) => {
+  Object.values(POZITION_INSTANCES).forEach((instance) => {
     const { rootOffset } = instance
     expect(typeof rootOffset).toBe('number')
     expect(offsetSeen[rootOffset]).toBe(false)

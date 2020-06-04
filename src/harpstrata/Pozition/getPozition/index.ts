@@ -1,34 +1,23 @@
 import { PozitionIds } from '../types'
 import type { Pozition } from '../types'
-import { instanceMap } from '../instances'
 import { POZITION_INSTANCES } from '../instances'
 import type { HalfstepIndex } from '../../Apparatus'
 
 
 export const getPozition = (pozitionId: PozitionIds): Pozition => {
-  const instance = instanceMap.get(pozitionId)
-  
-  if (instance !== undefined) return instance
+  const { [pozitionId]: pozition } = POZITION_INSTANCES
 
-  const errorMessage = `
-    A Pozition instance has not been found as mapped
-    from the input PozitionId: ${pozitionId}
-
-    The Pozition instanceMap should contain a mapping
-    for every PozitionId.
-  `
-  throw new Error(errorMessage)
+  return pozition
 }
 
 export const getPozitionByOffset = (rootOffset: HalfstepIndex): Pozition => {
-  const keyValues = Array.from(instanceMap)
-  const reducer = (accumulator: PozitionIds | undefined, nextPair: [PozitionIds, Pozition]): PozitionIds | undefined => {
-    const [ , instance ] = nextPair
-    if (rootOffset === instance.rootOffset) return instance.id
+  const pozitions = Object.values(POZITION_INSTANCES)
+  const reducer = (accumulator: PozitionIds | undefined, nextPozition: Pozition): PozitionIds | undefined => {
+    if (rootOffset === nextPozition.rootOffset) return nextPozition.id
     return accumulator
   }
 
-  const pozitionId = keyValues.reduce(reducer, undefined)
+  const pozitionId = pozitions.reduce(reducer, undefined)
 
   if (pozitionId !== undefined) return getPozition(pozitionId)
 
@@ -40,10 +29,4 @@ export const getPozitionByOffset = (rootOffset: HalfstepIndex): Pozition => {
     If your number is over 11 then try performing mod 12 on it.
   `
   throw new Error(errorMessage)
-}
-
-export const getPozitionLiteral = (pozitionId: PozitionIds): Pozition => {
-  const { [pozitionId]: pozition } = POZITION_INSTANCES
-
-  return pozition
 }
