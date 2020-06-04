@@ -26,3 +26,13 @@ test('Each of the Pozition objects id is mapped from and identical key, thus als
     expect(instance.id).toBe(key)
   })
 })
+
+test('Each of the rootOffsets is only seen in a single mapped instance', () => {
+  const offsetSeen = new Array(12).fill(false)
+  instanceMap.forEach((instance) => {
+    const { rootOffset } = instance
+    expect(typeof rootOffset).toBe('number')
+    expect(offsetSeen[rootOffset]).toBe(false)
+    offsetSeen[rootOffset] = true
+  })
+})
