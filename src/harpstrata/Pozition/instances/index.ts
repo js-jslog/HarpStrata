@@ -15,7 +15,7 @@ const SECOND:   Pozition = { id: PozitionIds.Second,   rootOffset: 7 }
 const NINTH:    Pozition = { id: PozitionIds.Ninth,    rootOffset: 8 }
 const FOURTH:   Pozition = { id: PozitionIds.Fourth,   rootOffset: 9 }
 const ELEVENTH: Pozition = { id: PozitionIds.Eleventh, rootOffset: 10 }
-const SIXTH:    Pozition = { id: PozitionIds.Sixth,    rootOffset: 10 }
+const SIXTH:    Pozition = { id: PozitionIds.Sixth,    rootOffset: 11 }
 
 instanceMap.set(PozitionIds.First,    FIRST)
 instanceMap.set(PozitionIds.Second,   SECOND)
