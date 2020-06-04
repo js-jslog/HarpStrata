@@ -2,10 +2,6 @@ import { PozitionIds } from '../types'
 
 import { instanceMap } from './index'
 
-test('instanceMap is exported', () => {
-  expect(instanceMap).toBeTruthy()
-})
-
 test('Pozition instanceMap has exactly 12 mappings', () => {
   expect(instanceMap.size).toBe(12)
 })
@@ -23,4 +19,10 @@ test('Pozition instanceMap has a mapping for each of the PozitionIds', () => {
   expect(instanceMap.get(PozitionIds.Tenth)).toBeTruthy()
   expect(instanceMap.get(PozitionIds.Eleventh)).toBeTruthy()
   expect(instanceMap.get(PozitionIds.Twelfth)).toBeTruthy()
+})
+
+test('Each of the Pozition objects id is mapped from and identical key, thus also guaranteeing unique ids in the instances', () => {
+  instanceMap.forEach((instance, key) => {
+    expect(instance.id).toBe(key)
+  })
 })
