@@ -1,6 +1,7 @@
 import { PozitionIds } from '../types'
 import type { Pozition } from '../types'
 import { instanceMap } from '../instances'
+import { POZITION_INSTANCES } from '../instances'
 import type { HalfstepIndex } from '../../Apparatus'
 
 
@@ -39,4 +40,10 @@ export const getPozitionByOffset = (rootOffset: HalfstepIndex): Pozition => {
     If your number is over 11 then try performing mod 12 on it.
   `
   throw new Error(errorMessage)
+}
+
+export const getPozitionLiteral = (pozitionId: PozitionIds): Pozition => {
+  const { [pozitionId]: pozition } = POZITION_INSTANCES
+
+  return pozition
 }
