@@ -1,6 +1,5 @@
 import { PozitionIds } from '../types'
-
-import { Pozition } from './types'
+import type { Pozition } from '../types'
 
 export const instanceMap = new Map<PozitionIds, Pozition>()
 

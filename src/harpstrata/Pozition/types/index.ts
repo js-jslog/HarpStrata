@@ -1,3 +1,5 @@
+import type { HalfstepIndex } from '../../Apparatus'
+
 export enum PozitionIds {
   First = 'FIRST',
   Eighth = 'EIGHTH',
@@ -15,4 +17,5 @@ export enum PozitionIds {
 
 export type Pozition = {
   readonly id: PozitionIds;
+  readonly rootOffset: HalfstepIndex;
 }
