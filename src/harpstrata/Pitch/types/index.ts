@@ -26,7 +26,7 @@ export enum NoteFoundations {
 export type NaturalDisplayValue = {
   readonly natural: NoteFoundations;
 }
-export type UnnaturalDisplayValue = {
+export type UnnaturalDisplayValues = {
   readonly sharp: NoteFoundations;
   readonly flat: NoteFoundations;
 }
@@ -37,7 +37,7 @@ export type NaturalPitch = {
 }
 export type UnnaturalPitch = {
   readonly id: PitchIds;
-  readonly contextualDisplayValues: UnnaturalDisplayValue;
+  readonly contextualDisplayValues: UnnaturalDisplayValues;
 }
 export type Pitch = NaturalPitch | UnnaturalPitch
 

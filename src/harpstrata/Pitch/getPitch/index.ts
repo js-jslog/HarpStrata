@@ -1,7 +1,7 @@
 import { PitchIds, NoteFoundations } from '../types'
-import type { Pitch, NaturalDisplayValue, UnnaturalDisplayValue } from '../types'
+import type { Pitch, NaturalDisplayValue, UnnaturalDisplayValues } from '../types'
 
-const pitchMap: Record<PitchIds, NaturalDisplayValue | UnnaturalDisplayValue> = {
+const pitchMap: Record<PitchIds, NaturalDisplayValue | UnnaturalDisplayValues> = {
   [PitchIds.A]: {
     natural: NoteFoundations.A
   },
