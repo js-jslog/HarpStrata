@@ -32,9 +32,8 @@ type UnnaturalDisplayValue = {
 }
 export type ContextualDisplayValue = NaturalDisplayValue | UnnaturalDisplayValue
 
-
 export type Pitch = {
-  readonly id: PitchIds;
+  readonly id: PitchIds
   readonly contextualDisplayValue: ContextualDisplayValue
 }
 
