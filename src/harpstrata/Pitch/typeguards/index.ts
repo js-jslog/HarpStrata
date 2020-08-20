@@ -1,11 +1,11 @@
 import { PitchIds } from '../types'
-import type { ContextualDisplayValues, NaturalDisplayValue } from '../types'
+import type { NaturalPitch, Pitch } from '../types'
 
 export const isPitchId = (idIn: string): idIn is PitchIds => {
   return Object.values(PitchIds).includes(idIn as PitchIds)
 }
 
-export const isNaturalDisplayValues = (displayValues: ContextualDisplayValues): displayValues is NaturalDisplayValue => {
-  const { natural } = displayValues as NaturalDisplayValue
+export const isNaturalPitch = (pitch: Pitch): pitch is NaturalPitch => {
+  const { contextualDisplayValues: { natural } } = pitch as NaturalPitch
   return natural !== undefined
 }

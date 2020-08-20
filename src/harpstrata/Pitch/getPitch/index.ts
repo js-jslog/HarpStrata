@@ -1,7 +1,7 @@
 import { PitchIds, NoteFoundations } from '../types'
-import type { Pitch, ContextualDisplayValues } from '../types'
+import type { Pitch, NaturalDisplayValue, UnnaturalDisplayValue } from '../types'
 
-const pitchMap: Record<PitchIds, ContextualDisplayValues> = {
+const pitchMap: Record<PitchIds, NaturalDisplayValue | UnnaturalDisplayValue> = {
   [PitchIds.A]: {
     natural: NoteFoundations.A
   },
@@ -45,4 +45,11 @@ const pitchMap: Record<PitchIds, ContextualDisplayValues> = {
   },
 }
 
-export const getPitch = (pitchId: PitchIds): Pitch => ({id: pitchId, contextualDisplayValues: pitchMap[pitchId]})
+export const getPitch = (pitchId: PitchIds): Pitch => {
+  const pitch = {
+    id: pitchId,
+    contextualDisplayValues: pitchMap[pitchId]
+  } as Pitch
+
+  return pitch
+}

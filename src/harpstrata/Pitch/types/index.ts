@@ -30,12 +30,17 @@ export type UnnaturalDisplayValue = {
   readonly sharp: NoteFoundations;
   readonly flat: NoteFoundations;
 }
-export type ContextualDisplayValues = NaturalDisplayValue | UnnaturalDisplayValue
 
-export type Pitch = {
+export type NaturalPitch = {
   readonly id: PitchIds;
-  readonly contextualDisplayValues: ContextualDisplayValues;
+  readonly contextualDisplayValues: NaturalDisplayValue;
 }
+export type UnnaturalPitch = {
+  readonly id: PitchIds;
+  readonly contextualDisplayValues: UnnaturalDisplayValue;
+}
+export type Pitch = NaturalPitch | UnnaturalPitch
+
 
 export type PitchRow = ReadonlyArray<Pitch | undefined>
 export type PitchMatrix = ReadonlyArray<PitchRow>
