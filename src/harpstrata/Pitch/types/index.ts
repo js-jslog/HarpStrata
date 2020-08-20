@@ -24,17 +24,17 @@ export enum NoteFoundations {
 }
 
 type NaturalDisplayValue = {
-  natural: NoteFoundations
+  readonly natural: NoteFoundations;
 }
 type UnnaturalDisplayValue = {
-  sharp: NoteFoundations
-  flat: NoteFoundations
+  readonly sharp: NoteFoundations;
+  readonly flat: NoteFoundations;
 }
 export type ContextualDisplayValue = NaturalDisplayValue | UnnaturalDisplayValue
 
 export type Pitch = {
-  readonly id: PitchIds
-  readonly contextualDisplayValue: ContextualDisplayValue
+  readonly id: PitchIds;
+  readonly contextualDisplayValue: ContextualDisplayValue;
 }
 
 export type PitchRow = ReadonlyArray<Pitch | undefined>
