@@ -45,4 +45,4 @@ const pitchMap: Record<PitchIds, ContextualDisplayValue> = {
   },
 }
 
-export const getPitch = (pitchId: PitchIds): Pitch => ({id: pitchId, contextualDisplayValue: pitchMap[pitchId]})
+export const getPitch = (pitchId: PitchIds): Pitch => ({id: pitchId, contextualDisplayValues: pitchMap[pitchId]})

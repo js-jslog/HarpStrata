@@ -7,7 +7,7 @@ import { getPitch } from './index'
 test('getPitch function can return a C pitch', () => {
   const C_PITCH: Pitch = {
     id: PitchIds.C,
-    contextualDisplayValue: {
+    contextualDisplayValues: {
       natural: NoteFoundations.C
     }
   } as const
@@ -19,7 +19,7 @@ test('getPitch function can return a C pitch', () => {
 test('getPitch function can return a Db pitch', () => {
   const DB_PITCH: Pitch = {
     id: PitchIds.Db,
-    contextualDisplayValue: {
+    contextualDisplayValues: {
       flat: NoteFoundations.D,
       sharp: NoteFoundations.C
     }

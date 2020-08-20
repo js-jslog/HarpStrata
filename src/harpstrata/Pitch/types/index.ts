@@ -34,7 +34,7 @@ export type ContextualDisplayValue = NaturalDisplayValue | UnnaturalDisplayValue
 
 export type Pitch = {
   readonly id: PitchIds;
-  readonly contextualDisplayValue: ContextualDisplayValue;
+  readonly contextualDisplayValues: ContextualDisplayValue;
 }
 
 export type PitchRow = ReadonlyArray<Pitch | undefined>
